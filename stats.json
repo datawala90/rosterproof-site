@@ -1,0 +1,122 @@
+{
+ "generated_at_utc": "2026-07-17T12:14:59Z",
+ "last_refresh_utc": "2026-07-17 10:31:07",
+ "records_total": 150719,
+ "sources_total": 16,
+ "states": 15,
+ "npi_resolved": {
+  "count": 33049,
+  "rate_pct": 21.9
+ },
+ "multi_jurisdiction_npis": 6032,
+ "federal_gap_overall_pct": 52.5,
+ "tiers": [
+  {
+   "tier": "T1",
+   "label": "Source-published NPI, NPPES-verified",
+   "description": "the excluding agency printed an NPI and the CMS NPPES registry confirms the identity",
+   "count": 19354
+  },
+  {
+   "tier": "T2",
+   "label": "Unique identity match (name+state)",
+   "description": "exactly one provider in the national registry shares the normalized name and state",
+   "count": 11923
+  },
+  {
+   "tier": "T2a",
+   "label": "Unique identity match via registered alias",
+   "description": "same, matched through a registered maiden/former/dba name",
+   "count": 364
+  },
+  {
+   "tier": "T3",
+   "label": "License-number corroborated",
+   "description": "the state license number on the exclusion agrees with the registry",
+   "count": 525
+  },
+  {
+   "tier": "T4",
+   "label": "AI-adjudicated, human review required",
+   "description": "a large language model weighed the remaining evidence; reasoning stored, every verdict flagged for human review",
+   "count": 266
+  }
+ ],
+ "state_gaps": [
+  {
+   "state": "AZ",
+   "active_records": 689,
+   "gap_pct": 98.8
+  },
+  {
+   "state": "TN",
+   "active_records": 21,
+   "gap_pct": 85.7
+  },
+  {
+   "state": "NC",
+   "active_records": 163,
+   "gap_pct": 78.5
+  },
+  {
+   "state": "MO",
+   "active_records": 262,
+   "gap_pct": 77.9
+  },
+  {
+   "state": "IL",
+   "active_records": 3232,
+   "gap_pct": 67.4
+  },
+  {
+   "state": "WA",
+   "active_records": 235,
+   "gap_pct": 66.8
+  },
+  {
+   "state": "MN",
+   "active_records": 1433,
+   "gap_pct": 65.7
+  },
+  {
+   "state": "MD",
+   "active_records": 1608,
+   "gap_pct": 64.3
+  },
+  {
+   "state": "CA",
+   "active_records": 23166,
+   "gap_pct": 59.6
+  },
+  {
+   "state": "NJ",
+   "active_records": 3638,
+   "gap_pct": 58.4
+  },
+  {
+   "state": "NY",
+   "active_records": 8922,
+   "gap_pct": 49.4
+  },
+  {
+   "state": "TX",
+   "active_records": 11887,
+   "gap_pct": 48.9
+  },
+  {
+   "state": "OH",
+   "active_records": 2010,
+   "gap_pct": 33.0
+  },
+  {
+   "state": "PA",
+   "active_records": 4887,
+   "gap_pct": 20.9
+  },
+  {
+   "state": "GA",
+   "active_records": 1370,
+   "gap_pct": 14.1
+  }
+ ]
+}

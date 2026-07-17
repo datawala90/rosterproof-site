@@ -20,6 +20,25 @@ h1{font-size:44px;letter-spacing:8px;font-weight:500;margin:0 0 10px}
 .card p{color:#b8c4de;line-height:1.7;margin:0}
 .badge{display:inline-block;background:#16233f;color:#7fd4c8;border:1px solid #1f3b5c;font-size:12px;letter-spacing:1px;padding:4px 12px;border-radius:999px;margin-bottom:14px}
 a{color:#7fd4c8}
+h2.sec{font-size:22px;margin:56px 0 6px;text-align:left}
+.secnote{color:#8fa3c7;font-size:13px;text-align:left;margin:0 0 18px}
+.gapchart{display:flex;flex-direction:column;gap:2px;text-align:left}
+.gaprow{display:grid;grid-template-columns:44px 1fr 52px;align-items:center;gap:10px;padding:1px 0}
+.gaprow .st{color:#8fa3c7;font-size:13px;font-variant-numeric:tabular-nums}
+.gaprow .track{background:#0d1530;border-radius:4px;height:14px;position:relative}
+.gaprow .bar{background:#7fd4c8;height:14px;border-radius:0 4px 4px 0;min-width:2px}
+.gaprow .val{color:#c7d2ea;font-size:13px;font-variant-numeric:tabular-nums;text-align:right}
+.gaprow:hover .bar{background:#a5e6dc}
+.gaprow[data-tip]:hover::after{content:attr(data-tip);position:absolute;transform:translateY(-26px);
+ background:#16233f;border:1px solid #2f3b55;border-radius:8px;padding:4px 10px;font-size:12px;color:#c7d2ea;pointer-events:none}
+.ladder{text-align:left;display:flex;flex-direction:column;gap:2px}
+.rung{display:grid;grid-template-columns:52px 1fr 84px;gap:14px;align-items:baseline;
+ background:#111a36;border:1px solid #2f3b55;border-radius:10px;padding:14px 18px}
+.rung .tier{color:#7fd4c8;font-weight:600;letter-spacing:1px}
+.rung .what{color:#c7d2ea;line-height:1.55;font-size:14px}
+.rung .what b{color:#eef2fb;font-weight:600;display:block}
+.rung .n{color:#8fa3c7;font-size:13px;text-align:right;font-variant-numeric:tabular-nums}
+.unres{color:#5b6b85;font-size:13px;margin-top:8px;text-align:left}
 footer{color:#5b6b85;font-size:13px;margin-top:64px}
 .legal{font-size:11px;color:#46536b}
 </style>
@@ -37,9 +56,9 @@ so exclusion screening becomes a simple join in your own warehouse — no scrape
 no PDFs to retype, no blind spots between the federal list and the states.</p>
 
 <div class="stats">
-<div class="stat"><div class="big">150K+</div><div class="small">exclusion records, history-tracked</div></div>
-<div class="stat"><div class="big">Federal + 15 states</div><div class="small">OIG LEIE plus state Medicaid exclusion lists</div></div>
-<div class="stat"><div class="big">~52%</div><div class="small">of state exclusions never reach the federal LEIE</div></div>
+<div class="stat"><div class="big" id="st-records">150K+</div><div class="small">exclusion records, history-tracked</div></div>
+<div class="stat"><div class="big" id="st-states">Federal + 15 states</div><div class="small">OIG LEIE plus state Medicaid exclusion lists</div></div>
+<div class="stat"><div class="big" id="st-gap">~52%</div><div class="small">of state exclusions never reach the federal LEIE</div></div>
 <div class="stat"><div class="big">Daily</div><div class="small">automated refresh with full change feed</div></div>
 </div>
 
@@ -51,6 +70,57 @@ they do propagate, it happens with months of lag. RosterProof closes that gap: e
 carries its source, jurisdiction, exclusion window, and an NPI match with stated confidence,
 so a compliance analyst can defend every hit without asking anyone.</p>
 </div>
+
+<h2 class="sec">The federal gap, state by state</h2>
+<p class="secnote">Share of each state's active exclusions that never appear on the federal LEIE.
+Live from the published dataset — refreshed daily<span id="st-asof"></span>.</p>
+<div class="gapchart" id="gapchart">
+<noscript><p class="secnote">Enable JavaScript for the live per-state chart, or see the dataset's FEED_INFO.</p></noscript>
+</div>
+
+<h2 class="sec">How matching works: four tiers, strongest first</h2>
+<p class="secnote">Every match carries its tier, evidence, and confidence. Unresolved records stay honestly unresolved.</p>
+<div class="ladder" id="ladder">
+<div class="rung"><div class="tier">T1</div><div class="what"><b>Source-published NPI, NPPES-verified</b>the excluding agency printed an NPI and the CMS NPPES registry confirms the identity</div><div class="n" id="n-T1"></div></div>
+<div class="rung"><div class="tier">T2</div><div class="what"><b>Unique identity match (name+state)</b>exactly one provider in the national registry shares the normalized name and state — including registered maiden/former/dba aliases</div><div class="n" id="n-T2"></div></div>
+<div class="rung"><div class="tier">T3</div><div class="what"><b>License-number corroborated</b>the state license number on the exclusion agrees with the registry</div><div class="n" id="n-T3"></div></div>
+<div class="rung"><div class="tier">T4</div><div class="what"><b>AI-adjudicated, human review required</b>a large language model weighs the remaining evidence, writes its reasoning, and every verdict is flagged for human review</div><div class="n" id="n-T4"></div></div>
+</div>
+<p class="unres" id="unres"></p>
+
+<script>
+fetch('stats.json').then(r => r.json()).then(d => {
+  const fmt = n => n.toLocaleString('en-US');
+  document.getElementById('st-records').textContent = fmt(d.records_total);
+  document.getElementById('st-states').textContent = 'Federal + ' + d.states + ' states';
+  document.getElementById('st-gap').textContent = '~' + Math.round(d.federal_gap_overall_pct) + '%';
+  document.getElementById('st-asof').textContent = ' · as of ' + d.last_refresh_utc.slice(0, 10) + ' UTC';
+  const chart = document.getElementById('gapchart');
+  d.state_gaps.forEach(g => {
+    const row = document.createElement('div');
+    row.className = 'gaprow';
+    row.setAttribute('data-tip', g.state + ': ' + fmt(g.active_records) + ' active exclusions, ' + g.gap_pct + '% not on the federal LEIE');
+    row.innerHTML = '<span class="st">' + g.state + '</span>' +
+      '<span class="track"><div class="bar" style="width:' + g.gap_pct + '%"></div></span>' +
+      '<span class="val">' + g.gap_pct + '%</span>';
+    chart.appendChild(row);
+  });
+  const t2 = (d.tiers.find(t => t.tier === 'T2') || {count: 0}).count +
+             (d.tiers.find(t => t.tier === 'T2a') || {count: 0}).count;
+  const counts = {T1: (d.tiers.find(t => t.tier === 'T1') || {}).count, T2: t2,
+                  T3: (d.tiers.find(t => t.tier === 'T3') || {}).count,
+                  T4: (d.tiers.find(t => t.tier === 'T4') || {}).count};
+  for (const k in counts) {
+    const el = document.getElementById('n-' + k);
+    if (el && counts[k] != null) el.textContent = fmt(counts[k]) + ' matches';
+  }
+  const unresolved = d.records_total - d.npi_resolved.count;
+  document.getElementById('unres').textContent =
+    fmt(d.npi_resolved.count) + ' records NPI-resolved (' + d.npi_resolved.rate_pct +
+    '%) · ' + fmt(d.multi_jurisdiction_npis) + ' providers excluded in 2+ jurisdictions · ' +
+    'the remainder is published unresolved — never guessed.';
+}).catch(() => {});
+</script>
 
 <footer>
 RosterProof · <a href="attribution.html">Attribution &amp; Notices</a> · <a href="dictionary.html">Data Dictionary</a> · <a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
