@@ -1,33 +1,33 @@
 {
- "generated_at_utc": "2026-07-18T13:27:00Z",
- "last_refresh_utc": "2026-07-18 13:15:29",
- "records_total": 327344,
- "sources_total": 24,
- "states": 22,
+ "generated_at_utc": "2026-07-18T16:53:09Z",
+ "last_refresh_utc": "2026-07-18 16:46:36",
+ "records_total": 328679,
+ "sources_total": 25,
+ "states": 23,
  "npi_resolved": {
-  "count": 52839,
-  "rate_pct": 16.1
+  "count": 53414,
+  "rate_pct": 16.2
  },
- "multi_jurisdiction_npis": 6543,
- "federal_gap_overall_pct": 53.1,
+ "multi_jurisdiction_npis": 6693,
+ "federal_gap_overall_pct": 52.9,
  "tiers": [
   {
    "tier": "T1",
    "label": "Source-published NPI, NPPES-verified",
    "description": "the excluding agency printed an NPI and the CMS NPPES registry confirms the identity",
-   "count": 27592
+   "count": 28075
   },
   {
    "tier": "T2",
    "label": "Unique identity match (name+state)",
    "description": "exactly one provider in the national registry shares the normalized name and state",
-   "count": 22931
+   "count": 22989
   },
   {
    "tier": "T2a",
    "label": "Unique identity match via registered alias",
    "description": "same, matched through a registered maiden/former/dba name",
-   "count": 662
+   "count": 667
   },
   {
    "tier": "T3",
@@ -132,6 +132,11 @@
    "state": "TX",
    "active_records": 11890,
    "gap_pct": 48.9
+  },
+  {
+   "state": "SC",
+   "active_records": 1335,
+   "gap_pct": 40.7
   },
   {
    "state": "OH",
