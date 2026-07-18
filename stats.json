@@ -1,12 +1,12 @@
 {
- "generated_at_utc": "2026-07-18T19:33:51Z",
+ "generated_at_utc": "2026-07-18T19:42:25Z",
  "last_refresh_utc": "2026-07-18 19:13:14",
  "records_total": 330763,
  "sources_total": 27,
  "states": 25,
  "npi_resolved": {
-  "count": 53416,
-  "rate_pct": 16.1
+  "count": 52525,
+  "rate_pct": 15.9
  },
  "multi_jurisdiction_npis": 6694,
  "federal_gap_overall_pct": 52.0,
