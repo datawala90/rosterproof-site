@@ -34,8 +34,13 @@ th,td{border:1px solid #2f3b55;padding:10px 12px;text-align:left;vertical-align:
 th{background:#111a36;color:#8fa3c7;font-weight:600;white-space:nowrap}
 td:first-child{white-space:nowrap;font-weight:600;color:#7fd4c8}
 a{color:#7fd4c8}
-footer{color:#5b6b85;font-size:13px;margin-top:56px}
-.legal{font-size:11px;color:#46536b}
+/* shared footer (canonical in tools/sync_footer.py — do not hand-edit per page) */
+.siteftr{margin-top:72px;padding:56px 12px 10px;border-top:1px solid #232e4a;text-align:center;color:#5b6b85;font-size:13px}
+.siteftr .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0 0 34px}
+.siteftr .flinks a{color:#7fd4c8;text-decoration:none;font-size:13.5px;letter-spacing:.5px}
+.siteftr .flinks a:hover{color:#a5e6dc;text-decoration:underline;text-underline-offset:4px}
+.siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
+.siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}
 .sitehdr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 36px}
 .sitehdr .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .sitehdr .brand img{display:block;border-radius:6px}
@@ -107,9 +112,16 @@ the source agency before taking adverse action; records flagged
 human-verified.</p>
 
 </main>
-<footer>
-RosterProof · <a href="/">Home</a> · <a href="dictionary.html">Data Dictionary</a> · <a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
-<br><img src="/shoonya-logo.png" alt="Shoonya" width="40" height="40" style="margin-top:14px;opacity:.75;max-width:100%"><br><span class="legal">© 2026 Shoonya — RosterProof is a Shoonya product</span>
+<footer class="siteftr">
+<nav class="flinks" aria-label="Footer">
+<a href="/attribution.html">Attribution &amp; Notices</a>
+<a href="/dictionary.html">Data Dictionary</a>
+<a href="/federal-gap.html">The Federal Gap</a>
+<a href="/terms.html">Terms of Use</a>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
+</nav>
+<div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
 </footer>
 </div>
 </body>

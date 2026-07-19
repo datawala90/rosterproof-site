@@ -30,6 +30,13 @@ a{color:#0f4c81}
 .sitehdr nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
 .sitehdr nav a{color:#8fa3c7;font-size:13px;text-decoration:none}
 .sitehdr nav a:hover{color:#7fd4c8}
+/* shared footer (canonical in tools/sync_footer.py — do not hand-edit per page) */
+.siteftr{margin-top:72px;padding:56px 12px 10px;border-top:1px solid #232e4a;text-align:center;color:#5b6b85;font-size:13px}
+.siteftr .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0 0 34px}
+.siteftr .flinks a{color:#7fd4c8;text-decoration:none;font-size:13.5px;letter-spacing:.5px}
+.siteftr .flinks a:hover{color:#a5e6dc;text-decoration:underline;text-underline-offset:4px}
+.siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
+.siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}
 </style>
 </head>
 <body>
@@ -55,6 +62,17 @@ a{color:#0f4c81}
 <h2>Contact</h2>
 <p>Questions about this policy or our data practices: <a href="mailto:support@rosterproof.com">support@rosterproof.com</a></p>
 
-<p style="margin-top:40px"><img src="/shoonya-logo.png" alt="Shoonya" width="40" height="40" style="opacity:.75;max-width:100%"></p>
+</main>
+<footer class="siteftr">
+<nav class="flinks" aria-label="Footer">
+<a href="/attribution.html">Attribution &amp; Notices</a>
+<a href="/dictionary.html">Data Dictionary</a>
+<a href="/federal-gap.html">The Federal Gap</a>
+<a href="/terms.html">Terms of Use</a>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
+</nav>
+<div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
+</footer>
 </body>
 </html>
