@@ -1,21 +1,22 @@
 {
- "generated_at_utc": "2026-07-19T02:34:25Z",
- "last_refresh_utc": "2026-07-18 19:13:14",
- "records_total": 330763,
- "sources_total": 27,
- "states": 25,
+ "generated_at_utc": "2026-07-19T15:45:15Z",
+ "last_refresh_utc": "2026-07-19 15:14:20",
+ "records_total": 332796,
+ "sources_total": 32,
+ "states": 29,
+ "includes_dc": true,
  "npi_resolved": {
-  "count": 52529,
-  "rate_pct": 15.9
+  "count": 53218,
+  "rate_pct": 16.0
  },
- "multi_jurisdiction_npis": 6695,
- "federal_gap_overall_pct": 52.0,
+ "multi_jurisdiction_npis": 6841,
+ "federal_gap_overall_pct": 52.5,
  "tiers": [
   {
    "tier": "T1",
    "label": "Source-published NPI, NPPES-verified",
    "description": "the excluding agency printed an NPI and the CMS NPPES registry confirms the identity",
-   "count": 28078
+   "count": 28767
   },
   {
    "tier": "T2",
@@ -49,9 +50,24 @@
    "gap_pct": 98.8
   },
   {
+   "state": "DC",
+   "active_records": 37,
+   "gap_pct": 97.3
+  },
+  {
    "state": "TN",
    "active_records": 21,
    "gap_pct": 85.7
+  },
+  {
+   "state": "IA",
+   "active_records": 1150,
+   "gap_pct": 85.0
+  },
+  {
+   "state": "MA",
+   "active_records": 292,
+   "gap_pct": 80.5
   },
   {
    "state": "NC",
@@ -144,6 +160,11 @@
    "gap_pct": 40.7
   },
   {
+   "state": "KS",
+   "active_records": 199,
+   "gap_pct": 34.2
+  },
+  {
    "state": "OH",
    "active_records": 2028,
    "gap_pct": 33.4
@@ -162,6 +183,11 @@
    "state": "PA",
    "active_records": 4888,
    "gap_pct": 20.9
+  },
+  {
+   "state": "MT",
+   "active_records": 170,
+   "gap_pct": 18.2
   },
   {
    "state": "GA",

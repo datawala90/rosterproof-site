@@ -81,11 +81,11 @@ so exclusion screening becomes a simple join in your own warehouse — no scrape
 no PDFs to retype, no blind spots between the federal list and the states.</p>
 
 <div class="stats">
-<div class="stat"><div class="big" id="st-records">330K+</div><div class="small">exclusion records, history-tracked</div></div>
-<div class="stat"><div class="big" id="st-states">Federal + 25 states</div><div class="small">OIG LEIE + SAM.gov plus state Medicaid exclusion lists</div></div>
-<div class="stat"><div class="big" id="st-gap">~52%</div><div class="small">of state exclusions never reach the federal LEIE</div></div>
-<div class="stat"><div class="big" id="st-npi">52K+</div><div class="small">NPPES-verified NPI matches — screen claims by NPI, not name-matching</div></div>
-<div class="stat"><div class="big" id="st-multi">6.5K+</div><div class="small">providers excluded in 2+ jurisdictions — under ACA §6501, one state's exclusion is every state's problem</div></div>
+<div class="stat"><div class="big" id="st-records">332K+</div><div class="small">exclusion records, history-tracked</div></div>
+<div class="stat"><div class="big" id="st-states">Federal + 29 states + DC</div><div class="small">OIG LEIE + SAM.gov plus state Medicaid exclusion lists</div></div>
+<div class="stat"><div class="big" id="st-gap">~53%</div><div class="small">of state exclusions never reach the federal LEIE</div></div>
+<div class="stat"><div class="big" id="st-npi">53K+</div><div class="small">NPPES-verified NPI matches — screen claims by NPI, not name-matching</div></div>
+<div class="stat"><div class="big" id="st-multi">6.8K+</div><div class="small">providers excluded in 2+ jurisdictions — under ACA §6501, one state's exclusion is every state's problem</div></div>
 <div class="stat"><div class="big">Daily</div><div class="small">automated refresh with full change feed</div></div>
 </div>
 
@@ -133,7 +133,7 @@ Live from the published dataset — refreshed daily<span id="st-asof"></span>.</
 fetch('stats.json').then(r => r.json()).then(d => {
   const fmt = n => n.toLocaleString('en-US');
   document.getElementById('st-records').textContent = fmt(d.records_total);
-  document.getElementById('st-states').textContent = 'Federal + ' + d.states + ' states';
+  document.getElementById('st-states').textContent = 'Federal + ' + d.states + ' states' + (d.includes_dc ? ' + DC' : '');
   document.getElementById('st-gap').textContent = '~' + Math.round(d.federal_gap_overall_pct) + '%';
   document.getElementById('st-npi').textContent = fmt(d.npi_resolved.count);
   document.getElementById('st-multi').textContent = fmt(d.multi_jurisdiction_npis);
