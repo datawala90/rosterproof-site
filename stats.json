@@ -1,12 +1,12 @@
 {
- "generated_at_utc": "2026-07-21T19:54:17Z",
- "last_refresh_utc": "2026-07-21 18:36:13",
- "records_total": 336102,
- "sources_total": 37,
- "states": 34,
+ "generated_at_utc": "2026-07-21T20:27:39Z",
+ "last_refresh_utc": "2026-07-21 20:24:04",
+ "records_total": 336180,
+ "sources_total": 38,
+ "states": 35,
  "includes_dc": true,
  "source_formats": {
-  "XLSX": 20,
+  "XLSX": 21,
   "CSV": 6,
   "PDF": 4,
   "JSON": 3,
@@ -16,17 +16,17 @@
  },
  "email_delivered_sources": 1,
  "npi_resolved": {
-  "count": 54294,
-  "rate_pct": 16.1
+  "count": 54344,
+  "rate_pct": 16.2
  },
- "multi_jurisdiction_npis": 7065,
+ "multi_jurisdiction_npis": 7083,
  "federal_gap_overall_pct": 53.1,
  "tiers": [
   {
    "tier": "T1",
    "label": "Source-published NPI, NPPES-verified",
    "description": "the excluding agency printed an NPI and the CMS NPPES registry confirms the identity",
-   "count": 29826
+   "count": 29876
   },
   {
    "tier": "T2",
@@ -106,6 +106,12 @@
    "state": "KY",
    "active_records": 395,
    "gap_pct": 77.2,
+   "source_format": "XLSX"
+  },
+  {
+   "state": "NH",
+   "active_records": 76,
+   "gap_pct": 75.0,
    "source_format": "XLSX"
   },
   {
@@ -200,7 +206,7 @@
   },
   {
    "state": "LA",
-   "active_records": 5531,
+   "active_records": 5533,
    "gap_pct": 49.2,
    "source_format": "CSV"
   },
