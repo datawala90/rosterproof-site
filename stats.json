@@ -1,38 +1,38 @@
 {
- "generated_at_utc": "2026-07-19T17:55:51Z",
- "last_refresh_utc": "2026-07-19 17:27:34",
- "records_total": 334900,
- "sources_total": 36,
- "states": 33,
+ "generated_at_utc": "2026-07-21T19:54:17Z",
+ "last_refresh_utc": "2026-07-21 18:36:13",
+ "records_total": 336102,
+ "sources_total": 37,
+ "states": 34,
  "includes_dc": true,
  "source_formats": {
   "XLSX": 20,
   "CSV": 6,
+  "PDF": 4,
   "JSON": 3,
-  "PDF": 3,
   "HTML_TABLE": 2,
   "TSV": 1,
   "XLS": 1
  },
  "email_delivered_sources": 1,
  "npi_resolved": {
-  "count": 53516,
-  "rate_pct": 16.0
+  "count": 54294,
+  "rate_pct": 16.1
  },
- "multi_jurisdiction_npis": 6879,
- "federal_gap_overall_pct": 53.0,
+ "multi_jurisdiction_npis": 7065,
+ "federal_gap_overall_pct": 53.1,
  "tiers": [
   {
    "tier": "T1",
    "label": "Source-published NPI, NPPES-verified",
    "description": "the excluding agency printed an NPI and the CMS NPPES registry confirms the identity",
-   "count": 29055
+   "count": 29826
   },
   {
    "tier": "T2",
    "label": "Unique identity match (name+state)",
    "description": "exactly one provider in the national registry shares the normalized name and state",
-   "count": 22998
+   "count": 23005
   },
   {
    "tier": "T2a",
@@ -181,6 +181,12 @@
    "source_format": "XLSX"
   },
   {
+   "state": "NV",
+   "active_records": 947,
+   "gap_pct": 57.1,
+   "source_format": "PDF"
+  },
+  {
    "state": "ND",
    "active_records": 194,
    "gap_pct": 53.1,
@@ -188,13 +194,13 @@
   },
   {
    "state": "NY",
-   "active_records": 8920,
+   "active_records": 8924,
    "gap_pct": 49.4,
    "source_format": "TSV"
   },
   {
    "state": "LA",
-   "active_records": 5528,
+   "active_records": 5531,
    "gap_pct": 49.2,
    "source_format": "CSV"
   },
@@ -212,8 +218,8 @@
   },
   {
    "state": "KS",
-   "active_records": 199,
-   "gap_pct": 34.2,
+   "active_records": 203,
+   "gap_pct": 33.5,
    "source_format": "XLSX"
   },
   {
@@ -236,7 +242,7 @@
   },
   {
    "state": "PA",
-   "active_records": 4888,
+   "active_records": 4890,
    "gap_pct": 20.9,
    "source_format": "CSV"
   },
