@@ -110,10 +110,22 @@ loadGapMap(function () {
         .on('mouseleave', () => { if (!isMobile()) blur(); });
     });
 
+    function resetLabels() {
+      gLab.selectAll('text').interrupt()
+        .style('opacity', 1).style('font-weight', null);
+      Object.values(meta).forEach(mm => {
+        if (!mm.label) return;
+        const [bx, by] = mm.labelXY || mm.centroid;
+        mm.label.classed('gm-focus', false)
+          .attr('transform', `translate(${bx},${by}) scale(1)`);
+      });
+    }
+
     function focus(postal) {
       const m = meta[postal];
       if (!m || !m.d) { blur(); return; }
       blur(false);
+      resetLabels();
       focused = postal;
       m.path.attr('fill', BRIGHT[m.stepIdx])
             .attr('stroke', '#cfeee8').attr('stroke-width', 1.5).raise();
@@ -142,16 +154,9 @@ loadGapMap(function () {
       if (focused) {
         const m = meta[focused];
         m.path.attr('fill', RAMP[m.stepIdx]).attr('stroke', null).attr('stroke-width', null);
-        if (m.label) {
-          const [cx, cy] = m.labelXY || m.centroid;
-          m.label.classed('gm-focus', false)
-            .transition().duration(150).ease(d3.easeCubicOut)
-            .style('font-weight', null)
-            .attr('transform', `translate(${cx},${cy}) scale(1)`);
-        }
         focused = null;
       }
-      gLab.selectAll('text').transition().duration(150).ease(d3.easeCubicOut).style('opacity', 1);
+      resetLabels();
       if (hideTip) tip.style.display = 'none';
     }
     document.addEventListener('click', () => { if (focused) blur(); });

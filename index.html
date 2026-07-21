@@ -37,13 +37,13 @@ a{color:#7fd4c8}
 .mapcard{background:#111a36;border:1px solid #2f3b55;border-radius:14px;padding:18px 18px 8px;margin-top:18px;position:relative}
 .mapcard svg{width:100%;height:auto;display:block}
 .gm-state{stroke:#0a1128;stroke-width:.75;cursor:pointer;transition:filter .15s ease-out}
-.gm-label{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;pointer-events:none;transition:opacity .15s ease-out;paint-order:stroke;stroke-linejoin:round;fill:#0a1128;stroke:rgba(234,241,251,.82);stroke-width:3px}
-.gm-label.gm-lead{fill:#c7d2ea;stroke:#0a1128;stroke-width:3px;pointer-events:all}
-.gm-label.gm-focus{fill:#f2f7ff;stroke:#0a1128;stroke-width:3px}
+.gm-label{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;pointer-events:none;transition:opacity .15s ease-out;fill:#0a1128;stroke:none}
+.gm-label.gm-lead{fill:#c7d2ea;pointer-events:all}
+.gm-label.gm-focus{fill:#f2f7ff;paint-order:stroke;stroke:#0a1128;stroke-width:3px;stroke-linejoin:round}
 .gm-leader{stroke:#3d4a6b;stroke-width:1;fill:none}
 .gm-legend{display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:10px 6px 8px;color:#8fa3c7;font-size:12px}
 .gm-legend .sw{display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:5px;vertical-align:-2px}
-@media (max-width:640px){.gm-label{font-size:26px;stroke-width:5px}.gm-label.gm-lead{font-size:19px;stroke-width:4px}}
+@media (max-width:640px){.gm-label{font-size:20px}}
 #map-tip{position:absolute;display:none;background:#0d1530;border:1px solid #2f3b55;border-radius:8px;
   padding:8px 12px;font-size:12.5px;color:#c7d2ea;pointer-events:none;z-index:5;max-width:230px;text-align:left}
 #map-tip b{color:#e8ecf4}
@@ -269,6 +269,6 @@ fetch('stats.json').then(r => r.json()).then(d => {
 <div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
 </footer>
 </div>
-<script src="/assets/site-map.js?v=5" defer></script>
+<script src="/assets/site-map.js?v=6" defer></script>
 </body>
 </html>
