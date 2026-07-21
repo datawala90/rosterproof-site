@@ -55,6 +55,7 @@ ul{color:#c7d2ea;line-height:1.7}
 .gm-leader{stroke:#3d4a6b;stroke-width:1;fill:none}
 .gm-legend{display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:10px 6px 8px;color:#8fa3c7;font-size:12px}
 .gm-legend .sw{display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:5px;vertical-align:-2px}
+@media (max-width:640px){.gm-label{font-size:26px;stroke-width:5px}}
 #map-tip{position:absolute;display:none;background:#0d1530;border:1px solid #2f3b55;border-radius:8px;
   padding:8px 12px;font-size:12.5px;color:#c7d2ea;pointer-events:none;z-index:5;max-width:230px;text-align:left}
 #map-tip b{color:#e8ecf4}
@@ -171,6 +172,6 @@ fetch('/stats.json').then(r => r.json()).then(d => {
   });
 });
 </script>
-<script src="/assets/site-map.js" defer></script>
+<script src="/assets/site-map.js?v=3" defer></script>
 </body>
 </html>

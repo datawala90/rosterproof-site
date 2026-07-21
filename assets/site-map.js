@@ -85,7 +85,6 @@ loadGapMap(function () {
     Object.keys(meta).forEach(postal => {
       const m = meta[postal];
       if (!m.d || SMALL.includes(postal)) return;
-      if (isMobile() && !top10.includes(postal)) return;
       m.label = gLab.append('text')
         .attr('class', 'gm-label')
         .attr('transform', `translate(${m.centroid[0]},${m.centroid[1]})`)
