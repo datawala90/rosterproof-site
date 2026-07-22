@@ -1,56 +1,56 @@
 {
- "generated_at_utc": "2026-07-21T20:27:39Z",
- "last_refresh_utc": "2026-07-21 20:24:04",
- "records_total": 336180,
- "sources_total": 38,
- "states": 35,
+ "generated_at_utc": "2026-07-22T15:26:36Z",
+ "last_refresh_utc": "2026-07-22 11:18:19",
+ "records_total": 340200,
+ "sources_total": 39,
+ "states": 36,
  "includes_dc": true,
  "source_formats": {
-  "XLSX": 21,
+  "XLSX": 22,
   "CSV": 6,
   "PDF": 4,
   "JSON": 3,
   "HTML_TABLE": 2,
-  "TSV": 1,
-  "XLS": 1
+  "XLS": 1,
+  "TSV": 1
  },
  "email_delivered_sources": 1,
  "npi_resolved": {
-  "count": 54344,
-  "rate_pct": 16.2
+  "count": 55629,
+  "rate_pct": 16.3
  },
- "multi_jurisdiction_npis": 7083,
- "federal_gap_overall_pct": 53.1,
+ "multi_jurisdiction_npis": 7303,
+ "federal_gap_overall_pct": 54.5,
  "tiers": [
   {
    "tier": "T1",
    "label": "Source-published NPI, NPPES-verified",
    "description": "the excluding agency printed an NPI and the CMS NPPES registry confirms the identity",
-   "count": 29876
+   "count": 30909
   },
   {
    "tier": "T2",
    "label": "Unique identity match (name+state)",
    "description": "exactly one provider in the national registry shares the normalized name and state",
-   "count": 23005
+   "count": 23250
   },
   {
    "tier": "T2a",
    "label": "Unique identity match via registered alias",
    "description": "same, matched through a registered maiden/former/dba name",
-   "count": 667
+   "count": 669
   },
   {
    "tier": "T3",
    "label": "License-number corroborated",
    "description": "the state license number on the exclusion agrees with the registry",
-   "count": 526
+   "count": 529
   },
   {
    "tier": "T4",
    "label": "AI-adjudicated, human review required",
    "description": "a large language model weighed the remaining evidence; reasoning stored, every verdict flagged for human review",
-   "count": 270
+   "count": 272
   }
  ],
  "state_gaps": [
@@ -80,8 +80,14 @@
   },
   {
    "state": "IA",
-   "active_records": 1150,
+   "active_records": 1149,
    "gap_pct": 85.0,
+   "source_format": "XLSX"
+  },
+  {
+   "state": "MI",
+   "active_records": 3982,
+   "gap_pct": 83.6,
    "source_format": "XLSX"
   },
   {
@@ -206,13 +212,13 @@
   },
   {
    "state": "LA",
-   "active_records": 5533,
-   "gap_pct": 49.2,
+   "active_records": 5534,
+   "gap_pct": 49.3,
    "source_format": "CSV"
   },
   {
    "state": "TX",
-   "active_records": 11890,
+   "active_records": 11891,
    "gap_pct": 48.9,
    "source_format": "XLS"
   },
