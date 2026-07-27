@@ -1,14 +1,14 @@
 {
- "generated_at_utc": "2026-07-22T15:26:36Z",
- "last_refresh_utc": "2026-07-22 11:18:19",
- "records_total": 340200,
- "sources_total": 39,
- "states": 36,
+ "generated_at_utc": "2026-07-27T18:19:27Z",
+ "last_refresh_utc": "2026-07-27 17:05:19",
+ "records_total": 340323,
+ "sources_total": 40,
+ "states": 37,
  "includes_dc": true,
  "source_formats": {
   "XLSX": 22,
   "CSV": 6,
-  "PDF": 4,
+  "PDF": 5,
   "JSON": 3,
   "HTML_TABLE": 2,
   "XLS": 1,
@@ -16,29 +16,29 @@
  },
  "email_delivered_sources": 1,
  "npi_resolved": {
-  "count": 55629,
+  "count": 55646,
   "rate_pct": 16.3
  },
- "multi_jurisdiction_npis": 7303,
+ "multi_jurisdiction_npis": 7306,
  "federal_gap_overall_pct": 54.5,
  "tiers": [
   {
    "tier": "T1",
    "label": "Source-published NPI, NPPES-verified",
    "description": "the excluding agency printed an NPI and the CMS NPPES registry confirms the identity",
-   "count": 30909
+   "count": 30919
   },
   {
    "tier": "T2",
    "label": "Unique identity match (name+state)",
    "description": "exactly one provider in the national registry shares the normalized name and state",
-   "count": 23250
+   "count": 23258
   },
   {
    "tier": "T2a",
    "label": "Unique identity match via registered alias",
    "description": "same, matched through a registered maiden/former/dba name",
-   "count": 669
+   "count": 668
   },
   {
    "tier": "T3",
@@ -67,16 +67,16 @@
    "source_format": "HTML_TABLE"
   },
   {
-   "state": "NE",
-   "active_records": 1406,
-   "gap_pct": 86.7,
-   "source_format": "PDF"
-  },
-  {
    "state": "TN",
    "active_records": 21,
    "gap_pct": 85.7,
    "source_format": "JSON"
+  },
+  {
+   "state": "NE",
+   "active_records": 1247,
+   "gap_pct": 85.6,
+   "source_format": "PDF"
   },
   {
    "state": "IA",
@@ -98,8 +98,8 @@
   },
   {
    "state": "NC",
-   "active_records": 163,
-   "gap_pct": 78.5,
+   "active_records": 164,
+   "gap_pct": 78.7,
    "source_format": "XLSX"
   },
   {
@@ -128,14 +128,14 @@
   },
   {
    "state": "AR",
-   "active_records": 1983,
+   "active_records": 1986,
    "gap_pct": 73.0,
    "source_format": "CSV"
   },
   {
    "state": "IN",
-   "active_records": 96,
-   "gap_pct": 70.8,
+   "active_records": 112,
+   "gap_pct": 71.4,
    "source_format": "XLSX"
   },
   {
@@ -181,6 +181,12 @@
    "source_format": "XLSX"
   },
   {
+   "state": "WY",
+   "active_records": 118,
+   "gap_pct": 61.0,
+   "source_format": "PDF"
+  },
+  {
    "state": "CA",
    "active_records": 23166,
    "gap_pct": 59.6,
@@ -206,26 +212,26 @@
   },
   {
    "state": "NY",
-   "active_records": 8924,
+   "active_records": 8928,
    "gap_pct": 49.4,
    "source_format": "TSV"
   },
   {
    "state": "LA",
-   "active_records": 5534,
+   "active_records": 5535,
    "gap_pct": 49.3,
    "source_format": "CSV"
   },
   {
    "state": "TX",
-   "active_records": 11891,
+   "active_records": 11892,
    "gap_pct": 48.9,
    "source_format": "XLS"
   },
   {
    "state": "SC",
-   "active_records": 1335,
-   "gap_pct": 40.7,
+   "active_records": 1344,
+   "gap_pct": 40.8,
    "source_format": "XLSX"
   },
   {
@@ -254,7 +260,7 @@
   },
   {
    "state": "PA",
-   "active_records": 4890,
+   "active_records": 4900,
    "gap_pct": 20.9,
    "source_format": "CSV"
   },
