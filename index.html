@@ -72,7 +72,9 @@ h2.sec{font-size:22px;margin:56px 0 6px;text-align:left}
 .rung .what b{color:#eef2fb;font-weight:600;display:block}
 .rung .n{color:#8fa3c7;font-size:13px;text-align:right;font-variant-numeric:tabular-nums}
 .unres{color:#5b6b85;font-size:13px;margin-top:8px;text-align:left}
-.topnav{display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto;padding:18px 24px 0}
+.topnav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;row-gap:10px;max-width:760px;margin:0 auto;padding:18px 24px 0}
+.topnav .navgroup{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.navbtn{white-space:nowrap}
 .topnav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .topnav .brand img{display:block;border-radius:6px}
 .topnav .brand span{color:#eef2fb;letter-spacing:3px;font-weight:600;font-size:14px}
@@ -127,7 +129,7 @@ h2.sec{font-size:22px;margin:56px 0 6px;text-align:left}
 </script>
 </head>
 <body>
-<nav class="topnav"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><span><a class="navbtn" href="/insights.html" style="margin-right:14px">Insights</a><a class="navbtn" href="#get-the-data">Get the data</a></span></nav>
+<nav class="topnav"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><span class="navgroup"><a class="navbtn" href="/insights.html">Insights</a><a class="navbtn" href="#get-the-data">Get the data</a></span></nav>
 <main>
 <div class="wrap">
 <div class="brandline">rosterproof</div>
