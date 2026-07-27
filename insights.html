@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Medicaid Exclusion Statistics — What the Data Says</title>
+<link rel="canonical" href="https://rosterproof.com/insights.html">
+<meta name="description" content="Provider exclusion data analysis: how late state exclusions reach the federal LEIE, which specialties carry the most risk, serial excludees, and more.">
+<meta property="og:title" content="What the exclusion data says — RosterProof Insights">
+<meta property="og:description" content="State exclusions that reach the federal LEIE take a median 156 days — a quarter take over 15 months, and half never arrive. Plus the specialty risk map and the serial-excludee window.">
+<meta property="og:image" content="https://rosterproof.com/assets/social/gap-map-1200x627.png">
+<meta property="og:url" content="https://rosterproof.com/insights.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rosterproof.com/assets/social/gap-map-1200x627.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<style>
+body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#0a1128;color:#eef2fb;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding:56px 24px}
+h1{font-size:28px;font-weight:600;margin:0 0 6px}
+h2{font-size:20px;margin:48px 0 8px;color:#7fd4c8}
+.tag{color:#8fa3c7;font-size:13px;letter-spacing:2px;margin-bottom:28px;text-transform:uppercase}
+p{color:#c7d2ea;line-height:1.7}
+.card{background:#111a36;border:1px solid #2f3b55;border-left:3px solid #7fd4c8;border-radius:14px;padding:18px 24px;margin:18px 0}
+.card p{margin:0}
+.bignum{font-size:44px;font-weight:600;color:#7fd4c8;font-family:Georgia,serif}
+.caveat{color:#8fa3c7;font-size:13px;line-height:1.6;margin-top:10px}
+a{color:#7fd4c8}
+.chart{margin:22px 0}
+.crow{display:grid;grid-template-columns:190px 1fr 74px;align-items:center;gap:10px;padding:3px 0}
+.crow .lbl{color:#8fa3c7;font-size:13px;text-align:right;line-height:1.3}
+.crow .track{background:#0d1530;border-radius:4px;height:16px;position:relative}
+.crow .bar{background:#7fd4c8;height:16px;border-radius:0 4px 4px 0;min-width:2px}
+.crow .bar.muted{background:#3d4a6b}
+.crow .val{color:#e8ecf4;font-size:13px;font-variant-numeric:tabular-nums}
+.chartnote{color:#5b6b85;font-size:12px;margin-top:8px}
+.statrow{display:flex;gap:26px;flex-wrap:wrap;margin:14px 0}
+.stat .big{font-size:26px;font-weight:600;color:#7fd4c8}
+.stat .small{color:#8fa3c7;font-size:13px;max-width:190px;line-height:1.5}
+.chain{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;color:#a5e6dc;background:#0d1530;border:1px solid #2f3b55;border-radius:8px;padding:12px 16px;overflow-x:auto;white-space:nowrap}
+.sitehdr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 36px}
+.sitehdr .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.sitehdr .brand img{display:block;border-radius:6px}
+.sitehdr .brand span{color:#eef2fb;letter-spacing:3px;font-weight:600;font-size:14px}
+.sitehdr nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
+.sitehdr nav a{color:#8fa3c7;font-size:13px;text-decoration:none}
+.sitehdr nav a:hover{color:#7fd4c8}
+/* shared footer (canonical in tools/sync_footer.py — do not hand-edit per page) */
+.siteftr{margin-top:72px;padding:56px 12px 10px;border-top:1px solid #232e4a;text-align:center;color:#5b6b85;font-size:13px}
+.siteftr .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0 0 34px}
+.siteftr .flinks a{color:#7fd4c8;text-decoration:none;font-size:13.5px;letter-spacing:.5px}
+.siteftr .flinks a:hover{color:#a5e6dc;text-decoration:underline;text-underline-offset:4px}
+.siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
+.siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}
+@media (max-width:640px){.crow{grid-template-columns:112px 1fr 64px}.crow .lbl{font-size:11.5px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What the exclusion data says: Medicaid exclusion statistics from the unified dataset",
+  "author": {"@type": "Organization", "name": "Shoonya"},
+  "publisher": {"@type": "Organization", "name": "Shoonya", "logo": {"@type": "ImageObject", "url": "https://rosterproof.com/icon-512.png"}},
+  "image": "https://rosterproof.com/assets/social/gap-map-1200x627.png",
+  "datePublished": "2026-07-26",
+  "mainEntityOfPage": "https://rosterproof.com/insights.html"
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<header class="sitehdr"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><nav><a href="/">Home</a><a href="/federal-gap.html">The Federal Gap</a><a href="/#get-the-data">Get the data</a><a href="/dictionary.html">Dictionary</a></nav></header>
+<main>
+<h1>What the data says</h1>
+<div class="tag">medicaid exclusion statistics · figures as of July 2026, reproducible from the dataset</div>
+
+<p>Every number on this page was computed from the RosterProof unified exclusion
+dataset — the federal OIG LEIE plus 36 state and district Medicaid exclusion
+lists, resolved to NPIs against the CMS NPPES registry. These are analytical
+findings from the July 2026 edition; each is reproducible from the published
+dataset, and each carries its own honest caveat.</p>
+
+<h2>Even the exclusions that reach the federal list arrive late</h2>
+<p>For providers whose state exclusion later appeared on the federal LEIE
+(6,292 state-led cases), we measured the gap between the state's exclusion
+start and the LEIE's:</p>
+<div class="chart" role="img" aria-label="Bar chart of how long state exclusions take to reach the federal LEIE: median 156 days, a quarter take more than 463 days, one in ten takes more than 1,025 days">
+<div class="crow"><div class="lbl">median trip</div><div class="track"><div class="bar" style="width:15%"></div></div><div class="val">156 days</div></div>
+<div class="crow"><div class="lbl">a quarter take over</div><div class="track"><div class="bar" style="width:45%"></div></div><div class="val">463 days</div></div>
+<div class="crow"><div class="lbl">one in ten takes over</div><div class="track"><div class="bar" style="width:100%"></div></div><div class="val">1,025 days</div></div>
+<div class="crow"><div class="lbl">never arrive at all</div><div class="track"><div class="bar muted" style="width:54.5%"></div></div><div class="val">54.5%</div></div>
+<p class="chartnote">1,905 providers took more than a year. The gray bar is the share of active
+state exclusions absent from the LEIE entirely — see <a href="/federal-gap.html">the federal gap, measured</a>.</p>
+</div>
+<div class="card"><p><strong>Even when state exclusions make it to the federal list, the median
+trip takes five months — a quarter take more than fifteen. Half never arrive.</strong></p>
+<p class="caveat">Caveat: measured across NPI-verified matches appearing on both a state list
+and the LEIE — the survivors. Exclusions that never reach the LEIE are excluded by
+construction, so true federal visibility is worse than these numbers.</p></div>
+
+<h2>The specialty risk map</h2>
+<p>Active excluded providers per 10,000 registered providers of the same type
+(NPPES taxonomies, NPI-verified matches, minimum 5,000 providers per category):</p>
+<div class="chart" role="img" aria-label="Bar chart of exclusions per 10,000 providers by specialty, led by community hospice agencies at 159">
+<div class="crow"><div class="lbl">Community hospice agencies</div><div class="track"><div class="bar" style="width:100%"></div></div><div class="val">159</div></div>
+<div class="crow"><div class="lbl">General practice physicians</div><div class="track"><div class="bar" style="width:84%"></div></div><div class="val">134</div></div>
+<div class="crow"><div class="lbl">Pain medicine</div><div class="track"><div class="bar" style="width:72%"></div></div><div class="val">114</div></div>
+<div class="crow"><div class="lbl">Interventional pain</div><div class="track"><div class="bar" style="width:54%"></div></div><div class="val">85</div></div>
+<div class="crow"><div class="lbl">Licensed vocational nurses</div><div class="track"><div class="bar" style="width:50%"></div></div><div class="val">79</div></div>
+<div class="crow"><div class="lbl">Podiatrists</div><div class="track"><div class="bar" style="width:48%"></div></div><div class="val">77</div></div>
+<div class="crow"><div class="lbl">Licensed practical nurses</div><div class="track"><div class="bar" style="width:45%"></div></div><div class="val">72</div></div>
+<div class="crow"><div class="lbl">Clinical medical laboratories</div><div class="track"><div class="bar" style="width:43%"></div></div><div class="val">69</div></div>
+</div>
+<div class="card"><p><strong>1.6% of America's community hospice agencies are under an active
+exclusion somewhere — the highest rate of any provider category we track.</strong> Hospice,
+pain management, and labs at the top independently mirrors the federal enforcement pattern.</p>
+<p class="caveat">Caveat: NPI-verified matches only; categories are NPPES primary taxonomies;
+rates use the active-NPI registry as the denominator.</p></div>
+
+<h2>The serial-excludee window</h2>
+<div class="statrow">
+<div class="stat"><div class="big">7,303</div><div class="small">verified NPIs excluded in 2+ jurisdictions</div></div>
+<div class="stat"><div class="big">~10 months</div><div class="small">median gap between a provider's first and second jurisdiction</div></div>
+<div class="stat"><div class="big">14</div><div class="small">jurisdictions for the record-holder</div></div>
+</div>
+<p>One provider's trail, anonymized — nine states in three years:</p>
+<div class="chain">CO 2020 → NE 2020 → MI 2021 → MO 2021 → MD 2021 → LA 2021 → KS 2021 → SC 2023 → NJ 2023</div>
+<div class="card"><p><strong>The ten-month median between first and second state is the window
+where cross-state screening catches what single-state screening cannot</strong> — under
+ACA §6501, one state's exclusion is every state's problem.</p>
+<p class="caveat">Caveat: NPI-verified multi-jurisdiction matches; jurisdictions counted
+distinctly (federal counts once).</p></div>
+
+<h2>At least 1 in 340</h2>
+<p><span class="bignum">1 in 340</span></p>
+<p>actively-registered US individual providers is under an active healthcare
+exclusion that we have verified against the NPI registry — 21,639 of 7.37
+million active individual NPIs.</p>
+<div class="card"><p class="caveat" style="margin-top:0">Caveat: this is a floor. It counts only
+exclusions we can tie to an active NPI with registry-verified identity; most state exclusion
+records publish no NPI at all, so the true rate is higher.</p></div>
+
+<h2>Functionally permanent</h2>
+<div class="statrow">
+<div class="stat"><div class="big">&lt;5%</div><div class="small">of exclusions ever receive a source-published end date</div></div>
+<div class="stat"><div class="big">~5 years</div><div class="small">median duration of the exclusions that do end</div></div>
+</div>
+<div class="card"><p><strong>Treat an exclusion as permanent unless proven otherwise.</strong>
+Fewer than one in twenty ever gets a published reinstatement, and those that do run a median
+five years.</p>
+<p class="caveat">Caveat: many sources publish no end dates by design — for those, an
+exclusion's end is observable only when the record leaves the source's list.</p></div>
+
+<h2>The state rate story</h2>
+<p>Raw counts crown the big states (California 23,166, Texas 11,892). Per 10,000
+providers practicing in the state, the picture changes:</p>
+<div class="statrow">
+<div class="stat"><div class="big">444</div><div class="small">Louisiana — active exclusions per 10K providers, more than double #4</div></div>
+<div class="stat"><div class="big">233</div><div class="small">Arkansas</div></div>
+<div class="stat"><div class="big">221</div><div class="small">Alabama</div></div>
+<div class="stat"><div class="big">198</div><div class="small">California &amp; Texas</div></div>
+</div>
+<div class="card"><p class="caveat" style="margin-top:0">Caveat: a state's list includes some
+out-of-state providers, while the denominator counts providers practicing in the state — the
+ratio is directional, not exact. Full per-state view: <a href="/federal-gap.html">the federal
+gap, measured</a>.</p></div>
+
+<h2>Names change. NPIs don't.</h2>
+<p><span class="bignum">6.5%</span></p>
+<p>of matched excluded individuals carry a <em>registered</em> former, maiden, or
+other name in the NPI registry — 1,464 providers whom single-name screening can
+miss entirely. This is why RosterProof's matching includes a dedicated
+registered-alias tier: identity follows the NPI, not the spelling.</p>
+<div class="card"><p class="caveat" style="margin-top:0">Caveat: counts only aliases formally
+registered in NPPES; informal aliases in state lists (a.k.a. annotations) are additional.</p></div>
+
+<h2>There's more in here</h2>
+<div class="card"><p>These findings came from the data itself — there's more to find.
+Program-integrity teams: if you have a question this dataset could answer, ask us —
+<a href="mailto:support@rosterproof.com">support@rosterproof.com</a>. Or
+<a href="/#get-the-data">get the dataset</a> and ask it yourself.</p></div>
+</main>
+
+<footer class="siteftr">
+<nav class="flinks" aria-label="Footer">
+<a href="/attribution.html">Attribution &amp; Notices</a>
+<a href="/dictionary.html">Data Dictionary</a>
+<a href="/federal-gap.html">The Federal Gap</a>
+<a href="/insights.html">Insights</a>
+<a href="/terms.html">Terms of Use</a>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
+</nav>
+<div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
+</footer>
+</div>
+</body>
+</html>

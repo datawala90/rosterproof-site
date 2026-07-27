@@ -127,7 +127,7 @@ h2.sec{font-size:22px;margin:56px 0 6px;text-align:left}
 </script>
 </head>
 <body>
-<nav class="topnav"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><a class="navbtn" href="#get-the-data">Get the data</a></nav>
+<nav class="topnav"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><span><a class="navbtn" href="/insights.html" style="margin-right:14px">Insights</a><a class="navbtn" href="#get-the-data">Get the data</a></span></nav>
 <main>
 <div class="wrap">
 <div class="brandline">rosterproof</div>
@@ -168,6 +168,15 @@ confidence, so a compliance analyst can defend every hit without asking anyone.<
 <span class="fmtchip">CSV</span><span class="fmtchip">Excel</span><span class="fmtchip">PDF</span><span class="fmtchip">JSON endpoints</span><span class="fmtchip">JavaScript portals</span><span class="fmtchip">Email-delivered files</span>
 </div>
 <p class="fmtnote">We normalize all of it into a single canonical schema, so your screening query never cares how a state chose to publish.</p>
+</div>
+
+<div class="card">
+<div class="badge">FROM THE DATA</div>
+<h2>Even the exclusions that reach the federal list arrive five months late</h2>
+<p>State exclusions that eventually make it to the LEIE take a median 156 days to get
+there — a quarter take more than fifteen months, and half never arrive at all. That,
+the specialty risk map, the serial-excludee window, and more:
+<a href="/insights.html">what the data says →</a></p>
 </div>
 
 <div class="card" id="get-the-data" style="text-align:center">
@@ -262,6 +271,7 @@ fetch('stats.json').then(r => r.json()).then(d => {
 <a href="/attribution.html">Attribution &amp; Notices</a>
 <a href="/dictionary.html">Data Dictionary</a>
 <a href="/federal-gap.html">The Federal Gap</a>
+<a href="/insights.html">Insights</a>
 <a href="/terms.html">Terms of Use</a>
 <a href="/privacy.html">Privacy Policy</a>
 <a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
