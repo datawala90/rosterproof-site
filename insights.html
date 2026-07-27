@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Medicaid Exclusion Statistics — What the Data Says</title>
 <link rel="canonical" href="https://rosterproof.com/insights.html">
-<meta name="description" content="Provider exclusion data analysis: how late state exclusions reach the federal LEIE, which specialties carry the most risk, serial excludees, and more.">
+<meta name="description" content="Provider exclusion data analysis: the federal propagation lag, migration patterns of excluded providers, the 189-provider watchlist, specialty risk, and the people-vs-companies split.">
 <meta property="og:title" content="What the exclusion data says — RosterProof Insights">
 <meta property="og:description" content="State exclusions that reach the federal LEIE take a median 156 days — a quarter take over 15 months, and half never arrive. Plus the specialty risk map and the serial-excludee window.">
 <meta property="og:image" content="https://rosterproof.com/assets/social/gap-map-1200x627.png">
@@ -75,7 +75,7 @@ a{color:#7fd4c8}
 <header class="sitehdr"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><nav><a href="/">Home</a><a href="/federal-gap.html">The Federal Gap</a><a href="/#get-the-data">Get the data</a><a href="/dictionary.html">Dictionary</a></nav></header>
 <main>
 <h1>What the data says</h1>
-<div class="tag">medicaid exclusion statistics · figures as of July 2026, reproducible from the dataset</div>
+<div class="tag">medicaid exclusion statistics · figures as of July 2026 · reproducible from workbench §15–§17</div>
 
 <p>Every number on this page was computed from the RosterProof unified exclusion
 dataset — the federal OIG LEIE plus 36 state and district Medicaid exclusion
@@ -176,6 +176,70 @@ miss entirely. This is why RosterProof's matching includes a dedicated
 registered-alias tier: identity follows the NPI, not the spelling.</p>
 <div class="card"><p class="caveat" style="margin-top:0">Caveat: counts only aliases formally
 registered in NPPES; informal aliases in state lists (a.k.a. annotations) are additional.</p></div>
+
+<h2 id="migration">When excluded providers move</h2>
+<p>Time-ordering every multi-jurisdiction excludee's states reveals the corridors —
+and adjacency rules them. The Northeast triangle owns the migration map:</p>
+<div class="chart" role="img" aria-label="Bar chart of top state-to-state exclusion corridors, led by Pennsylvania to New Jersey with 112 providers">
+<div class="crow"><div class="lbl">PA &#8594; NJ</div><div class="track"><div class="bar" style="width:100%"></div></div><div class="val">112</div></div>
+<div class="crow"><div class="lbl">NY &#8594; NJ</div><div class="track"><div class="bar" style="width:92%"></div></div><div class="val">103</div></div>
+<div class="crow"><div class="lbl">NJ &#8594; NY</div><div class="track"><div class="bar" style="width:69%"></div></div><div class="val">77</div></div>
+<div class="crow"><div class="lbl">PA &#8594; NY</div><div class="track"><div class="bar" style="width:40%"></div></div><div class="val">45</div></div>
+<div class="crow"><div class="lbl">CA &#8594; NY</div><div class="track"><div class="bar" style="width:29%"></div></div><div class="val">33</div></div>
+<p class="chartnote">Providers excluded in the first state and later in the second (same NPI,
+ordered by exclusion dates). Median gap between a provider's first and second state:
+<strong>~10 months</strong> — the window where cross-state screening catches what
+single-state screening cannot.</p>
+</div>
+<div class="card"><p><strong>Excluded providers resurface one state over</strong> — six of the
+seven busiest corridors are inside the NY/NJ/PA triangle.</p>
+<p class="caveat">Caveat: corridor order reflects exclusion dates, which proxies but does not
+prove relocation order.</p></div>
+
+<p style="margin-top:34px">The actionable number: providers with <em>active</em> exclusions in
+two or more states who are currently registered in a state that has <strong>not</strong>
+excluded them —</p>
+<p><span class="bignum">189</span></p>
+<div class="chart" role="img" aria-label="Bar chart of states hosting multi-state-excluded providers not excluded locally, led by Florida with 31">
+<div class="crow"><div class="lbl">Florida</div><div class="track"><div class="bar" style="width:100%"></div></div><div class="val">31</div></div>
+<div class="crow"><div class="lbl">Virginia</div><div class="track"><div class="bar" style="width:42%"></div></div><div class="val">13</div></div>
+<div class="crow"><div class="lbl">Tennessee</div><div class="track"><div class="bar" style="width:39%"></div></div><div class="val">12</div></div>
+<div class="crow"><div class="lbl">Texas</div><div class="track"><div class="bar" style="width:32%"></div></div><div class="val">10</div></div>
+<div class="crow"><div class="lbl">Ohio</div><div class="track"><div class="bar" style="width:29%"></div></div><div class="val">9</div></div>
+</div>
+<div class="card"><p><strong>Excluded next door, active in your state.</strong> 189 providers
+hold active exclusions in two or more states while their current NPI-registry practice state
+has not excluded them — Florida hosts the most.</p>
+<p class="caveat">Caveat: NPPES practice state is self-reported and can lag reality; "has not
+excluded" means absent from that state's published list — some states publish no list at all.</p></div>
+
+<p style="margin-top:34px">And what changes when they move? About <strong>1 in 30</strong>
+multi-state excludees appears under materially different surnames in different states —
+sometimes a legal name change, sometimes <em>the states themselves misspelling the same
+person three different ways</em>. Either way, name-based screening loses. Identity has to
+follow the NPI.</p>
+<div class="card"><p class="caveat" style="margin-top:0">Honest boundary: same-NPI tracking is
+what exclusion-list data can prove — a provider who abandons their identity behind a new
+organizational NPI or corporate shell is invisible to this method. Detecting that requires
+ownership linkage, which we name as future work rather than claim.</p></div>
+
+<h2 id="composition">People and companies</h2>
+<div class="statrow">
+<div class="stat"><div class="big">93%</div><div class="small">of healthcare exclusions are people</div></div>
+<div class="stat"><div class="big">7%</div><div class="small">are companies</div></div>
+</div>
+<p>…and the companies dominate the categories that bill at scale: <strong>100% of excluded
+hospice agencies and 94% of excluded labs are organizations</strong>, while license-driven
+exclusions are 99.5% individual — licenses attach to people.</p>
+<div class="card"><p><strong>When a company goes multi-state, it lands everywhere at once.</strong>
+Organizations are 4.8% of two-state excludees but 20.4% of four-plus-state ones — mass
+multi-state enrollments mean an excluded company shows up in many states nearly
+simultaneously.</p>
+<p class="caveat">Caveat: type shares among NPI-verified matches; category percentages use
+NPPES enumeration type (Type 1 person / Type 2 organization).</p></div>
+<div class="card"><p><strong>Zero person/company conflicts across all 25,206 registry-verified
+matches</strong> — the entity-type invariant held end-to-end. When we say a match is verified,
+the registry agrees about <em>what kind of thing</em> it is, every single time.</p></div>
 
 <h2>There's more in here</h2>
 <div class="card"><p>These findings came from the data itself — there's more to find.
