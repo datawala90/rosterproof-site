@@ -1,38 +1,38 @@
 {
- "generated_at_utc": "2026-07-27T18:19:27Z",
- "last_refresh_utc": "2026-07-27 17:05:19",
- "records_total": 340323,
- "sources_total": 40,
- "states": 37,
+ "generated_at_utc": "2026-07-28T14:51:24Z",
+ "last_refresh_utc": "2026-07-28 14:49:00",
+ "records_total": 341442,
+ "sources_total": 41,
+ "states": 38,
  "includes_dc": true,
  "source_formats": {
   "XLSX": 22,
-  "CSV": 6,
+  "CSV": 7,
   "PDF": 5,
   "JSON": 3,
   "HTML_TABLE": 2,
-  "XLS": 1,
-  "TSV": 1
+  "TSV": 1,
+  "XLS": 1
  },
  "email_delivered_sources": 1,
  "npi_resolved": {
-  "count": 55646,
+  "count": 55644,
   "rate_pct": 16.3
  },
  "multi_jurisdiction_npis": 7306,
- "federal_gap_overall_pct": 54.5,
+ "federal_gap_overall_pct": 54.2,
  "tiers": [
   {
    "tier": "T1",
    "label": "Source-published NPI, NPPES-verified",
    "description": "the excluding agency printed an NPI and the CMS NPPES registry confirms the identity",
-   "count": 30919
+   "count": 30918
   },
   {
    "tier": "T2",
    "label": "Unique identity match (name+state)",
    "description": "exactly one provider in the national registry shares the normalized name and state",
-   "count": 23258
+   "count": 23256
   },
   {
    "tier": "T2a",
@@ -200,14 +200,14 @@
   },
   {
    "state": "NV",
-   "active_records": 947,
-   "gap_pct": 57.1,
+   "active_records": 953,
+   "gap_pct": 57.4,
    "source_format": "PDF"
   },
   {
    "state": "ND",
-   "active_records": 194,
-   "gap_pct": 53.1,
+   "active_records": 193,
+   "gap_pct": 52.8,
    "source_format": "XLSX"
   },
   {
@@ -218,7 +218,7 @@
   },
   {
    "state": "LA",
-   "active_records": 5535,
+   "active_records": 5538,
    "gap_pct": 49.3,
    "source_format": "CSV"
   },
@@ -233,6 +233,12 @@
    "active_records": 1344,
    "gap_pct": 40.8,
    "source_format": "XLSX"
+  },
+  {
+   "state": "ME",
+   "active_records": 1110,
+   "gap_pct": 35.5,
+   "source_format": "CSV"
   },
   {
    "state": "KS",
