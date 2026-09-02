@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
-<meta name="description" content="Unified provider exclusion data: OIG LEIE, SAM.gov and 33 state Medicaid exclusion lists in one schema — NPI-resolved, history-tracked, refreshed daily.">
+<meta name="description" content="Unified provider exclusion data: OIG LEIE, SAM.gov and 33 state Medicaid exclusion lists in one schema — NPI-resolved, history-tracked, refreshed weekly.">
 <style>
 body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#0a1128;color:#eef2fb;margin:0}
 .wrap{max-width:760px;margin:0 auto;padding:72px 24px;text-align:center}
@@ -99,7 +99,7 @@ h2.sec{font-size:22px;margin:56px 0 6px;text-align:left}
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "RosterProof — Unified Provider Exclusions (Federal + State)",
-  "description": "Unified healthcare provider exclusion dataset: the federal OIG LEIE, the full SAM.gov exclusions extract, and 33 state and district Medicaid exclusion lists normalized into one schema, resolved to NPIs with stated confidence tiers, and tracked with full change history. Refreshed daily.",
+  "description": "Unified healthcare provider exclusion dataset: the federal OIG LEIE, the full SAM.gov exclusions extract, and 33 state and district Medicaid exclusion lists normalized into one schema, resolved to NPIs with stated confidence tiers, and tracked with full change history. Refreshed weekly.",
   "url": "https://rosterproof.com/",
   "sameAs": "https://app.snowflake.com/marketplace/listing/GZSXZ2K49BC/",
   "keywords": ["provider exclusions", "OIG LEIE", "SAM.gov exclusions", "state Medicaid exclusion list", "exclusion screening", "NPI", "healthcare compliance", "program integrity"],
@@ -193,7 +193,7 @@ query the <code>PUBLISHED_V1</code> views in minutes. Free, no forms.</p>
 
 <h2 class="sec">The federal gap, on the map</h2>
 <p class="secnote">Share of each state's active exclusions that never appear on the federal LEIE.
-Live from the published dataset — refreshed daily<span id="st-asof"></span>. Hover or tap a state.
+Live from the published dataset — refreshed weekly<span id="st-asof"></span>. Hover or tap a state.
 Full methodology and per-state table: <a href="/federal-gap.html" style="color:#7fd4c8">The federal gap, measured</a>.</p>
 <div class="mapcard">
 <svg id="gapmap" viewBox="0 0 1085 620" role="img" aria-label="US map of per-state federal exclusion gap"></svg>
