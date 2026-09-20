@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
-<meta name="description" content="Unified provider exclusion data: OIG LEIE, SAM.gov and 33 state Medicaid exclusion lists in one schema — NPI-resolved, history-tracked, refreshed weekly.">
+<meta name="description" content="Unified provider exclusion data: OIG LEIE, SAM.gov and 38 state Medicaid exclusion lists in one schema — NPI-resolved, history-tracked, refreshed weekly.">
 <style>
 body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#0a1128;color:#eef2fb;margin:0}
 .wrap{max-width:760px;margin:0 auto;padding:72px 24px;text-align:center}
@@ -143,12 +143,12 @@ so exclusion screening becomes a simple join in your own warehouse — no scrape
 no PDFs to retype, no blind spots between the federal list and the states.</p>
 
 <div class="stats">
-<div class="stat"><div class="big" id="st-records">341K+</div><div class="small">exclusion records, history-tracked</div></div>
+<div class="stat"><div class="big" id="st-records">343K+</div><div class="small">exclusion records, history-tracked</div></div>
 <div class="stat"><div class="big" id="st-states">Federal + 38 states + DC</div><div class="small">OIG LEIE + SAM.gov plus state Medicaid exclusion lists</div></div>
-<div class="stat"><div class="big" id="st-gap">~55%</div><div class="small">of state exclusions never reach the federal LEIE — <a href="/federal-gap.html" style="color:#7fd4c8">see the full analysis</a></div></div>
-<div class="stat"><div class="big" id="st-npi">55K+</div><div class="small">NPPES-verified NPI matches — screen claims by NPI, not name-matching</div></div>
+<div class="stat"><div class="big" id="st-gap">~54%</div><div class="small">of state exclusions never reach the federal LEIE — <a href="/federal-gap.html" style="color:#7fd4c8">see the full analysis</a></div></div>
+<div class="stat"><div class="big" id="st-npi">56K+</div><div class="small">NPPES-verified NPI matches — screen claims by NPI, not name-matching</div></div>
 <div class="stat"><div class="big" id="st-multi">7.3K+</div><div class="small">providers excluded in 2+ jurisdictions — under ACA §6501, one state's exclusion is every state's problem</div></div>
-<div class="stat"><div class="big">Daily</div><div class="small">automated refresh with full change feed</div></div>
+<div class="stat"><div class="big" id="st-cadence">Weekly</div><div class="small">automated refresh with full change feed</div></div>
 </div>
 
 <div class="card">
@@ -227,6 +227,7 @@ fetch('stats.json').then(r => r.json()).then(d => {
   document.getElementById('st-gap').textContent = '~' + Math.round(d.federal_gap_overall_pct) + '%';
   document.getElementById('st-npi').textContent = fmt(d.npi_resolved.count);
   document.getElementById('st-multi').textContent = fmt(d.multi_jurisdiction_npis);
+  if (d.refresh_cadence) document.getElementById('st-cadence').textContent = d.refresh_cadence.charAt(0).toUpperCase() + d.refresh_cadence.slice(1);
   if (d.source_formats) {
     const label = {CSV:'CSV', TSV:'CSV', XLSX:'Excel', XLS:'Excel', PDF:'PDF',
                    JSON:'JSON endpoints', HTML_TABLE:'JavaScript portals'};
