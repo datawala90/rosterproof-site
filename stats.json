@@ -1,8 +1,8 @@
 {
- "generated_at_utc": "2026-09-21T00:58:22Z",
- "last_refresh_utc": "2026-09-21 00:57:37",
+ "generated_at_utc": "2026-09-21T15:51:23Z",
+ "last_refresh_utc": "2026-09-21 15:50:20",
  "refresh_cadence": "weekly",
- "records_total": 343332,
+ "records_total": 343330,
  "sources_total": 41,
  "states": 38,
  "includes_dc": true,
