@@ -1,8 +1,8 @@
 {
- "generated_at_utc": "2026-09-28T17:30:32Z",
- "last_refresh_utc": "2026-09-28 17:28:59",
+ "generated_at_utc": "2026-10-03T15:53:48Z",
+ "last_refresh_utc": "2026-10-03 15:52:51",
  "refresh_cadence": "weekly",
- "records_total": 344004,
+ "records_total": 344019,
  "sources_total": 41,
  "states": 38,
  "includes_dc": true,
@@ -194,16 +194,16 @@
    "source_format": "CSV"
   },
   {
+   "state": "NJ",
+   "active_records": 3675,
+   "gap_pct": 58.6,
+   "source_format": "XLSX"
+  },
+  {
    "state": "NV",
    "active_records": 978,
    "gap_pct": 58.6,
    "source_format": "PDF"
-  },
-  {
-   "state": "NJ",
-   "active_records": 3660,
-   "gap_pct": 58.4,
-   "source_format": "XLSX"
   },
   {
    "state": "ND",
@@ -267,7 +267,7 @@
   },
   {
    "state": "PA",
-   "active_records": 4905,
+   "active_records": 4904,
    "gap_pct": 20.7,
    "source_format": "CSV"
   },
