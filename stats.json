@@ -1,5 +1,5 @@
 {
- "generated_at_utc": "2026-10-05T18:06:04Z",
+ "generated_at_utc": "2026-10-08T00:35:31Z",
  "last_refresh_utc": "2026-10-05 18:02:28",
  "refresh_cadence": "weekly",
  "records_total": 344070,
@@ -267,7 +267,7 @@
   },
   {
    "state": "PA",
-   "active_records": 4901,
+   "active_records": 4900,
    "gap_pct": 20.8,
    "source_format": "CSV"
   },
@@ -289,5 +289,47 @@
    "gap_pct": 9.1,
    "source_format": "PDF"
   }
- ]
+ ],
+ "watchlist": {
+  "definition": "NPPES-verified providers with an active exclusion from one or more states whose current NPPES practice state has not excluded them",
+  "any_state": 1758,
+  "invisible_to_federal": 1161,
+  "two_plus_states": 194,
+  "individuals": 1545,
+  "organizations": 213,
+  "top_practice_states": [
+   {
+    "state": "FL",
+    "count": 229
+   },
+   {
+    "state": "NC",
+    "count": 91
+   },
+   {
+    "state": "AZ",
+    "count": 77
+   },
+   {
+    "state": "TX",
+    "count": 76
+   },
+   {
+    "state": "OH",
+    "count": 70
+   },
+   {
+    "state": "PA",
+    "count": 64
+   },
+   {
+    "state": "GA",
+    "count": 64
+   },
+   {
+    "state": "CA",
+    "count": 60
+   }
+  ]
+ }
 }

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Medicaid Exclusion Statistics — What the Data Says</title>
 <link rel="canonical" href="https://rosterproof.com/insights.html">
-<meta name="description" content="Provider exclusion data analysis: the federal propagation lag, migration patterns of excluded providers, the 189-provider watchlist, specialty risk, and the people-vs-companies split.">
+<meta name="description" content="Provider exclusion data analysis: the federal propagation lag, migration patterns of excluded providers, the watchlist of excluded providers practicing where no list can see them, specialty risk, and the people-vs-companies split.">
 <meta property="og:title" content="What the exclusion data says — RosterProof Insights">
 <meta property="og:description" content="State exclusions that reach the federal LEIE take a median 156 days — a quarter take over 15 months, and half never arrive. Plus the specialty risk map and the serial-excludee window.">
 <meta property="og:image" content="https://rosterproof.com/assets/social/gap-map-1200x627.png">
@@ -196,22 +196,60 @@ seven busiest corridors are inside the NY/NJ/PA triangle.</p>
 <p class="caveat">Caveat: corridor order reflects exclusion dates, which proxies but does not
 prove relocation order.</p></div>
 
-<p style="margin-top:34px">The actionable number: providers with <em>active</em> exclusions in
-two or more states who are currently registered in a state that has <strong>not</strong>
-excluded them —</p>
-<p><span class="bignum">189</span></p>
-<div class="chart" role="img" aria-label="Bar chart of states hosting multi-state-excluded providers not excluded locally, led by Florida with 31">
-<div class="crow"><div class="lbl">Florida</div><div class="track"><div class="bar" style="width:100%"></div></div><div class="val">31</div></div>
-<div class="crow"><div class="lbl">Virginia</div><div class="track"><div class="bar" style="width:42%"></div></div><div class="val">13</div></div>
-<div class="crow"><div class="lbl">Tennessee</div><div class="track"><div class="bar" style="width:39%"></div></div><div class="val">12</div></div>
-<div class="crow"><div class="lbl">Texas</div><div class="track"><div class="bar" style="width:32%"></div></div><div class="val">10</div></div>
-<div class="crow"><div class="lbl">Ohio</div><div class="track"><div class="bar" style="width:29%"></div></div><div class="val">9</div></div>
+<h2 id="watchlist">Excluded somewhere, practicing where nobody can see it</h2>
+<p>The actionable number. Take every provider we have <em>proven</em> is excluded right now
+(matched to a verified NPI), check where the national NPI registry says they currently
+practice, and keep the ones practicing in a state that has <strong>not</strong> excluded
+them. A clinic or health plan in that state, screening against its own state list, sees a
+clean provider.</p>
+<p><span class="bignum" id="wl-any">1,758</span></p>
+<div class="chart" style="padding-top:4px">
+<div class="crow"><div class="lbl" style="width:auto;min-width:0;flex:1">also on <strong>neither</strong> federal list (LEIE or SAM) — invisible even to federal screening</div><div class="val" id="wl-invisible">1,161</div></div>
+<div class="crow"><div class="lbl" style="width:auto;min-width:0;flex:1">excluded in <strong>two or more</strong> states — the serial subset</div><div class="val" id="wl-serial">194</div></div>
+<div class="crow"><div class="lbl" style="width:auto;min-width:0;flex:1">people / organizations</div><div class="val"><span id="wl-ind">1,545</span> / <span id="wl-org">213</span></div></div>
 </div>
-<div class="card"><p><strong>Excluded next door, active in your state.</strong> 189 providers
-hold active exclusions in two or more states while their current NPI-registry practice state
-has not excluded them — Florida hosts the most.</p>
-<p class="caveat">Caveat: NPPES practice state is self-reported and can lag reality; "has not
-excluded" means absent from that state's published list — some states publish no list at all.</p></div>
+
+<div class="card">
+<p><strong>A real one, initials only.</strong> Dr. K.B. is a family-medicine physician. Eight
+states carry an active exclusion on her — California, Colorado, Kansas, Michigan, Missouri,
+New Jersey, New York and Pennsylvania — the first in March 2023, the latest in September 2025.
+The national NPI registry says she practices in <strong>Tennessee</strong>. Tennessee has not
+excluded her, and she is not on the federal list either. A Tennessee Medicaid plan that checks
+its own state list and the federal LEIE sees nothing. Under ACA §6501 every one of those eight
+exclusions is grounds for termination in Tennessee too.</p>
+</div>
+
+<p style="margin-top:28px"><strong>How we count it</strong> — five steps, nothing clever:</p>
+<ol style="line-height:1.7;color:#c7d2ea;padding-left:22px">
+<li><strong>Active only.</strong> The excluding state has published no end date (or a future
+one) and still carries the record on its list. Reinstated or expired exclusions are out.</li>
+<li><strong>Proven identity only.</strong> The record carries an NPI confirmed against the CMS
+NPPES registry. Name-only records are <em>not</em> counted — a name alone could be two people.</li>
+<li><strong>Count excluding states.</strong> Federal lists don't count as a state. One state is
+enough; the "two or more" figure above is the subset.</li>
+<li><strong>Look up where they practice now</strong> — the practice-location state on their
+NPPES record.</li>
+<li><strong>Keep the mismatches.</strong> Practice state not among the excluding states.</li>
+</ol>
+
+<p style="margin-top:28px">Where they practice:</p>
+<div class="chart" id="wl-chart" role="img" aria-label="Bar chart of states where excluded providers currently practice without a local exclusion, led by Florida">
+<div class="crow"><div class="lbl">Florida</div><div class="track"><div class="bar" style="width:100%"></div></div><div class="val">229</div></div>
+<div class="crow"><div class="lbl">North Carolina</div><div class="track"><div class="bar" style="width:40%"></div></div><div class="val">91</div></div>
+<div class="crow"><div class="lbl">Arizona</div><div class="track"><div class="bar" style="width:34%"></div></div><div class="val">77</div></div>
+<div class="crow"><div class="lbl">Texas</div><div class="track"><div class="bar" style="width:33%"></div></div><div class="val">76</div></div>
+<div class="crow"><div class="lbl">Ohio</div><div class="track"><div class="bar" style="width:31%"></div></div><div class="val">70</div></div>
+<div class="crow"><div class="lbl">Pennsylvania</div><div class="track"><div class="bar" style="width:28%"></div></div><div class="val">64</div></div>
+<div class="crow"><div class="lbl">Georgia</div><div class="track"><div class="bar" style="width:28%"></div></div><div class="val">64</div></div>
+<div class="crow"><div class="lbl">California</div><div class="track"><div class="bar" style="width:26%"></div></div><div class="val">60</div></div>
+<p class="chartnote">Live from the published dataset — recomputed weekly<span id="wl-asof"></span>.</p>
+</div>
+<div class="card"><p class="caveat" style="margin-top:0">Caveats, so the number holds up: NPPES
+practice state is self-reported by the provider and can lag a move. "Has not excluded" means
+absent from that state's <em>published</em> list — several states (Florida among them) publish
+no usable list, so there is nothing for the provider to appear on. And this counts only
+providers we can pin to a verified NPI; roughly three quarters of all exclusion records are
+name-only and are not counted here, so the true figure is larger.</p></div>
 
 <p style="margin-top:34px">And what changes when they move? About <strong>1 in 30</strong>
 multi-state excludees appears under materially different surnames in different states —
@@ -261,5 +299,31 @@ Program-integrity teams: if you have a question this dataset could answer, ask u
 <div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
 </footer>
 </div>
+<script>
+(function(){
+  var NAMES={AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',PR:'Puerto Rico'};
+  var fmt=function(n){return n.toLocaleString('en-US');};
+  fetch('stats.json').then(function(r){return r.json();}).then(function(d){
+    var w=d.watchlist; if(!w) return;
+    var set=function(id,v){var e=document.getElementById(id); if(e&&v!=null) e.textContent=fmt(v);};
+    set('wl-any',w.any_state); set('wl-invisible',w.invisible_to_federal); set('wl-serial',w.two_plus_states);
+    set('wl-ind',w.individuals); set('wl-org',w.organizations);
+    var ch=document.getElementById('wl-chart'), note=ch.querySelector('.chartnote');
+    if(w.top_practice_states&&w.top_practice_states.length){
+      ch.querySelectorAll('.crow').forEach(function(r){r.remove();});
+      var max=w.top_practice_states[0].count;
+      w.top_practice_states.forEach(function(t){
+        var row=document.createElement('div'); row.className='crow';
+        row.innerHTML='<div class="lbl"></div><div class="track"><div class="bar"></div></div><div class="val"></div>';
+        row.querySelector('.lbl').textContent=NAMES[t.state]||t.state;
+        row.querySelector('.bar').style.width=Math.round(100*t.count/max)+'%';
+        row.querySelector('.val').textContent=fmt(t.count);
+        ch.insertBefore(row,note);
+      });
+    }
+    var a=document.getElementById('wl-asof'); if(a&&d.last_refresh_utc) a.textContent=' · as of '+d.last_refresh_utc.slice(0,10)+' UTC';
+  }).catch(function(){});
+})();
+</script>
 </body>
 </html>
