@@ -1,5 +1,5 @@
 {
- "generated_at_utc": "2026-10-08T00:35:31Z",
+ "generated_at_utc": "2026-10-08T01:13:36Z",
  "last_refresh_utc": "2026-10-05 18:02:28",
  "refresh_cadence": "weekly",
  "records_total": 344070,
@@ -17,10 +17,10 @@
  },
  "email_delivered_sources": 1,
  "npi_resolved": {
-  "count": 56957,
-  "rate_pct": 16.5
+  "count": 57832,
+  "rate_pct": 16.7
  },
- "multi_jurisdiction_npis": 7401,
+ "multi_jurisdiction_npis": 7588,
  "federal_gap_overall_pct": 54.5,
  "tiers": [
   {
@@ -51,7 +51,7 @@
    "tier": "T4",
    "label": "AI-adjudicated, human review required",
    "description": "a large language model weighed the remaining evidence; reasoning stored, every verdict flagged for human review",
-   "count": 276
+   "count": 1151
   }
  ],
  "state_gaps": [
@@ -232,7 +232,7 @@
   {
    "state": "SC",
    "active_records": 1362,
-   "gap_pct": 40.5,
+   "gap_pct": 40.4,
    "source_format": "XLSX"
   },
   {
@@ -292,43 +292,43 @@
  ],
  "watchlist": {
   "definition": "NPPES-verified providers with an active exclusion from one or more states whose current NPPES practice state has not excluded them",
-  "any_state": 1758,
-  "invisible_to_federal": 1161,
-  "two_plus_states": 194,
-  "individuals": 1545,
+  "any_state": 2260,
+  "invisible_to_federal": 1553,
+  "two_plus_states": 228,
+  "individuals": 2047,
   "organizations": 213,
   "top_practice_states": [
    {
     "state": "FL",
-    "count": 229
+    "count": 282
    },
    {
     "state": "NC",
-    "count": 91
-   },
-   {
-    "state": "AZ",
-    "count": 77
+    "count": 104
    },
    {
     "state": "TX",
-    "count": 76
+    "count": 100
+   },
+   {
+    "state": "AZ",
+    "count": 98
+   },
+   {
+    "state": "NY",
+    "count": 85
    },
    {
     "state": "OH",
-    "count": 70
+    "count": 84
    },
    {
     "state": "PA",
-    "count": 64
-   },
-   {
-    "state": "GA",
-    "count": 64
+    "count": 83
    },
    {
     "state": "CA",
-    "count": 60
+    "count": 81
    }
   ]
  }
