@@ -131,7 +131,7 @@ def render(stats_path: str, topo_path: str, out_path: str) -> None:
     t(468, "r o s t e r p r o o f", sans, 30, INK)
     t(392, "Unified Provider Exclusions", sans_bold, 23, TEAL)
     dc = " + DC" if stats.get("includes_dc") else ""
-    t(324, f"Federal + SAM + {stats['states']} States{dc}", sans, 22, INK)
+    t(324, f"OIG + SAM + FDA + {stats['states']} States{dc}", sans, 22, INK)
     t(280, f"{headline(stats['records_total'])} records  ·  refreshed {cadence}", sans, 17, MUTED)
     t(165, "Half of state exclusions never", serif_bold, 23, INK)
     t(127, "reach the federal list.", serif_bold, 23, INK)

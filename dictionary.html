@@ -42,6 +42,7 @@ ul{color:#c7d2ea;line-height:1.7}
 .siteftr .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0 0 34px}
 .siteftr .flinks a{color:#7fd4c8;text-decoration:none;font-size:13.5px;letter-spacing:.5px}
 .siteftr .flinks a:hover{color:#a5e6dc;text-decoration:underline;text-underline-offset:4px}
+.siteftr .fpos{color:#8fa3c7;font-size:13px;line-height:1.6;text-align:center;max-width:620px;margin:0 auto 22px}
 .siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
 .siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}
 .sitehdr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 36px}
@@ -69,7 +70,7 @@ dates as published by the source.</p></div>
 <div class="tablewrap"><table>
 <tr><th>Column</th><th>Type</th><th>Meaning</th></tr>
 <tr><td>EXCLUSION_KEY</td><td>VARCHAR(64)</td><td>Stable record identity: SHA-256 over source + identity fields (name, DOB, state) + exclusion date. Stable across runs. <strong>Known caveat:</strong> if a source corrects a typo in an identity field, the key changes, so the correction appears in the change feed as <code>REMOVED</code> (old key) + <code>ADDED</code> (new key) rather than <code>CHANGED</code>. Join key for history and matches.</td></tr>
-<tr><td>SOURCE_ID</td><td>VARCHAR(20)</td><td>Which list: <code>LEIE</code> (federal), <code>TX</code>, <code>CA</code>, <code>NY</code>, <code>OH</code>, <code>GA</code>, <code>NC</code>, <code>AZ</code>, <code>WA</code>, <code>NJ</code>, <code>MD</code>, <code>MN</code>, <code>MO</code>, <code>TN</code>, <code>PA</code>. Only publishable sources appear on this surface; sources whose terms of use block redistribution (currently Michigan) are held back until permission or public-records sourcing clears them.</td></tr>
+<tr><td>SOURCE_ID</td><td>VARCHAR(20)</td><td>Which list: <code>LEIE</code>, <code>SAM</code>, <code>FDA_DEBAR</code>, <code>FDA_CIDQ</code> (federal), <code>TX</code>, <code>CA</code>, <code>NY</code>, <code>OH</code>, <code>GA</code>, <code>NC</code>, <code>AZ</code>, <code>WA</code>, <code>NJ</code>, <code>MD</code>, <code>MN</code>, <code>MO</code>, <code>TN</code>, <code>PA</code>. Only publishable sources appear on this surface; sources whose terms of use block redistribution (currently Michigan) are held back until permission or public-records sourcing clears them.</td></tr>
 <tr><td>ENTITY_TYPE</td><td>VARCHAR(20)</td><td><code>INDIVIDUAL</code> or <code>ENTITY</code> (organization).</td></tr>
 <tr><td>LAST_NAME / FIRST_NAME / MIDDLE_NAME</td><td>VARCHAR</td><td>Person name as published by the source (casing preserved; LEIE is all-caps, Texas mixed-case). Null for organizations.</td></tr>
 <tr><td>BUSINESS_NAME</td><td>VARCHAR(500)</td><td>Organization name as published. Null for individuals.</td></tr>
@@ -226,10 +227,12 @@ cannot be overlapped, so these counts are a floor, not a census.</p>
 <a href="/dictionary.html">Data Dictionary</a>
 <a href="/federal-gap.html">The Federal Gap</a>
 <a href="/insights.html">Insights</a>
+<a href="/life-sciences.html">Life sciences</a>
 <a href="/terms.html">Terms of Use</a>
 <a href="/privacy.html">Privacy Policy</a>
 <a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
 </nav>
+<p class="fpos">RosterProof is the exclusion and owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a fraud detector.</p>
 <div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
 </footer>
 </div>

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDA Debarment List Screening &amp; Investigator Disqualification Checks</title>
+<link rel="canonical" href="https://rosterproof.com/life-sciences.html">
+<meta name="description" content="Screen HCPs, speakers, consultants and clinical investigators against the FDA debarment list, FDA clinical investigator disqualification proceedings, OIG LEIE, SAM.gov and state Medicaid exclusions — unified in one join on the Snowflake Marketplace.">
+<meta property="og:title" content="FDA debarment and investigator disqualification, unified with exclusion screening — RosterProof">
+<meta property="og:description" content="HCP exclusion screening for pharma and devices: the FDA debarment list and clinical investigator disqualification proceedings in the same tables as OIG LEIE, SAM.gov and 38 state Medicaid lists.">
+<meta property="og:image" content="https://rosterproof.com/assets/social/gap-map-1200x627.png">
+<meta property="og:url" content="https://rosterproof.com/life-sciences.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rosterproof.com/assets/social/gap-map-1200x627.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<style>
+body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#0a1128;color:#eef2fb;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding:56px 24px}
+h1{font-size:28px;font-weight:600;margin:0 0 6px}
+h2{font-size:20px;margin:48px 0 8px;color:#7fd4c8}
+.tag{color:#8fa3c7;font-size:13px;letter-spacing:2px;margin-bottom:28px;text-transform:uppercase}
+p{color:#c7d2ea;line-height:1.7}
+.card{background:#111a36;border:1px solid #2f3b55;border-left:3px solid #7fd4c8;border-radius:14px;padding:18px 24px;margin:18px 0}
+.card p{margin:0}
+.bignum{font-size:44px;font-weight:600;color:#7fd4c8;font-family:Georgia,serif}
+.caveat{color:#8fa3c7;font-size:13px;line-height:1.6;margin-top:10px}
+a{color:#7fd4c8}
+.chart{margin:22px 0}
+.crow{display:grid;grid-template-columns:190px 1fr 74px;align-items:center;gap:10px;padding:3px 0}
+.crow .lbl{color:#8fa3c7;font-size:13px;text-align:right;line-height:1.3}
+.crow .track{background:#0d1530;border-radius:4px;height:16px;position:relative}
+.crow .bar{background:#7fd4c8;height:16px;border-radius:0 4px 4px 0;min-width:2px}
+.crow .bar.muted{background:#3d4a6b}
+.crow .val{color:#e8ecf4;font-size:13px;font-variant-numeric:tabular-nums}
+.chartnote{color:#5b6b85;font-size:12px;margin-top:8px}
+.statrow{display:flex;gap:26px;flex-wrap:wrap;margin:14px 0}
+.stat .big{font-size:26px;font-weight:600;color:#7fd4c8}
+.stat .small{color:#8fa3c7;font-size:13px;max-width:190px;line-height:1.5}
+.chain{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;color:#a5e6dc;background:#0d1530;border:1px solid #2f3b55;border-radius:8px;padding:12px 16px;overflow-x:auto;white-space:nowrap}
+.sitehdr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 36px}
+.sitehdr .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.sitehdr .brand img{display:block;border-radius:6px}
+.sitehdr .brand span{color:#eef2fb;letter-spacing:3px;font-weight:600;font-size:14px}
+.sitehdr nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
+.sitehdr nav a{color:#8fa3c7;font-size:13px;text-decoration:none}
+.sitehdr nav a:hover{color:#7fd4c8}
+/* shared footer (canonical in tools/sync_footer.py — do not hand-edit per page) */
+.siteftr{margin-top:72px;padding:56px 12px 10px;border-top:1px solid #232e4a;text-align:center;color:#5b6b85;font-size:13px}
+.siteftr .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0 0 34px}
+.siteftr .flinks a{color:#7fd4c8;text-decoration:none;font-size:13.5px;letter-spacing:.5px}
+.siteftr .flinks a:hover{color:#a5e6dc;text-decoration:underline;text-underline-offset:4px}
+.siteftr .fpos{color:#8fa3c7;font-size:13px;line-height:1.6;text-align:center;max-width:620px;margin:0 auto 22px}
+.siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
+.siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}
+@media (max-width:640px){.crow{grid-template-columns:112px 1fr 64px}.crow .lbl{font-size:11.5px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "FDA debarment list screening and clinical investigator disqualification checks, unified with exclusion screening",
+  "description": "How life-sciences compliance teams screen HCP engagements and clinical investigators against the FDA debarment list, FDA disqualification proceedings, OIG LEIE, SAM.gov and state Medicaid exclusions in one join.",
+  "author": {
+    "@type": "Organization",
+    "name": "Shoonya"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Shoonya",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rosterproof.com/icon-512.png"
+    }
+  },
+  "image": "https://rosterproof.com/assets/og-image.png",
+  "datePublished": "2026-10-09",
+  "mainEntityOfPage": "https://rosterproof.com/life-sciences.html",
+  "keywords": [
+    "FDA debarment list screening",
+    "clinical investigator disqualification check",
+    "HCP exclusion screening pharma",
+    "21 USC 335a",
+    "OIG LEIE",
+    "SAM.gov"
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<header class="sitehdr"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><nav><a href="/">Home</a><a href="/federal-gap.html">The Federal Gap</a><a href="/#get-the-data">Get the data</a><a href="/dictionary.html">Dictionary</a></nav></header>
+<main>
+<h1>Life sciences: FDA debarment and investigator disqualification, in the same join as exclusion screening</h1>
+<div class="tag">hcp engagement screening · clinical investigator vetting · live numbers from the published dataset</div>
+
+<p>Manufacturers screen the people they pay — speakers, consultants, advisory-board members,
+clinical investigators — against the OIG exclusion list and SAM.gov, and vet investigators
+against FDA's debarment list and its clinical investigator disqualification proceedings.
+Four lists, four formats, four places to look. RosterProof carries all four in one schema,
+beside 38 state Medicaid exclusion lists, so a roster check is a single query.</p>
+
+<h2>What is loaded, right now</h2>
+<div id="fed-chart" style="margin:6px 0 10px">
+<div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #232e4a;color:#c7d2ea"><span>SAM.gov exclusions — government-wide, all excluding agencies</span><strong style="color:#7fd4c8;font-variant-numeric:tabular-nums;white-space:nowrap" id="fs-SAM">169,050</strong></div>
+<div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #232e4a;color:#c7d2ea"><span>OIG LEIE — HHS Office of Inspector General</span><strong style="color:#7fd4c8;font-variant-numeric:tabular-nums;white-space:nowrap" id="fs-LEIE">83,933</strong></div>
+<div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #232e4a;color:#c7d2ea"><span>FDA Debarment List — persons and firms, 21 U.S.C. 335a</span><strong style="color:#7fd4c8;font-variant-numeric:tabular-nums;white-space:nowrap" id="fs-FDA_DEBAR">225</strong></div>
+<div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #232e4a;color:#c7d2ea"><span>FDA Clinical Investigator Disqualification Proceedings — currently disqualified or restricted</span><strong style="color:#7fd4c8;font-variant-numeric:tabular-nums;white-space:nowrap" id="fs-FDA_CIDQ">181</strong></div>
+<p class="chartnote" style="margin-top:12px">Active records on the published surface, refreshed weekly<span id="fs-asof"></span>. Plus <span id="fs-states">38</span> state Medicaid lists and DC.</p>
+</div>
+
+<div class="card">
+<p><strong>HCP engagement screening.</strong> Anyone a manufacturer pays for services — a speaker,
+a consultant, an investigator — must be screened against the OIG LEIE and SAM.gov before and
+during the engagement; paying an excluded party can trigger civil monetary penalties and, for
+federally funded work, false-claims exposure. State Medicaid exclusions matter too: an
+excluded clinician is often excluded by a state first, a median five months before the federal
+list catches up, and sometimes never.</p>
+</div>
+<div class="card">
+<p><strong>Clinical-trial investigator vetting.</strong> Sponsors may not use investigators FDA has
+disqualified (21 CFR 312.70, 812.119), and persons debarred under 21 U.S.C. 335a may not
+provide services in any capacity to a person with an approved or pending drug application.
+FDA publishes both lists, but as web tables with no NPI, no license and no address — exactly
+as they are published, we load them: the debarment term verbatim (<em>Permanent^</em>,
+<em>5 years%</em>, footnote marks included), the investigator's current FDA status verbatim,
+Federal Register citations and letter links preserved.</p>
+</div>
+
+<h2>One join</h2>
+<p>A roster check across every list at once. Subscribers prepend their mounted database name
+(for a free listing mounted as <code>ROSTERPROOF</code>):</p>
+<pre style="background:#0d1530;border:1px solid #2f3b55;border-radius:14px;padding:18px 20px;overflow-x:auto;font-size:13px;line-height:1.55;color:#c7d2ea"><code>WITH roster AS (
+  SELECT 'ACOSTA' AS last_name, 'GINA' AS first_name
+  UNION ALL SELECT 'SMITH', 'JOHN'
+)
+SELECT r.last_name, r.first_name, e.source_id, e.exclusion_authority, e.exclusion_reason,
+       e.exclusion_start, e.npi, e.match_confidence
+FROM roster r
+JOIN ROSTERPROOF.PUBLISHED_V1.EXCLUSIONS_SCREENABLE e
+  ON UPPER(e.last_name) = r.last_name AND UPPER(e.first_name) = r.first_name
+WHERE e.is_active
+ORDER BY r.last_name, e.source_id;</code></pre>
+<p class="chartnote">The FDA rows identify themselves: <code>EXCLUSION_AUTHORITY = 'FDA / Debarment'</code> or
+<code>'FDA / Clinical Investigator Disqualification'</code>. Filter on that column to see only
+FDA actions, or on <code>SOURCE_ID</code> for any single list.</p>
+
+<h2>What the two lists have in common with the others</h2>
+<p>Of the <span id="x-debar-n">224</span> people on the FDA debarment list, <strong>67</strong>
+also appear on the OIG LEIE, SAM.gov or a state Medicaid list under a name rare enough to trust
+(ten or fewer namesakes in the entire national NPI registry) — about <strong>30%</strong>. For
+disqualified investigators it is <strong>19 of 180</strong> (11%). In many of those cases the OIG
+action came first and FDA's debarment followed the conviction months or years later.</p>
+<div class="card"><p class="caveat" style="margin-top:0">Caveat: FDA publishes no NPI, so this
+is a name-based cross-check (surname + first name, middle initial not conflicting), graded by
+how rare the name is in NPPES; common-name coincidences are excluded from the count. October
+2026 edition, reproducible from the published dataset.</p></div>
+
+<h2>Where this fits</h2>
+<p>RosterProof is the exclusion and owner-screening layer that feeds compliance,
+payment-integrity, and fraud programs — not a fraud detector. It tells you who is on a
+list, which list, since when, and how confidently the record maps to an NPI; your
+engagement-review, debarment-certification and investigator-selection workflows decide what
+to do with that. The data is free on the <a href="https://app.snowflake.com/marketplace/listing/GZSXZ2K49BC/" target="_blank" rel="noopener">Snowflake Marketplace</a>;
+sources and required notices are on the <a href="/attribution.html">attribution page</a>.</p>
+</main>
+<footer class="siteftr">
+<nav class="flinks" aria-label="Footer">
+<a href="/attribution.html">Attribution &amp; Notices</a>
+<a href="/dictionary.html">Data Dictionary</a>
+<a href="/federal-gap.html">The Federal Gap</a>
+<a href="/insights.html">Insights</a>
+<a href="/life-sciences.html">Life sciences</a>
+<a href="/terms.html">Terms of Use</a>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
+</nav>
+<p class="fpos">RosterProof is the exclusion and owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a fraud detector.</p>
+<div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
+</footer>
+</div>
+<script>
+(function(){
+  var fmt=function(n){return n.toLocaleString('en-US');};
+  fetch('stats.json').then(function(r){return r.json();}).then(function(d){
+    (d.federal_sources||[]).forEach(function(s){var e=document.getElementById('fs-'+s.source_id); if(e) e.textContent=fmt(s.active_records);});
+    var st=document.getElementById('fs-states'); if(st&&d.states) st.textContent=d.states;
+    var a=document.getElementById('fs-asof'); if(a&&d.last_refresh_utc) a.textContent=' · as of '+d.last_refresh_utc.slice(0,10)+' UTC';
+  }).catch(function(){});
+})();
+</script>
+</body>
+</html>

@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Data Sources: OIG LEIE, SAM.gov & State Exclusion Lists</title>
+<title>Data Sources: OIG LEIE, SAM.gov, FDA Lists &amp; State Exclusion Lists</title>
 <link rel="canonical" href="https://rosterproof.com/attribution.html">
 <meta property="og:title" content="RosterProof — Data Sources, Attribution & Required Notices">
-<meta property="og:description" content="RosterProof unifies the federal OIG LEIE, the SAM.gov exclusions extract, and state Medicaid exclusion lists into one NPI-resolved, history-tracked dataset. Over half of state exclusions never reach the federal list.">
+<meta property="og:description" content="RosterProof unifies the federal OIG LEIE, the SAM.gov exclusions extract, the FDA lists, and state Medicaid exclusion lists into one NPI-resolved, history-tracked dataset. Over half of state exclusions never reach the federal list.">
 <meta property="og:image" content="https://rosterproof.com/assets/og-image.png">
 <meta property="og:url" content="https://rosterproof.com/attribution.html">
 <meta property="og:type" content="website">
@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
-<meta name="description" content="Every source behind RosterProof: HHS-OIG LEIE, SAM.gov exclusions, and state Medicaid exclusion lists — with per-source attribution and required notices.">
+<meta name="description" content="Every source behind RosterProof: HHS-OIG LEIE, SAM.gov exclusions, the FDA debarment and clinical-investigator disqualification lists, and state Medicaid exclusion lists — with per-source attribution and required notices.">
 <style>
 body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#0a1128;color:#eef2fb;margin:0}
 .wrap{max-width:860px;margin:0 auto;padding:56px 24px}
@@ -39,6 +39,7 @@ a{color:#7fd4c8}
 .siteftr .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0 0 34px}
 .siteftr .flinks a{color:#7fd4c8;text-decoration:none;font-size:13.5px;letter-spacing:.5px}
 .siteftr .flinks a:hover{color:#a5e6dc;text-decoration:underline;text-underline-offset:4px}
+.siteftr .fpos{color:#8fa3c7;font-size:13px;line-height:1.6;text-align:center;max-width:620px;margin:0 auto 22px}
 .siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
 .siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}
 .sitehdr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 36px}
@@ -69,6 +70,9 @@ timestamps ship inside the dataset itself (<code>SOURCE_REGISTRY</code>, <code>F
 <table>
 <tr><th>Source</th><th>Publishing agency</th><th>Attribution / notice obligations</th></tr>
 <tr><td>LEIE</td><td>U.S. HHS Office of Inspector General</td><td>Public domain. Definitive individual verification requires OIG's SSN-based Online Search — this file alone is not conclusive.</td></tr>
+<tr><td>SAM</td><td>U.S. General Services Administration (SAM.gov)</td><td>Public domain. Full public exclusions extract, all excluding agencies (filter via <code>EXCLUSION_AUTHORITY</code>).</td></tr>
+<tr><td>FDA_DEBAR</td><td>U.S. Food and Drug Administration — Debarment List (21 U.S.C. 335a)</td><td>Public domain. Active drug-application, drug-import and food-import debarments; term text as published (footnote marks included); <code>EXCLUSION_AUTHORITY = 'FDA / Debarment'</code>.</td></tr>
+<tr><td>FDA_CIDQ</td><td>U.S. Food and Drug Administration — Clinical Investigator Disqualification Proceedings</td><td>Public domain. Investigators currently Disqualified / Restricted / Totally Restricted; <code>EXCLUSION_AUTHORITY = 'FDA / Clinical Investigator Disqualification'</code>.</td></tr>
 <tr><td>AZ</td><td>Arizona AHCCCS</td><td>Attribution + accuracy disclaimer.</td></tr>
 <tr><td>CA</td><td>California DHCS (via CalHHS Open Data Portal)</td><td>Credit to DHCS/CalHHS with citation of source page and publication date; data is clearly labeled as modified (see above and <code>SOURCE_REGISTRY</code>). License is revocable by the State.</td></tr>
 <tr><td>IL</td><td>Illinois HFS Office of Inspector General</td><td>Attribution + accuracy disclaimer; portal export confirmed official by HFS-OIG.</td></tr>
@@ -120,10 +124,12 @@ human-verified.</p>
 <a href="/dictionary.html">Data Dictionary</a>
 <a href="/federal-gap.html">The Federal Gap</a>
 <a href="/insights.html">Insights</a>
+<a href="/life-sciences.html">Life sciences</a>
 <a href="/terms.html">Terms of Use</a>
 <a href="/privacy.html">Privacy Policy</a>
 <a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
 </nav>
+<p class="fpos">RosterProof is the exclusion and owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a fraud detector.</p>
 <div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
 </footer>
 </div>

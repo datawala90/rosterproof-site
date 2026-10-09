@@ -1,17 +1,17 @@
 {
- "generated_at_utc": "2026-10-08T01:13:36Z",
- "last_refresh_utc": "2026-10-05 18:02:28",
+ "generated_at_utc": "2026-10-09T17:54:00Z",
+ "last_refresh_utc": "2026-10-09 17:48:46",
  "refresh_cadence": "weekly",
- "records_total": 344070,
- "sources_total": 41,
+ "records_total": 344476,
+ "sources_total": 43,
  "states": 38,
  "includes_dc": true,
  "source_formats": {
   "XLSX": 22,
   "CSV": 7,
   "PDF": 5,
+  "HTML_TABLE": 4,
   "JSON": 3,
-  "HTML_TABLE": 2,
   "XLS": 1,
   "TSV": 1
  },
@@ -288,6 +288,28 @@
    "active_records": 198,
    "gap_pct": 9.1,
    "source_format": "PDF"
+  }
+ ],
+ "federal_sources": [
+  {
+   "source_id": "SAM",
+   "name": "SAM.gov Exclusions Public Extract",
+   "active_records": 169050
+  },
+  {
+   "source_id": "LEIE",
+   "name": "HHS OIG List of Excluded Individuals/Entities",
+   "active_records": 83933
+  },
+  {
+   "source_id": "FDA_DEBAR",
+   "name": "FDA Debarment List (21 U.S.C. 335a)",
+   "active_records": 225
+  },
+  {
+   "source_id": "FDA_CIDQ",
+   "name": "FDA Clinical Investigator Disqualification Proceedings",
+   "active_records": 181
   }
  ],
  "watchlist": {

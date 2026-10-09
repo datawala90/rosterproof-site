@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Provider Exclusion List Data — LEIE + SAM + State Medicaid</title>
+<title>Provider Exclusion List Data — LEIE + SAM + FDA + State Medicaid</title>
 <link rel="canonical" href="https://rosterproof.com/">
 <meta property="og:title" content="RosterProof — Unified Provider Exclusions">
 <meta property="og:description" content="RosterProof unifies the federal OIG LEIE, the SAM.gov exclusions extract, and state Medicaid exclusion lists into one NPI-resolved, history-tracked dataset. Over half of state exclusions never reach the federal list.">
@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png">
-<meta name="description" content="Unified provider exclusion data: OIG LEIE, SAM.gov and 38 state Medicaid exclusion lists in one schema — NPI-resolved, history-tracked, refreshed weekly.">
+<meta name="description" content="Unified provider exclusion data: OIG LEIE, SAM.gov, FDA lists and 38 state Medicaid exclusion lists in one schema — NPI-resolved, history-tracked, refreshed weekly.">
 <style>
 body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#0a1128;color:#eef2fb;margin:0}
 .wrap{max-width:760px;margin:0 auto;padding:72px 24px;text-align:center}
@@ -91,6 +91,7 @@ h2.sec{font-size:22px;margin:56px 0 6px;text-align:left}
 .siteftr .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0 0 34px}
 .siteftr .flinks a{color:#7fd4c8;text-decoration:none;font-size:13.5px;letter-spacing:.5px}
 .siteftr .flinks a:hover{color:#a5e6dc;text-decoration:underline;text-underline-offset:4px}
+.siteftr .fpos{color:#8fa3c7;font-size:13px;line-height:1.6;text-align:center;max-width:620px;margin:0 auto 22px}
 .siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
 .siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}
 </style>
@@ -99,10 +100,10 @@ h2.sec{font-size:22px;margin:56px 0 6px;text-align:left}
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "RosterProof — Unified Provider Exclusions (Federal + State)",
-  "description": "Unified healthcare provider exclusion dataset: the federal OIG LEIE, the full SAM.gov exclusions extract, and 33 state and district Medicaid exclusion lists normalized into one schema, resolved to NPIs with stated confidence tiers, and tracked with full change history. Refreshed weekly.",
+  "description": "Unified healthcare provider exclusion dataset: the federal OIG LEIE, the full SAM.gov exclusions extract, the FDA debarment list and clinical investigator disqualification proceedings, and 38 state and District of Columbia Medicaid exclusion lists in one schema, NPI-resolved and history-tracked.",
   "url": "https://rosterproof.com/",
   "sameAs": "https://app.snowflake.com/marketplace/listing/GZSXZ2K49BC/",
-  "keywords": ["provider exclusions", "OIG LEIE", "SAM.gov exclusions", "state Medicaid exclusion list", "exclusion screening", "NPI", "healthcare compliance", "program integrity"],
+  "keywords": ["provider exclusions", "OIG LEIE", "SAM.gov exclusions", "FDA debarment list", "clinical investigator disqualification", "state Medicaid exclusion list", "exclusion screening", "NPI", "healthcare compliance", "program integrity"],
   "license": "https://rosterproof.com/terms.html",
   "isAccessibleForFree": true,
   "creator": {"@type": "Organization", "name": "Shoonya", "url": "https://rosterproof.com/"},
@@ -133,10 +134,10 @@ h2.sec{font-size:22px;margin:56px 0 6px;text-align:left}
 <main>
 <div class="wrap">
 <div class="brandline">rosterproof</div>
-<h1 class="tag">Unified provider exclusion lists — OIG LEIE + SAM + state Medicaid</h1>
+<h1 class="tag">Unified provider exclusion lists — OIG LEIE + SAM + FDA + state Medicaid</h1>
 
-<p class="pitch">RosterProof unifies the federal OIG LEIE, the full SAM.gov exclusions extract, and state
-Medicaid exclusion lists into a single dataset: collected continuously, normalized into one schema, tracked
+<p class="pitch">RosterProof unifies the federal OIG LEIE, the full SAM.gov exclusions extract, the FDA debarment and
+clinical-investigator disqualification lists, and state Medicaid exclusion lists into a single dataset: collected continuously, normalized into one schema, tracked
 with full change history, and resolved to NPIs with transparent confidence tiers and
 provenance on every derived fact. Delivered as native tables on the Snowflake Marketplace,
 so exclusion screening becomes a simple join in your own warehouse — no scrapers to babysit,
@@ -144,7 +145,7 @@ no PDFs to retype, no blind spots between the federal list and the states.</p>
 
 <div class="stats">
 <div class="stat"><div class="big" id="st-records">344K+</div><div class="small">exclusion records, history-tracked</div></div>
-<div class="stat"><div class="big" id="st-states">Federal + 38 states + DC</div><div class="small">OIG LEIE + SAM.gov plus state Medicaid exclusion lists</div></div>
+<div class="stat"><div class="big" id="st-states">Federal + 38 states + DC</div><div class="small">OIG LEIE + SAM.gov + FDA lists plus state Medicaid exclusion lists</div></div>
 <div class="stat"><div class="big" id="st-gap">~54%</div><div class="small">of state exclusions never reach the federal LEIE — <a href="/federal-gap.html" style="color:#7fd4c8">see the full analysis</a></div></div>
 <div class="stat"><div class="big" id="st-npi">57K+</div><div class="small">NPPES-verified NPI matches — screen claims by NPI, not name-matching</div></div>
 <div class="stat"><div class="big" id="st-multi">7.3K+</div><div class="small">providers excluded in 2+ jurisdictions — under ACA §6501, one state's exclusion is every state's problem</div></div>
@@ -162,6 +163,29 @@ other state. RosterProof closes that gap for providers <em>and</em> vendors — 
 companies, DME suppliers, staffing agencies appear on these lists as entities — with every
 record carrying its source, jurisdiction, exclusion window, and an NPI match with stated
 confidence, so a compliance analyst can defend every hit without asking anyone.</p>
+</div>
+
+
+<div class="card" id="who">
+<div class="badge">WHO IT'S FOR</div>
+<h2>Three audiences, one dataset</h2>
+<h3 style="margin:18px 0 6px;font-size:17px;color:#eaf1fb">Providers &amp; health systems</h3>
+<p>Screen staff, medical staff and vendors monthly against every federal and state list, run a
+claims lookback when a hit surfaces, and check owners and managing employees on enrollment
+and revalidation — a single join against your HR, credentialing and vendor-master tables.</p>
+<h3 style="margin:18px 0 6px;font-size:17px;color:#eaf1fb">Payers &amp; managed care organizations</h3>
+<p>Network credentialing, monthly monitoring and pre-payment claims edits from one feed:
+paying an excluded provider means recoupment and penalties — 42 CFR 438.608 for Medicaid
+managed care, and FDR screening obligations for Medicare Advantage — and under ACA §6501 one
+state's exclusion is every state's problem.</p>
+<h3 style="margin:18px 0 6px;font-size:17px;color:#eaf1fb">Life sciences</h3>
+<p>HCP engagement screening — speakers, consultants and investigators paid by manufacturers
+must be screened against OIG and SAM — and clinical-trial investigator vetting against FDA
+debarment and disqualification, now unified with the exclusion lists in one join.
+<a href="/life-sciences.html">How life-sciences teams use it →</a></p>
+<p class="caveat" style="margin-top:14px;color:#8fa3c7;font-size:14px">RosterProof is the exclusion and
+owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a
+fraud detector.</p>
 </div>
 
 <div class="fmtcard" id="formats">
@@ -275,10 +299,12 @@ fetch('stats.json').then(r => r.json()).then(d => {
 <a href="/dictionary.html">Data Dictionary</a>
 <a href="/federal-gap.html">The Federal Gap</a>
 <a href="/insights.html">Insights</a>
+<a href="/life-sciences.html">Life sciences</a>
 <a href="/terms.html">Terms of Use</a>
 <a href="/privacy.html">Privacy Policy</a>
 <a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
 </nav>
+<p class="fpos">RosterProof is the exclusion and owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a fraud detector.</p>
 <div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
 </footer>
 </div>

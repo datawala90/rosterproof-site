@@ -13,7 +13,7 @@ import re
 import sys
 import pathlib
 
-PAGES = ["index.html", "federal-gap.html", "insights.html", "dictionary.html",
+PAGES = ["index.html", "federal-gap.html", "insights.html", "life-sciences.html", "dictionary.html",
          "attribution.html", "terms.html", "privacy.html"]
 
 FOOTER_CSS = """/* shared footer (canonical in tools/sync_footer.py — do not hand-edit per page) */
@@ -21,6 +21,7 @@ FOOTER_CSS = """/* shared footer (canonical in tools/sync_footer.py — do not h
 .siteftr .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0 0 34px}
 .siteftr .flinks a{color:#7fd4c8;text-decoration:none;font-size:13.5px;letter-spacing:.5px}
 .siteftr .flinks a:hover{color:#a5e6dc;text-decoration:underline;text-underline-offset:4px}
+.siteftr .fpos{color:#8fa3c7;font-size:13px;line-height:1.6;text-align:center;max-width:620px;margin:0 auto 22px}
 .siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
 .siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}"""
 
@@ -30,10 +31,12 @@ FOOTER_HTML = """<footer class="siteftr">
 <a href="/dictionary.html">Data Dictionary</a>
 <a href="/federal-gap.html">The Federal Gap</a>
 <a href="/insights.html">Insights</a>
+<a href="/life-sciences.html">Life sciences</a>
 <a href="/terms.html">Terms of Use</a>
 <a href="/privacy.html">Privacy Policy</a>
 <a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
 </nav>
+<p class="fpos">RosterProof is the exclusion and owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a fraud detector.</p>
 <div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
 </footer>"""
 
