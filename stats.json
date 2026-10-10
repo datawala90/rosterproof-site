@@ -1,8 +1,8 @@
 {
- "generated_at_utc": "2026-10-09T17:54:00Z",
- "last_refresh_utc": "2026-10-09 17:48:46",
+ "generated_at_utc": "2026-10-10T21:12:43Z",
+ "last_refresh_utc": "2026-10-10 21:11:27",
  "refresh_cadence": "weekly",
- "records_total": 344476,
+ "records_total": 344576,
  "sources_total": 43,
  "states": 38,
  "includes_dc": true,
@@ -20,26 +20,26 @@
   "count": 57832,
   "rate_pct": 16.7
  },
- "multi_jurisdiction_npis": 7588,
- "federal_gap_overall_pct": 54.5,
+ "multi_jurisdiction_npis": 7585,
+ "federal_gap_overall_pct": 54.4,
  "tiers": [
   {
    "tier": "T1",
    "label": "Source-published NPI, NPPES-verified",
    "description": "the excluding agency printed an NPI and the CMS NPPES registry confirms the identity",
-   "count": 31936
+   "count": 31916
   },
   {
    "tier": "T2",
    "label": "Unique identity match (name+state)",
    "description": "exactly one provider in the national registry shares the normalized name and state",
-   "count": 23538
+   "count": 23525
   },
   {
    "tier": "T2a",
    "label": "Unique identity match via registered alias",
    "description": "same, matched through a registered maiden/former/dba name",
-   "count": 672
+   "count": 670
   },
   {
    "tier": "T3",
@@ -57,7 +57,7 @@
  "state_gaps": [
   {
    "state": "AZ",
-   "active_records": 746,
+   "active_records": 772,
    "gap_pct": 98.8,
    "source_format": "XLSX"
   },
@@ -69,7 +69,7 @@
   },
   {
    "state": "NE",
-   "active_records": 1437,
+   "active_records": 1435,
    "gap_pct": 86.8,
    "source_format": "PDF"
   },
@@ -100,7 +100,7 @@
   {
    "state": "KY",
    "active_records": 401,
-   "gap_pct": 77.3,
+   "gap_pct": 77.1,
    "source_format": "XLSX"
   },
   {
@@ -123,8 +123,8 @@
   },
   {
    "state": "AR",
-   "active_records": 2009,
-   "gap_pct": 73.3,
+   "active_records": 2010,
+   "gap_pct": 73.4,
    "source_format": "CSV"
   },
   {
@@ -146,16 +146,16 @@
    "source_format": "JSON"
   },
   {
-   "state": "WA",
-   "active_records": 235,
-   "gap_pct": 66.8,
-   "source_format": "XLSX"
-  },
-  {
    "state": "OR",
    "active_records": 3,
    "gap_pct": 66.7,
    "source_format": "JSON"
+  },
+  {
+   "state": "WA",
+   "active_records": 235,
+   "gap_pct": 66.4,
+   "source_format": "XLSX"
   },
   {
    "state": "MN",
@@ -171,8 +171,8 @@
   },
   {
    "state": "MD",
-   "active_records": 1608,
-   "gap_pct": 64.1,
+   "active_records": 1613,
+   "gap_pct": 64.2,
    "source_format": "XLSX"
   },
   {
@@ -190,20 +190,20 @@
   {
    "state": "CA",
    "active_records": 23372,
-   "gap_pct": 59.7,
+   "gap_pct": 59.6,
    "source_format": "CSV"
-  },
-  {
-   "state": "NV",
-   "active_records": 984,
-   "gap_pct": 58.7,
-   "source_format": "PDF"
   },
   {
    "state": "NJ",
    "active_records": 3675,
-   "gap_pct": 58.6,
+   "gap_pct": 58.5,
    "source_format": "XLSX"
+  },
+  {
+   "state": "NV",
+   "active_records": 984,
+   "gap_pct": 58.3,
+   "source_format": "PDF"
   },
   {
    "state": "ND",
@@ -213,38 +213,38 @@
   },
   {
    "state": "NY",
-   "active_records": 9076,
+   "active_records": 9088,
    "gap_pct": 50.0,
    "source_format": "TSV"
   },
   {
    "state": "LA",
-   "active_records": 5585,
+   "active_records": 5587,
    "gap_pct": 49.4,
    "source_format": "CSV"
   },
   {
    "state": "TX",
-   "active_records": 11948,
+   "active_records": 11953,
    "gap_pct": 48.8,
    "source_format": "XLS"
   },
   {
    "state": "SC",
    "active_records": 1362,
-   "gap_pct": 40.4,
+   "gap_pct": 40.3,
    "source_format": "XLSX"
   },
   {
    "state": "ME",
    "active_records": 1114,
-   "gap_pct": 35.6,
+   "gap_pct": 35.8,
    "source_format": "CSV"
   },
   {
    "state": "OH",
    "active_records": 2099,
-   "gap_pct": 34.1,
+   "gap_pct": 34.0,
    "source_format": "XLSX"
   },
   {
@@ -256,12 +256,12 @@
   {
    "state": "CT",
    "active_records": 80,
-   "gap_pct": 28.8,
+   "gap_pct": 27.5,
    "source_format": "HTML_TABLE"
   },
   {
    "state": "AL",
-   "active_records": 2080,
+   "active_records": 2081,
    "gap_pct": 21.0,
    "source_format": "XLSX"
   },
@@ -279,8 +279,8 @@
   },
   {
    "state": "GA",
-   "active_records": 1373,
-   "gap_pct": 14.3,
+   "active_records": 1375,
+   "gap_pct": 14.5,
    "source_format": "XLSX"
   },
   {
@@ -294,12 +294,12 @@
   {
    "source_id": "SAM",
    "name": "SAM.gov Exclusions Public Extract",
-   "active_records": 169050
+   "active_records": 169030
   },
   {
    "source_id": "LEIE",
    "name": "HHS OIG List of Excluded Individuals/Entities",
-   "active_records": 83933
+   "active_records": 84025
   },
   {
    "source_id": "FDA_DEBAR",
@@ -314,10 +314,10 @@
  ],
  "watchlist": {
   "definition": "NPPES-verified providers with an active exclusion from one or more states whose current NPPES practice state has not excluded them",
-  "any_state": 2260,
-  "invisible_to_federal": 1553,
+  "any_state": 2258,
+  "invisible_to_federal": 1552,
   "two_plus_states": 228,
-  "individuals": 2047,
+  "individuals": 2045,
   "organizations": 213,
   "top_practice_states": [
    {
