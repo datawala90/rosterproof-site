@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Screen My Roster — Check NPIs Against Every Exclusion List</title>
+<link rel="canonical" href="https://rosterproof.com/screen.html">
+<meta name="description" content="Upload or paste a roster of NPIs and screen it against the OIG LEIE, SAM.gov, FDA lists and 38 state Medicaid exclusion lists in your browser. Results table and downloadable report. Free.">
+<meta property="og:title" content="Screen my roster — RosterProof">
+<meta property="og:description" content="Paste NPIs, get hits across every federal and state exclusion list, download the report.">
+<meta property="og:image" content="https://rosterproof.com/assets/social/gap-map-1200x627.png">
+<meta property="og:url" content="https://rosterproof.com/screen.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rosterproof.com/assets/social/gap-map-1200x627.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<style>
+body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#0a1128;color:#eef2fb;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding:56px 24px}
+h1{font-size:28px;font-weight:600;margin:0 0 6px}
+h2{font-size:20px;margin:48px 0 8px;color:#7fd4c8}
+.tag{color:#8fa3c7;font-size:13px;letter-spacing:2px;margin-bottom:28px;text-transform:uppercase}
+p{color:#c7d2ea;line-height:1.7}
+.card{background:#111a36;border:1px solid #2f3b55;border-left:3px solid #7fd4c8;border-radius:14px;padding:18px 24px;margin:18px 0}
+.card p{margin:0}
+.bignum{font-size:44px;font-weight:600;color:#7fd4c8;font-family:Georgia,serif}
+.caveat{color:#8fa3c7;font-size:13px;line-height:1.6;margin-top:10px}
+a{color:#7fd4c8}
+.chart{margin:22px 0}
+.crow{display:grid;grid-template-columns:190px 1fr 74px;align-items:center;gap:10px;padding:3px 0}
+.crow .lbl{color:#8fa3c7;font-size:13px;text-align:right;line-height:1.3}
+.crow .track{background:#0d1530;border-radius:4px;height:16px;position:relative}
+.crow .bar{background:#7fd4c8;height:16px;border-radius:0 4px 4px 0;min-width:2px}
+.crow .bar.muted{background:#3d4a6b}
+.crow .val{color:#e8ecf4;font-size:13px;font-variant-numeric:tabular-nums}
+.chartnote{color:#5b6b85;font-size:12px;margin-top:8px}
+.statrow{display:flex;gap:26px;flex-wrap:wrap;margin:14px 0}
+.stat .big{font-size:26px;font-weight:600;color:#7fd4c8}
+.stat .small{color:#8fa3c7;font-size:13px;max-width:190px;line-height:1.5}
+.chain{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;color:#a5e6dc;background:#0d1530;border:1px solid #2f3b55;border-radius:8px;padding:12px 16px;overflow-x:auto;white-space:nowrap}
+.sitehdr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 36px}
+.sitehdr .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.sitehdr .brand img{display:block;border-radius:6px}
+.sitehdr .brand span{color:#eef2fb;letter-spacing:3px;font-weight:600;font-size:14px}
+.sitehdr nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
+.sitehdr nav a{color:#8fa3c7;font-size:13px;text-decoration:none}
+.sitehdr nav a:hover{color:#7fd4c8}
+/* shared footer (canonical in tools/sync_footer.py — do not hand-edit per page) */
+.siteftr{margin-top:72px;padding:56px 12px 10px;border-top:1px solid #232e4a;text-align:center;color:#5b6b85;font-size:13px}
+.siteftr .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0 0 34px}
+.siteftr .flinks a{color:#7fd4c8;text-decoration:none;font-size:13.5px;letter-spacing:.5px}
+.siteftr .flinks a:hover{color:#a5e6dc;text-decoration:underline;text-underline-offset:4px}
+.siteftr .fpos{color:#8fa3c7;font-size:13px;line-height:1.6;text-align:center;max-width:620px;margin:0 auto 22px}
+.siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
+.siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}
+@media (max-width:640px){.crow{grid-template-columns:112px 1fr 64px}.crow .lbl{font-size:11.5px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "RosterProof \u2014 Screen my roster",
+  "applicationCategory": "BusinessApplication",
+  "description": "Upload a roster of NPIs and screen it against OIG LEIE, SAM.gov, FDA lists and 38 state Medicaid exclusion lists.",
+  "url": "https://rosterproof.com/screen.html",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<header class="sitehdr"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><nav><a href="/">Home</a><a href="/federal-gap.html">The Federal Gap</a><a href="/#get-the-data">Get the data</a><a href="/dictionary.html">Dictionary</a></nav></header>
+<main>
+<h1>Screen my roster</h1>
+<div class="tag">paste or upload NPIs · results in your browser · downloadable report</div>
+<p>Paste NPIs (one per line, or a CSV with an NPI column — optional <code>last_name</code>,
+<code>first_name</code>, <code>state</code> columns are screened by name too). Nothing is stored
+server-side except your API key's daily usage count.</p>
+
+<div class="card" id="keybox">
+<p><strong>API key</strong> <span id="keystate" style="color:#8fa3c7"></span></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+<input type="email" id="semail" placeholder="you@organization.com (to create a key)" style="flex:1;min-width:220px;background:#0d1530;border:1px solid #2f3b55;border-radius:10px;padding:11px 14px;color:#eaf1fb;font-size:14px">
+<button id="mkkey" style="background:#16233f;color:#7fd4c8;border:1px solid #1f3b5c;border-radius:10px;padding:11px 16px;font-size:14px;cursor:pointer">Create key</button>
+<input type="text" id="skey" placeholder="or paste rp_live_…" style="flex:1;min-width:220px;background:#0d1530;border:1px solid #2f3b55;border-radius:10px;padding:11px 14px;color:#eaf1fb;font-size:14px">
+</div>
+</div>
+
+<div class="card">
+<p><strong>Roster</strong></p>
+<textarea id="roster" rows="8" placeholder="1891616215&#10;1083287536&#10;npi,last_name,first_name,state&#10;1234567893,Smith,John,CA" style="width:100%;box-sizing:border-box;background:#0d1530;border:1px solid #2f3b55;border-radius:10px;padding:12px 14px;color:#eaf1fb;font-size:14px;font-family:ui-monospace,Menlo,monospace"></textarea>
+<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px">
+<input type="file" id="file" accept=".csv,.txt" style="color:#8fa3c7;font-size:14px">
+<button id="run" style="background:#7fd4c8;color:#0a1128;border:0;border-radius:10px;padding:12px 18px;font-weight:600;font-size:15px;cursor:pointer">Screen</button>
+<button id="dl" disabled style="background:#16233f;color:#7fd4c8;border:1px solid #1f3b5c;border-radius:10px;padding:12px 16px;font-size:14px;cursor:pointer">Download report (CSV)</button>
+</div>
+<p id="status" style="margin-top:12px;color:#c7d2ea"></p>
+</div>
+
+<div class="card" id="rescard" style="display:none">
+<p id="summary" style="margin:0 0 12px"></p>
+<div style="overflow-x:auto"><table id="results" style="width:100%;border-collapse:collapse;font-size:13.5px">
+<thead><tr style="color:#8fa3c7;text-align:left"><th style="padding:8px 6px;border-bottom:1px solid #2f3b55">Query</th><th style="padding:8px 6px;border-bottom:1px solid #2f3b55">Hit</th><th style="padding:8px 6px;border-bottom:1px solid #2f3b55">List</th><th style="padding:8px 6px;border-bottom:1px solid #2f3b55">Name / organization</th><th style="padding:8px 6px;border-bottom:1px solid #2f3b55">Status</th><th style="padding:8px 6px;border-bottom:1px solid #2f3b55">Since</th><th style="padding:8px 6px;border-bottom:1px solid #2f3b55">NPI match</th><th style="padding:8px 6px;border-bottom:1px solid #2f3b55">Review</th></tr></thead>
+<tbody></tbody></table></div>
+<p class="caveat" style="margin-top:14px" id="notice">Verify any hit against the source agency (and OIG's SSN-based Online Search for LEIE) before taking adverse action. Name queries can return namesakes; read the tier and review flag.</p>
+</div>
+</main>
+<footer class="siteftr">
+<nav class="flinks" aria-label="Footer">
+<a href="/attribution.html">Attribution &amp; Notices</a>
+<a href="/dictionary.html">Data Dictionary</a>
+<a href="/federal-gap.html">The Federal Gap</a>
+<a href="/insights.html">Insights</a>
+<a href="/life-sciences.html">Life sciences</a>
+<a href="/download.html">Download</a>
+<a href="/api.html">API</a>
+<a href="/screen.html">Screen my roster</a>
+<a href="/terms.html">Terms of Use</a>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
+</nav>
+<p class="fpos">RosterProof is the exclusion and owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a fraud detector.</p>
+<div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
+</footer>
+</div>
+<script src="/assets/screen.js"></script>
+</body>
+</html>
