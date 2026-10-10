@@ -23,20 +23,21 @@
   function cell(s) { return s.trim().replace(/^"|"$/g, ''); }
   function parseRoster(text) {
     var lines = text.split(/\r?\n/).map(function (l) { return l.trim(); }).filter(Boolean);
-    if (!lines.length) return { npis: [], names: [] };
+    if (!lines.length) return { npis: [], names: [], invalid: [] };
     var hdr = lines[0].toLowerCase().split(',').map(cell);
     var iN = hdr.findIndex(function (h) { return /^npi/.test(h); });
     var iL = hdr.indexOf('last_name') >= 0 ? hdr.indexOf('last_name') : hdr.indexOf('last');
     var iF = hdr.indexOf('first_name') >= 0 ? hdr.indexOf('first_name') : hdr.indexOf('first');
     var iS = hdr.indexOf('state');
-    var hasHeader = (iN >= 0 || iL >= 0), npis = [], names = [], seen = {};
+    var hasHeader = (iN >= 0 || iL >= 0), npis = [], names = [], invalid = [], seen = {};
     lines.slice(hasHeader ? 1 : 0).forEach(function (l) {
       var c = l.split(',').map(cell);
       var npi = ((hasHeader && iN >= 0) ? c[iN] : c[0] || '').replace(/\D/g, '');
       if (/^\d{10}$/.test(npi) && !seen[npi]) { seen[npi] = 1; npis.push(npi); }
       else if (hasHeader && iL >= 0 && c[iL]) { names.push({ last: c[iL], first: iF >= 0 ? c[iF] : '', state: iS >= 0 ? c[iS] : '' }); }
+      else if (npi && !/^\d{10}$/.test(npi)) { invalid.push(((hasHeader && iN >= 0) ? c[iN] : c[0]) || npi); }
     });
-    return { npis: npis, names: names };
+    return { npis: npis, names: names, invalid: invalid };
   }
 
   var lastRows = [];
@@ -47,11 +48,12 @@
     var key = keyIn.value.trim(), st = document.getElementById('status');
     if (!key) { st.textContent = 'Create or paste an API key first.'; return; }
     var r = parseRoster(document.getElementById('roster').value), total = r.npis.length + r.names.length;
-    if (!total) { st.textContent = 'No NPIs or names found.'; return; }
+    if (!total) { st.textContent = r.invalid.length ? 'Not screened: ' + r.invalid.join(', ') + ' — an NPI is exactly 10 digits.' : 'No NPIs or names found.'; return; }
     try { localStorage.setItem('rp_api_key', key); } catch (_) {}
     st.textContent = 'Screening ' + total + ' entries…';
     var tb = document.querySelector('#results tbody'); tb.innerHTML = ''; lastRows = [];
     var hits = 0, done = 0, asof = '', batches = [];
+    r.invalid.forEach(function (v) { lastRows.push([v, 'INVALID', '', '', 'not a 10-digit NPI — not screened', '', '', '']); var t = document.createElement('tr'); t.innerHTML = td(esc(v)) + td('<span style="color:#f0c674">invalid</span>') + '<td colspan="6" style="padding:7px 6px;border-bottom:1px solid #232e4a;color:#f0c674">not a 10-digit NPI — not screened</td>'; tb.appendChild(t); });
     for (var i = 0; i < r.npis.length; i += 400) batches.push({ npis: r.npis.slice(i, i + 400) });
     for (var j = 0; j < r.names.length; j += 200) batches.push({ names: r.names.slice(j, j + 200) });
     (function next(k) {
