@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Download the Provider Exclusion Dataset — CSV &amp; Parquet</title>
+<link rel="canonical" href="https://rosterproof.com/download.html">
+<meta name="description" content="Download the unified provider exclusion dataset as CSV or Parquet: OIG LEIE, SAM.gov, FDA lists and 38 state Medicaid exclusion lists in one schema, with a 90-day change feed, manifest and attribution. Weekly snapshot, free for compliance screening.">
+<meta property="og:title" content="Download the exclusion dataset — CSV / Parquet — RosterProof">
+<meta property="og:description" content="Weekly snapshot of every federal and state exclusion list in one schema. CSV and Parquet, manifest with checksums, attribution README.">
+<meta property="og:image" content="https://rosterproof.com/assets/social/gap-map-1200x627.png">
+<meta property="og:url" content="https://rosterproof.com/download.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rosterproof.com/assets/social/gap-map-1200x627.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<style>
+body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#0a1128;color:#eef2fb;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding:56px 24px}
+h1{font-size:28px;font-weight:600;margin:0 0 6px}
+h2{font-size:20px;margin:48px 0 8px;color:#7fd4c8}
+.tag{color:#8fa3c7;font-size:13px;letter-spacing:2px;margin-bottom:28px;text-transform:uppercase}
+p{color:#c7d2ea;line-height:1.7}
+.card{background:#111a36;border:1px solid #2f3b55;border-left:3px solid #7fd4c8;border-radius:14px;padding:18px 24px;margin:18px 0}
+.card p{margin:0}
+.bignum{font-size:44px;font-weight:600;color:#7fd4c8;font-family:Georgia,serif}
+.caveat{color:#8fa3c7;font-size:13px;line-height:1.6;margin-top:10px}
+a{color:#7fd4c8}
+.chart{margin:22px 0}
+.crow{display:grid;grid-template-columns:190px 1fr 74px;align-items:center;gap:10px;padding:3px 0}
+.crow .lbl{color:#8fa3c7;font-size:13px;text-align:right;line-height:1.3}
+.crow .track{background:#0d1530;border-radius:4px;height:16px;position:relative}
+.crow .bar{background:#7fd4c8;height:16px;border-radius:0 4px 4px 0;min-width:2px}
+.crow .bar.muted{background:#3d4a6b}
+.crow .val{color:#e8ecf4;font-size:13px;font-variant-numeric:tabular-nums}
+.chartnote{color:#5b6b85;font-size:12px;margin-top:8px}
+.statrow{display:flex;gap:26px;flex-wrap:wrap;margin:14px 0}
+.stat .big{font-size:26px;font-weight:600;color:#7fd4c8}
+.stat .small{color:#8fa3c7;font-size:13px;max-width:190px;line-height:1.5}
+.chain{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;color:#a5e6dc;background:#0d1530;border:1px solid #2f3b55;border-radius:8px;padding:12px 16px;overflow-x:auto;white-space:nowrap}
+.sitehdr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 36px}
+.sitehdr .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.sitehdr .brand img{display:block;border-radius:6px}
+.sitehdr .brand span{color:#eef2fb;letter-spacing:3px;font-weight:600;font-size:14px}
+.sitehdr nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
+.sitehdr nav a{color:#8fa3c7;font-size:13px;text-decoration:none}
+.sitehdr nav a:hover{color:#7fd4c8}
+/* shared footer (canonical in tools/sync_footer.py — do not hand-edit per page) */
+.siteftr{margin-top:72px;padding:56px 12px 10px;border-top:1px solid #232e4a;text-align:center;color:#5b6b85;font-size:13px}
+.siteftr .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0 0 34px}
+.siteftr .flinks a{color:#7fd4c8;text-decoration:none;font-size:13.5px;letter-spacing:.5px}
+.siteftr .flinks a:hover{color:#a5e6dc;text-decoration:underline;text-underline-offset:4px}
+.siteftr .fpos{color:#8fa3c7;font-size:13px;line-height:1.6;text-align:center;max-width:620px;margin:0 auto 22px}
+.siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
+.siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}
+@media (max-width:640px){.crow{grid-template-columns:112px 1fr 64px}.crow .lbl{font-size:11.5px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "RosterProof unified provider exclusions snapshot",
+  "description": "Weekly CSV/Parquet snapshot of the OIG LEIE, SAM.gov, FDA debarment and investigator-disqualification lists and 38 state Medicaid exclusion lists in one schema, with a 90-day change feed.",
+  "url": "https://rosterproof.com/download.html",
+  "license": "https://rosterproof.com/terms.html",
+  "creator": {
+    "@type": "Organization",
+    "name": "Shoonya"
+  },
+  "isAccessibleForFree": true,
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://rosterproof.com/download.html"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/vnd.apache.parquet",
+      "contentUrl": "https://rosterproof.com/download.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<header class="sitehdr"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><nav><a href="/">Home</a><a href="/federal-gap.html">The Federal Gap</a><a href="/#get-the-data">Get the data</a><a href="/dictionary.html">Dictionary</a></nav></header>
+<main>
+<h1>Download the data</h1>
+<div class="tag">weekly snapshot · csv and parquet · manifest with checksums · attribution included</div>
+
+<p>The same published tables the Snowflake Marketplace serves, as files. One weekly snapshot
+of the full screening view plus every change observed in the last 90 days. Enter an email,
+get a 15-minute link. Free for compliance-screening use; see the use label below.</p>
+
+<div class="card" id="files-card">
+<p id="asof" style="color:#8fa3c7;font-size:14px;margin:0 0 14px">Loading the current snapshot…</p>
+<table style="width:100%;border-collapse:collapse;font-size:14.5px" id="files">
+<thead><tr style="color:#8fa3c7;text-align:left"><th style="padding:8px 6px;border-bottom:1px solid #2f3b55">File</th><th style="padding:8px 6px;border-bottom:1px solid #2f3b55">Format</th><th style="padding:8px 6px;border-bottom:1px solid #2f3b55;text-align:right">Rows</th><th style="padding:8px 6px;border-bottom:1px solid #2f3b55;text-align:right">Size</th><th style="padding:8px 6px;border-bottom:1px solid #2f3b55"></th></tr></thead>
+<tbody></tbody>
+</table>
+<p class="caveat" style="margin-top:14px">exclusions_screenable = the full screening view (active and ended; IS_ACTIVE tells them apart). change_feed_90d = every ADDED / CHANGED / REMOVED / REINSTATED event in the last 90 days with the full record as JSON. Columns are documented in the <a href="/dictionary.html">data dictionary</a>.</p>
+</div>
+
+<div class="card" id="gate">
+<p><strong>Get a download link.</strong> We ask for an email so we can tell you when the schema or
+the sources change. Nothing else is sent.</p>
+<form id="dlform" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px">
+<input type="email" id="email" required placeholder="you@organization.com" style="flex:1;min-width:240px;background:#0d1530;border:1px solid #2f3b55;border-radius:10px;padding:12px 14px;color:#eaf1fb;font-size:15px">
+<select id="file" style="background:#0d1530;border:1px solid #2f3b55;border-radius:10px;padding:12px 14px;color:#eaf1fb;font-size:15px"></select>
+<button type="submit" style="background:#7fd4c8;color:#0a1128;border:0;border-radius:10px;padding:12px 18px;font-weight:600;font-size:15px;cursor:pointer">Get link</button>
+</form>
+<p id="result" style="margin-top:12px;color:#c7d2ea"></p>
+</div>
+
+<h2>Use label and attribution</h2>
+<div class="card"><p id="uselabel">This bundle is labeled for <strong>compliance-screening use</strong>. Records from North
+Carolina and Texas are included under those states' non-commercial permissions; do not
+resell or repackage NC/TX rows commercially without those agencies' written permission.</p>
+<p class="caveat">Every snapshot ships with a README carrying the full source attribution and required
+notices (also at <a href="/attribution.html">/attribution</a>), and this notice: verify any hit
+against the source agency — and OIG's SSN-based Online Search for LEIE — before taking adverse
+action. Source agencies disclaim the accuracy of their lists; records pass through as published.</p></div>
+
+<h2>Prefer tables to files?</h2>
+<p>The same data is live on the <a href="https://app.snowflake.com/marketplace/listing/GZSXZ2K49BC/" target="_blank" rel="noopener">Snowflake Marketplace</a>, free, refreshed weekly, with change tracking for streams.
+An HTTP API and a roster-screening tool are on the way.</p>
+</main>
+<footer class="siteftr">
+<nav class="flinks" aria-label="Footer">
+<a href="/attribution.html">Attribution &amp; Notices</a>
+<a href="/dictionary.html">Data Dictionary</a>
+<a href="/federal-gap.html">The Federal Gap</a>
+<a href="/insights.html">Insights</a>
+<a href="/life-sciences.html">Life sciences</a>
+<a href="/download.html">Download</a>
+<a href="/terms.html">Terms of Use</a>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
+</nav>
+<p class="fpos">RosterProof is the exclusion and owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a fraud detector.</p>
+<div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
+</footer>
+</div>
+<script>
+(function(){
+  var DL='https://dl.rosterproof.com';
+  var fmt=function(n){return n.toLocaleString('en-US');}, mb=function(b){return (b/1048576).toFixed(1)+' MB';};
+  var sel=document.getElementById('file'), tb=document.querySelector('#files tbody');
+  fetch(DL+'/manifest').then(function(r){return r.json();}).then(function(m){
+    document.getElementById('asof').textContent='Snapshot as of '+m.as_of+' · generated '+m.generated_at_utc.slice(0,16).replace('T',' ')+' UTC · schema '+m.schema_version+' · '+m.sources+' sources · NPPES '+m.nppes_snapshot_date;
+    tb.innerHTML=''; sel.innerHTML='';
+    m.tables.forEach(function(t){ t.files.forEach(function(f){
+      var tr=document.createElement('tr'); tr.innerHTML='<td style="padding:9px 6px;border-bottom:1px solid #232e4a"><code>'+f.name+'</code></td><td style="padding:9px 6px;border-bottom:1px solid #232e4a">'+f.format.toUpperCase()+'</td><td style="padding:9px 6px;border-bottom:1px solid #232e4a;text-align:right">'+fmt(f.rows)+'</td><td style="padding:9px 6px;border-bottom:1px solid #232e4a;text-align:right">'+mb(f.bytes)+'</td><td style="padding:9px 6px;border-bottom:1px solid #232e4a"><a href="#gate" style="color:#7fd4c8" data-file="'+f.name+'">get link</a></td>';
+      tb.appendChild(tr); var o=document.createElement('option'); o.value=f.name; o.textContent=f.name+' ('+mb(f.bytes)+')'; sel.appendChild(o);
+    });});
+    ['manifest.json','README.md'].forEach(function(n){var o=document.createElement('option'); o.value=n; o.textContent=n; sel.appendChild(o);});
+    tb.addEventListener('click',function(e){ if(e.target.dataset&&e.target.dataset.file){ sel.value=e.target.dataset.file; } });
+  }).catch(function(){ document.getElementById('asof').textContent='The snapshot service is not reachable right now — email support@rosterproof.com and we will send the files.'; });
+  document.getElementById('dlform').addEventListener('submit',function(e){
+    e.preventDefault(); var out=document.getElementById('result'); out.textContent='Requesting…';
+    fetch(DL+'/request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('email').value,file:sel.value,source:'website'})})
+    .then(function(r){return r.json();}).then(function(d){
+      if(d.url){ out.innerHTML='Your link (valid 15 minutes): <a href="'+d.url+'" style="color:#7fd4c8">'+sel.value+'</a> · <a href="'+d.readme+'" style="color:#7fd4c8">README</a>'; window.location.href=d.url; }
+      else { out.textContent=d.error||'Something went wrong.'; }
+    }).catch(function(){ out.textContent='The download service is not reachable right now.'; });
+  });
+})();
+</script>
+</body>
+</html>

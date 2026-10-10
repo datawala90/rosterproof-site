@@ -13,7 +13,7 @@ import re
 import sys
 import pathlib
 
-PAGES = ["index.html", "federal-gap.html", "insights.html", "life-sciences.html", "dictionary.html",
+PAGES = ["index.html", "federal-gap.html", "insights.html", "life-sciences.html", "download.html", "dictionary.html",
          "attribution.html", "terms.html", "privacy.html"]
 
 FOOTER_CSS = """/* shared footer (canonical in tools/sync_footer.py — do not hand-edit per page) */
@@ -32,6 +32,7 @@ FOOTER_HTML = """<footer class="siteftr">
 <a href="/federal-gap.html">The Federal Gap</a>
 <a href="/insights.html">Insights</a>
 <a href="/life-sciences.html">Life sciences</a>
+<a href="/download.html">Download</a>
 <a href="/terms.html">Terms of Use</a>
 <a href="/privacy.html">Privacy Policy</a>
 <a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
