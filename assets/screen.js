@@ -20,24 +20,39 @@
     var rd = new FileReader(); rd.onload = function () { document.getElementById('roster').value = rd.result; }; rd.readAsText(f);
   });
 
-  function cell(s) { return s.trim().replace(/^"|"$/g, ''); }
+  function cell(s) { return s.trim().replace(/^"|"$/g, '').replace(/""/g, '"'); }
+  // quote-aware CSV line splitter: "Marketing Service, Inc" stays one cell; "" is an escaped quote
+  function splitCsv(line) {
+    var out = [], cur = '', inq = false;
+    for (var i = 0; i < line.length; i++) {
+      var ch = line[i];
+      if (inq) { if (ch === '"') { if (line[i + 1] === '"') { cur += '"'; i++; } else inq = false; } else cur += ch; }
+      else if (ch === '"') inq = true;
+      else if (ch === ',') { out.push(cur); cur = ''; }
+      else cur += ch;
+    }
+    out.push(cur); return out.map(function (x) { return x.trim(); });
+  }
   function parseRoster(text) {
     var lines = text.split(/\r?\n/).map(function (l) { return l.trim(); }).filter(Boolean);
-    if (!lines.length) return { npis: [], names: [], invalid: [] };
-    var hdr = lines[0].toLowerCase().split(',').map(cell);
+    if (!lines.length) return { npis: [], names: [], orgs: [], invalid: [] };
+    var hdr = splitCsv(lines[0].toLowerCase()).map(cell);
     var iN = hdr.findIndex(function (h) { return /^npi/.test(h); });
     var iL = hdr.indexOf('last_name') >= 0 ? hdr.indexOf('last_name') : hdr.indexOf('last');
     var iF = hdr.indexOf('first_name') >= 0 ? hdr.indexOf('first_name') : hdr.indexOf('first');
     var iS = hdr.indexOf('state');
-    var hasHeader = (iN >= 0 || iL >= 0), npis = [], names = [], invalid = [], seen = {};
+    var iO = ['organization', 'org', 'business_name', 'business'].map(function (h) { return hdr.indexOf(h); }).filter(function (i) { return i >= 0; })[0];
+    if (iO === undefined) iO = -1;
+    var hasHeader = (iN >= 0 || iL >= 0 || iO >= 0), npis = [], names = [], orgs = [], invalid = [], seen = {};
     lines.slice(hasHeader ? 1 : 0).forEach(function (l) {
-      var c = l.split(',').map(cell);
+      var c = splitCsv(l);
       var npi = ((hasHeader && iN >= 0) ? c[iN] : c[0] || '').replace(/\D/g, '');
       if (/^\d{10}$/.test(npi) && !seen[npi]) { seen[npi] = 1; npis.push(npi); }
       else if (hasHeader && iL >= 0 && c[iL]) { names.push({ last: c[iL], first: iF >= 0 ? c[iF] : '', state: iS >= 0 ? c[iS] : '' }); }
+      else if (hasHeader && iO >= 0 && c[iO]) { orgs.push({ name: c[iO], state: iS >= 0 ? c[iS] : '' }); }
       else if (npi && !/^\d{10}$/.test(npi)) { invalid.push(((hasHeader && iN >= 0) ? c[iN] : c[0]) || npi); }
     });
-    return { npis: npis, names: names, invalid: invalid };
+    return { npis: npis, names: names, orgs: orgs, invalid: invalid };
   }
 
   var lastRows = [];
@@ -47,7 +62,7 @@
   document.getElementById('run').addEventListener('click', function () {
     var key = keyIn.value.trim(), st = document.getElementById('status');
     if (!key) { st.textContent = 'Create or paste an API key first.'; return; }
-    var r = parseRoster(document.getElementById('roster').value), total = r.npis.length + r.names.length;
+    var r = parseRoster(document.getElementById('roster').value), total = r.npis.length + r.names.length + r.orgs.length;
     if (!total) { st.textContent = r.invalid.length ? 'Not screened: ' + r.invalid.join(', ') + ' — an NPI is exactly 10 digits.' : 'No NPIs or names found.'; return; }
     try { localStorage.setItem('rp_api_key', key); } catch (_) {}
     st.textContent = 'Screening ' + total + ' entries…';
@@ -56,6 +71,7 @@
     r.invalid.forEach(function (v) { lastRows.push([v, 'INVALID', '', '', 'not a 10-digit NPI — not screened', '', '', '']); var t = document.createElement('tr'); t.innerHTML = td(esc(v)) + td('<span style="color:#f0c674">invalid</span>') + '<td colspan="6" style="padding:7px 6px;border-bottom:1px solid #232e4a;color:#f0c674">not a 10-digit NPI — not screened</td>'; tb.appendChild(t); });
     for (var i = 0; i < r.npis.length; i += 400) batches.push({ npis: r.npis.slice(i, i + 400) });
     for (var j = 0; j < r.names.length; j += 200) batches.push({ names: r.names.slice(j, j + 200) });
+    for (var o = 0; o < r.orgs.length; o += 200) batches.push({ organizations: r.orgs.slice(o, o + 200) });
     (function next(k) {
       if (k >= batches.length) {
         st.textContent = 'Done: ' + total + ' screened, ' + hits + ' with a hit (snapshot as of ' + asof + ').';
@@ -67,7 +83,7 @@
           if (d.error) { st.textContent = 'Error: ' + d.error; return; }
           asof = d.as_of;
           d.results.forEach(function (res) {
-            var q = res.query.npi || (res.query.last + ', ' + res.query.first + (res.query.state ? ' (' + res.query.state + ')' : ''));
+            var q = res.query.npi || (res.query.name ? res.query.name + (res.query.state ? ' (' + res.query.state + ')' : '') : (res.query.last + ', ' + res.query.first + (res.query.state ? ' (' + res.query.state + ')' : '')));
             if (!res.matches.length) {
               lastRows.push([q, 'no', '', '', '', '', '', '']);
               var tr0 = document.createElement('tr'); tr0.innerHTML = td(esc(q)) + td('<span style="color:#8fa3c7">clear</span>') + '<td colspan="6" style="border-bottom:1px solid #232e4a"></td>'; tb.appendChild(tr0); return;
