@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exclusion Screening API — NPI &amp; Name Lookup Against Every List</title>
+<link rel="canonical" href="https://rosterproof.com/api.html">
+<meta name="description" content="REST API to screen NPIs, people and organizations against the OIG LEIE, SAM.gov, FDA debarment and investigator lists and 38 state Medicaid exclusion lists. Free key, JSON, weekly snapshot.">
+<meta property="og:title" content="Exclusion screening API — RosterProof">
+<meta property="og:description" content="One key, three endpoints: NPI lookup, batch screen, change feed. Every list, one call.">
+<meta property="og:image" content="https://rosterproof.com/assets/social/gap-map-1200x627.png">
+<meta property="og:url" content="https://rosterproof.com/api.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rosterproof.com/assets/social/gap-map-1200x627.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<style>
+body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#0a1128;color:#eef2fb;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding:56px 24px}
+h1{font-size:28px;font-weight:600;margin:0 0 6px}
+h2{font-size:20px;margin:48px 0 8px;color:#7fd4c8}
+.tag{color:#8fa3c7;font-size:13px;letter-spacing:2px;margin-bottom:28px;text-transform:uppercase}
+p{color:#c7d2ea;line-height:1.7}
+.card{background:#111a36;border:1px solid #2f3b55;border-left:3px solid #7fd4c8;border-radius:14px;padding:18px 24px;margin:18px 0}
+.card p{margin:0}
+.bignum{font-size:44px;font-weight:600;color:#7fd4c8;font-family:Georgia,serif}
+.caveat{color:#8fa3c7;font-size:13px;line-height:1.6;margin-top:10px}
+a{color:#7fd4c8}
+.chart{margin:22px 0}
+.crow{display:grid;grid-template-columns:190px 1fr 74px;align-items:center;gap:10px;padding:3px 0}
+.crow .lbl{color:#8fa3c7;font-size:13px;text-align:right;line-height:1.3}
+.crow .track{background:#0d1530;border-radius:4px;height:16px;position:relative}
+.crow .bar{background:#7fd4c8;height:16px;border-radius:0 4px 4px 0;min-width:2px}
+.crow .bar.muted{background:#3d4a6b}
+.crow .val{color:#e8ecf4;font-size:13px;font-variant-numeric:tabular-nums}
+.chartnote{color:#5b6b85;font-size:12px;margin-top:8px}
+.statrow{display:flex;gap:26px;flex-wrap:wrap;margin:14px 0}
+.stat .big{font-size:26px;font-weight:600;color:#7fd4c8}
+.stat .small{color:#8fa3c7;font-size:13px;max-width:190px;line-height:1.5}
+.chain{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;color:#a5e6dc;background:#0d1530;border:1px solid #2f3b55;border-radius:8px;padding:12px 16px;overflow-x:auto;white-space:nowrap}
+.sitehdr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 36px}
+.sitehdr .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.sitehdr .brand img{display:block;border-radius:6px}
+.sitehdr .brand span{color:#eef2fb;letter-spacing:3px;font-weight:600;font-size:14px}
+.sitehdr nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
+.sitehdr nav a{color:#8fa3c7;font-size:13px;text-decoration:none}
+.sitehdr nav a:hover{color:#7fd4c8}
+/* shared footer (canonical in tools/sync_footer.py — do not hand-edit per page) */
+.siteftr{margin-top:72px;padding:56px 12px 10px;border-top:1px solid #232e4a;text-align:center;color:#5b6b85;font-size:13px}
+.siteftr .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0 0 34px}
+.siteftr .flinks a{color:#7fd4c8;text-decoration:none;font-size:13.5px;letter-spacing:.5px}
+.siteftr .flinks a:hover{color:#a5e6dc;text-decoration:underline;text-underline-offset:4px}
+.siteftr .fpos{color:#8fa3c7;font-size:13px;line-height:1.6;text-align:center;max-width:620px;margin:0 auto 22px}
+.siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
+.siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}
+@media (max-width:640px){.crow{grid-template-columns:112px 1fr 64px}.crow .lbl{font-size:11.5px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebAPI",
+  "name": "RosterProof Exclusions API",
+  "description": "Screen NPIs, people and organizations against OIG LEIE, SAM.gov, FDA lists and 38 state Medicaid exclusion lists.",
+  "documentation": "https://rosterproof.com/api.html",
+  "provider": {
+    "@type": "Organization",
+    "name": "Shoonya"
+  },
+  "termsOfService": "https://rosterproof.com/terms.html"
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<header class="sitehdr"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><nav><a href="/">Home</a><a href="/federal-gap.html">The Federal Gap</a><a href="/#get-the-data">Get the data</a><a href="/dictionary.html">Dictionary</a></nav></header>
+<main>
+<h1>Exclusion screening API</h1>
+<div class="tag">api.rosterproof.com · one key, three endpoints · weekly snapshot of every list</div>
+<p>Screen an NPI, a person or an organization against the OIG LEIE, SAM.gov, the FDA debarment and
+investigator-disqualification lists and 38 state Medicaid exclusion lists in one call. Same published
+data as the Snowflake listing and the download files, loaded weekly. Free plan: 2,000 lookups a day,
+500 queries per request. Machine-readable spec: <a href="https://api.rosterproof.com/openapi.json">openapi.json</a>.</p>
+
+<h2>1. Get a key</h2>
+<pre style="background:#0d1530;border:1px solid #2f3b55;border-radius:14px;padding:16px 18px;overflow-x:auto;font-size:13px;line-height:1.55;color:#c7d2ea"><code>curl -s https://api.rosterproof.com/v1/keys \
+  -H 'Content-Type: application/json' \
+  -d '{"email":"you@organization.com","org":"Example Health"}'
+# -> {"api_key":"rp_live_…","plan":"free","daily_lookups":2000}   (shown once)</code></pre>
+<div class="card" id="keycard"><p><strong>Or get one here.</strong></p>
+<form id="keyform" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px">
+<input type="email" id="kemail" required placeholder="you@organization.com" style="flex:1;min-width:220px;background:#0d1530;border:1px solid #2f3b55;border-radius:10px;padding:12px 14px;color:#eaf1fb;font-size:15px">
+<input type="text" id="korg" placeholder="organization (optional)" style="flex:1;min-width:180px;background:#0d1530;border:1px solid #2f3b55;border-radius:10px;padding:12px 14px;color:#eaf1fb;font-size:15px">
+<button type="submit" style="background:#7fd4c8;color:#0a1128;border:0;border-radius:10px;padding:12px 18px;font-weight:600;font-size:15px;cursor:pointer">Create key</button></form>
+<p id="keyout" style="margin-top:12px;color:#c7d2ea;word-break:break-all"></p></div>
+
+<h2>2. Look up one NPI</h2>
+<pre style="background:#0d1530;border:1px solid #2f3b55;border-radius:14px;padding:16px 18px;overflow-x:auto;font-size:13px;line-height:1.55;color:#c7d2ea"><code>curl -s https://api.rosterproof.com/v1/npi/1891616215 -H 'Authorization: Bearer rp_live_…'</code></pre>
+<pre style="background:#0d1530;border:1px solid #2f3b55;border-radius:14px;padding:16px 18px;overflow-x:auto;font-size:13px;line-height:1.55;color:#c7d2ea"><code>{
+ "as_of": "2026-10-09",
+ "npi": "1891616215",
+ "hit": true,
+ "matches": [{
+   "source_id": "CA", "jurisdiction": "CA", "entity_type": "INDIVIDUAL",
+   "last_name": "…", "first_name": "…", "state": "CA",
+   "exclusion_reason": "…", "exclusion_authority": "W&amp;I Code 14043.6 / Medi-Cal S&amp;I",
+   "exclusion_start": "2025-01-01", "exclusion_end": null, "is_active": true,
+   "npi": "1891616215", "npi_origin": "VERIFIED_WITH_NPPES", "npi_status": "ACTIVE_IN_NPPES",
+   "tier": {"confidence": "LOW", "basis": "AI-adjudicated match among ambiguous candidates - human review required", "score": 0.9},
+   "needs_human_review": true,
+   "source_attribution": "https://rosterproof.com/attribution#CA"
+ }],
+ "notice": "VERIFY BEFORE ADVERSE ACTION: …",
+ "attribution": "https://rosterproof.com/attribution"
+}</code></pre>
+
+<h2>3. Screen a batch</h2>
+<pre style="background:#0d1530;border:1px solid #2f3b55;border-radius:14px;padding:16px 18px;overflow-x:auto;font-size:13px;line-height:1.55;color:#c7d2ea"><code>curl -s https://api.rosterproof.com/v1/screen -H 'Authorization: Bearer rp_live_…' \
+  -H 'Content-Type: application/json' \
+  -d '{"npis":["1891616215","1234567893"],
+       "names":[{"last":"Smith","first":"John","state":"CA"}],
+       "organizations":[{"name":"Quality Poultry and Seafood Inc."}]}'
+# -> {"as_of":"…","lookups":4,"hits":2,"results":[{"query":{"npi":"1891616215"},"match_method":"NPI (NPPES-verified)","matches":[…]}, …]}</code></pre>
+<p class="caveat">NPI queries are exact against NPPES-verified matches (and source-printed NPIs). Name queries are
+exact on the normalized name (accents and suffix tokens like Jr., MD ignored) with optional state;
+they can return namesakes — read <code>tier</code>, <code>npi_origin</code> and <code>needs_human_review</code>
+before acting. Organization queries match the normalized business name.</p>
+
+<h2>4. Poll for changes</h2>
+<pre style="background:#0d1530;border:1px solid #2f3b55;border-radius:14px;padding:16px 18px;overflow-x:auto;font-size:13px;line-height:1.55;color:#c7d2ea"><code>curl -s 'https://api.rosterproof.com/v1/changes?since=2026-10-01&amp;limit=1000' -H 'Authorization: Bearer rp_live_…'
+# -> {"count":1000,"next_cursor":123456,"changes":[{"change_type":"ADDED","observed_at":"…","record":{…}}, …]}
+# page with &amp;cursor=&lt;next_cursor&gt; until next_cursor is null</code></pre>
+
+<h2>Limits, status, terms</h2>
+<p><code>GET /v1/status</code> (no key) returns the snapshot date and counts. Rate-limit headers
+(<code>X-RateLimit-Used</code> / <code>-Limit</code>, per day) come back on every authenticated call; the
+free plan is 2,000 lookups a day and 500 queries per request — email <a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
+for more. Every response carries the notice: <em>verify any hit against the source agency (and OIG's
+SSN-based search for LEIE) before adverse action</em>, and the <a href="/attribution.html">attribution</a> pointer; NC and TX
+records are included under non-commercial permissions (see the <a href="/download.html">use label</a>). RosterProof is the
+exclusion and owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a fraud detector.</p>
+<p>Prefer a spreadsheet? <a href="/screen.html">Screen my roster</a> runs this API from your browser.</p>
+</main>
+<footer class="siteftr">
+<nav class="flinks" aria-label="Footer">
+<a href="/attribution.html">Attribution &amp; Notices</a>
+<a href="/dictionary.html">Data Dictionary</a>
+<a href="/federal-gap.html">The Federal Gap</a>
+<a href="/insights.html">Insights</a>
+<a href="/life-sciences.html">Life sciences</a>
+<a href="/download.html">Download</a>
+<a href="/terms.html">Terms of Use</a>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
+</nav>
+<p class="fpos">RosterProof is the exclusion and owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a fraud detector.</p>
+<div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
+</footer>
+</div>
+<script>
+(function(){
+  document.getElementById('keyform').addEventListener('submit',function(e){
+    e.preventDefault(); var out=document.getElementById('keyout'); out.textContent='Creating…';
+    fetch('https://api.rosterproof.com/v1/keys',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('kemail').value,org:document.getElementById('korg').value})})
+    .then(function(r){return r.json();}).then(function(d){ if(d.api_key){ try{localStorage.setItem('rp_api_key',d.api_key);}catch(_){ } out.innerHTML='Your key (shown once — copy it): <code>'+d.api_key+'</code> · free plan, '+d.daily_lookups.toLocaleString()+' lookups/day. Saved in this browser for <a href="/screen.html" style="color:#7fd4c8">Screen my roster</a>.'; } else out.textContent=d.error||'Something went wrong.'; })
+    .catch(function(){ out.textContent='The API is not reachable right now.'; });
+  });
+})();
+</script>
+</body>
+</html>
