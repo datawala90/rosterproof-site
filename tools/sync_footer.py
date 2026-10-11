@@ -35,7 +35,7 @@ FOOTER_HTML = """<footer class="siteftr">
 <a href="/life-sciences.html">Life sciences</a>
 <a href="/download.html">Download</a>
 <a href="/api.html">API</a>
-<a href="/screen.html">Screen my roster</a>
+<a href="/screen.html">Screen my providers</a>
 <a href="/terms.html">Terms of Use</a>
 <a href="/privacy.html">Privacy Policy</a>
 <a href="mailto:support@rosterproof.com">support@rosterproof.com</a>

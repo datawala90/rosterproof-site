@@ -75,7 +75,7 @@ a{color:#7fd4c8}
 </head>
 <body>
 <div class="wrap">
-<header class="sitehdr"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><nav><a href="/">Home</a><a href="/screen.html">Screen my roster</a><a href="/api.html">API</a><a href="/#get-the-data">Get the data</a><a href="/federal-gap.html">The Federal Gap</a><a href="/dictionary.html">Dictionary</a></nav></header>
+<header class="sitehdr"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><nav><a href="/">Home</a><a href="/screen.html">Screen my providers</a><a href="/api.html">API</a><a href="/#get-the-data">Get the data</a><a href="/federal-gap.html">The Federal Gap</a><a href="/dictionary.html">Dictionary</a></nav></header>
 <main>
 <h1>Exclusion screening API</h1>
 <div class="tag">api.rosterproof.com · one key, three endpoints · weekly snapshot of every list</div>
@@ -141,7 +141,7 @@ for more. Every response carries the notice: <em>verify any hit against the sour
 SSN-based search for LEIE) before adverse action</em>, and the <a href="/attribution.html">attribution</a> pointer; NC and TX
 records are included under non-commercial permissions (see the <a href="/download.html">use label</a>). RosterProof is the
 exclusion and owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a fraud detector.</p>
-<p>Prefer a spreadsheet? <a href="/screen.html">Screen my roster</a> runs this API from your browser.</p>
+<p>Prefer a spreadsheet? <a href="/screen.html">Screen my providers</a> runs this API from your browser.</p>
 </main>
 <footer class="siteftr">
 <nav class="flinks" aria-label="Footer">
@@ -153,7 +153,7 @@ exclusion and owner-screening layer that feeds compliance, payment-integrity, an
 <a href="/life-sciences.html">Life sciences</a>
 <a href="/download.html">Download</a>
 <a href="/api.html">API</a>
-<a href="/screen.html">Screen my roster</a>
+<a href="/screen.html">Screen my providers</a>
 <a href="/terms.html">Terms of Use</a>
 <a href="/privacy.html">Privacy Policy</a>
 <a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
@@ -167,7 +167,7 @@ exclusion and owner-screening layer that feeds compliance, payment-integrity, an
   document.getElementById('keyform').addEventListener('submit',function(e){
     e.preventDefault(); var out=document.getElementById('keyout'); out.textContent='Creating…';
     fetch('https://api.rosterproof.com/v1/keys',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('kemail').value,org:document.getElementById('korg').value})})
-    .then(function(r){return r.json();}).then(function(d){ if(d.api_key){ try{localStorage.setItem('rp_api_key',d.api_key);}catch(_){ } out.innerHTML='Your key (shown once — copy it): <code>'+d.api_key+'</code> · free plan, '+d.daily_lookups.toLocaleString()+' lookups/day. Saved in this browser for <a href="/screen.html" style="color:#7fd4c8">Screen my roster</a>.'; } else out.textContent=d.error||'Something went wrong.'; })
+    .then(function(r){return r.json();}).then(function(d){ if(d.api_key){ try{localStorage.setItem('rp_api_key',d.api_key);}catch(_){ } out.innerHTML='Your key (shown once — copy it): <code>'+d.api_key+'</code> · free plan, '+d.daily_lookups.toLocaleString()+' lookups/day. Saved in this browser for <a href="/screen.html" style="color:#7fd4c8">Screen my providers</a>.'; } else out.textContent=d.error||'Something went wrong.'; })
     .catch(function(){ out.textContent='The API is not reachable right now.'; });
   });
 })();

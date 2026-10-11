@@ -153,7 +153,7 @@ That is the historical-claims validation story: point-in-time truth for any date
 <tr><td>ACTIVE_RECORD_COUNT</td><td>NUMBER</td><td>Rows currently in <code>EXCLUSION_CURRENT</code> for this source.</td></tr>
 </table></div>
 
-<h2>EXCLUSIONS_SCREENABLE <small>— the "join your roster against this" view (ALL records, active and ended)</small></h2>
+<h2>EXCLUSIONS_SCREENABLE <small>— the "join your provider list against this" view (ALL records, active and ended)</small></h2>
 <p>Contains every exclusion record we have ever observed — currently-active ones <strong>and</strong>
 ended ones (reinstated or no-longer-published) — so historical claim dates can be validated
 against past exclusion windows. Filter <code>IS_ACTIVE = TRUE</code> for present-day screening.</p>
@@ -214,7 +214,7 @@ cannot be overlapped, so these counts are a floor, not a census.</p>
 
 <h2>Which object answers which question</h2>
 <ul>
-<li><strong><code>EXCLUSIONS_SCREENABLE</code> = final answers for screening.</strong> One row per exclusion record with the best available NPI, confidence labels, and review flags. This is what you join rosters/claims against.</li>
+<li><strong><code>EXCLUSIONS_SCREENABLE</code> = final answers for screening.</strong> One row per exclusion record with the best available NPI, confidence labels, and review flags. This is what you join provider lists and claims against.</li>
 <li><strong><code>CHANGE_FEED</code> = what changed since my last poll.</strong></li>
 <li><strong><code>EXCLUSION_HISTORY</code> = full audit trail</strong> of every version of every record.</li>
 <li><strong><code>FEED_INFO</code> = is the feed fresh</strong> and which NPPES snapshot backs the matches.</li>
@@ -231,7 +231,7 @@ cannot be overlapped, so these counts are a floor, not a census.</p>
 <a href="/life-sciences.html">Life sciences</a>
 <a href="/download.html">Download</a>
 <a href="/api.html">API</a>
-<a href="/screen.html">Screen my roster</a>
+<a href="/screen.html">Screen my providers</a>
 <a href="/terms.html">Terms of Use</a>
 <a href="/privacy.html">Privacy Policy</a>
 <a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
