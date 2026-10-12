@@ -81,14 +81,14 @@ a{color:#7fd4c8}
 <div class="tag">api.rosterproof.com · one key, three endpoints · weekly snapshot of every list</div>
 <p>Screen an NPI, a person or an organization against the OIG LEIE, SAM.gov, the FDA debarment and
 investigator-disqualification lists and 38 state Medicaid exclusion lists in one call. Same published
-data as the Snowflake listing and the download files, loaded weekly. Free plan: 2,000 lookups a day,
-500 queries per request. Machine-readable spec: <a href="https://api.rosterproof.com/openapi.json">openapi.json</a>.</p>
+data as the Snowflake listing and the download files, loaded weekly. Free plan: 500 lookups per calendar month,
+100 queries per request. Machine-readable spec: <a href="https://api.rosterproof.com/openapi.json">openapi.json</a>.</p>
 
 <h2>1. Get a key</h2>
 <pre style="background:#0d1530;border:1px solid #2f3b55;border-radius:14px;padding:16px 18px;overflow-x:auto;font-size:13px;line-height:1.55;color:#c7d2ea"><code>curl -s https://api.rosterproof.com/v1/keys \
   -H 'Content-Type: application/json' \
   -d '{"email":"you@organization.com","org":"Example Health"}'
-# -> {"api_key":"rp_live_…","plan":"free","daily_lookups":2000}   (shown once)</code></pre>
+# -> {"api_key":"rp_live_…","plan":"free","monthly_lookups":500,"max_queries_per_request":100}   (shown once)</code></pre>
 <div class="card" id="keycard"><p><strong>Or get one here.</strong></p>
 <form id="keyform" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px">
 <input type="email" id="kemail" required placeholder="you@organization.com" style="flex:1;min-width:220px;background:#0d1530;border:1px solid #2f3b55;border-radius:10px;padding:12px 14px;color:#eaf1fb;font-size:15px">
@@ -136,9 +136,10 @@ before acting. Organization queries match the normalized business name.</p>
 
 <h2>Limits, status, terms</h2>
 <p><code>GET /v1/status</code> (no key) returns the snapshot date and counts. Rate-limit headers
-(<code>X-RateLimit-Used</code> / <code>-Limit</code>, per day) come back on every authenticated call; the
-free plan is 2,000 lookups a day and 500 queries per request — email <a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
-for more. Every response carries the notice: <em>verify any hit against the source agency (and OIG's
+(<code>X-RateLimit-Limit</code> / <code>-Remaining</code> / <code>-Reset</code>, per calendar month, UTC) come back on every authenticated call; the
+free plan is 500 lookups per calendar month and 100 queries per request — over the month's limit returns <code>429</code> with
+<code>resets_at</code>, and a larger request returns <code>400</code>. Email <a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
+for a higher limit. Every response carries the notice: <em>verify any hit against the source agency (and OIG's
 SSN-based search for LEIE) before adverse action</em>, and the <a href="/attribution.html">attribution</a> pointer; NC and TX
 records are included under non-commercial permissions (see the <a href="/download.html">use label</a>). RosterProof is the
 exclusion and owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a fraud detector.</p>
@@ -168,7 +169,7 @@ exclusion and owner-screening layer that feeds compliance, payment-integrity, an
   document.getElementById('keyform').addEventListener('submit',function(e){
     e.preventDefault(); var out=document.getElementById('keyout'); out.textContent='Creating…';
     fetch('https://api.rosterproof.com/v1/keys',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('kemail').value,org:document.getElementById('korg').value})})
-    .then(function(r){return r.json();}).then(function(d){ if(d.api_key){ try{localStorage.setItem('rp_api_key',d.api_key);}catch(_){ } out.innerHTML='Your key (shown once — copy it): <code>'+d.api_key+'</code> · free plan, '+d.daily_lookups.toLocaleString()+' lookups/day. Saved in this browser for <a href="/screen.html" style="color:#7fd4c8">Screen my providers</a>.'; } else out.textContent=d.error||'Something went wrong.'; })
+    .then(function(r){return r.json();}).then(function(d){ if(d.api_key){ try{localStorage.setItem('rp_api_key',d.api_key);}catch(_){ } out.innerHTML='Your key (shown once — copy it): <code>'+d.api_key+'</code> · free plan, '+d.monthly_lookups.toLocaleString()+' lookups per month, '+d.max_queries_per_request+' queries per request. Saved in this browser for <a href="/screen.html" style="color:#7fd4c8">Screen my providers</a>.'; } else out.textContent=d.error||'Something went wrong.'; })
     .catch(function(){ out.textContent='The API is not reachable right now.'; });
   });
 })();
