@@ -53,7 +53,7 @@ a{color:#7fd4c8}
 <main>
 <h1>Terms of Use</h1>
 <div class="tag">rosterproof · exclusions data feed</div>
-<p class="muted">Shoonya · Effective: July 15, 2026</p>
+<p class="muted">Shoonya · Effective: October 11, 2026</p>
 
 <p>These terms govern use of the RosterProof dataset and website, provided by Shoonya
 ("we," "us"). By accessing the data — on the Snowflake Marketplace or otherwise — you
@@ -80,7 +80,9 @@ payment, or other decision made using the data. Before taking any adverse action
 person or organization based on a match in this dataset, you must
 <strong>independently verify the record with the source agency</strong> (for the federal
 LEIE, OIG's SSN-based Online Search is the definitive check). Records flagged
-<code>NEEDS_HUMAN_REVIEW</code> require human verification by design.</p>
+<code>NEEDS_HUMAN_REVIEW</code> require human verification by design. Nothing on this site or in the dataset is legal advice, and
+using the data does not by itself satisfy any screening obligation you have under federal or state law
+(for example, 42 CFR 455.436 monthly screening) — those obligations remain yours.</p>
 
 <h2>4. Not a consumer reporting agency (FCRA)</h2>
 <div class="card"><p>Shoonya is <strong>not a consumer reporting agency</strong> as defined
@@ -91,11 +93,28 @@ insurance, housing, or any other purpose that would require FCRA compliance. Pro
 exclusion screening of providers and entities is not a consumer-report use; if your use
 case involves consumer-report purposes, do not use this data.</p></div>
 
-<h2>5. Lawful use only</h2>
+<h2>5. Lawful use, and the source agencies' own restrictions</h2>
 <p>You may not use the dataset or this website for any unlawful purpose, including
 harassment, discrimination, or any use that violates applicable law or the source
-agencies' stated notices (for example, New York's intended-use notice shipped with NY
-records).</p>
+agencies' stated notices. The dataset is <strong>labeled for compliance-screening use</strong>.
+Some source agencies attach conditions that travel with their records, and by using the data you
+agree to honor them:</p>
+<ul>
+<li><strong>North Carolina and Texas</strong> records are included under those states' <strong>non-commercial</strong>
+permissions. Do not resell, sublicense, or repackage NC or TX records commercially, and do not alter them,
+without the agency's written permission.</li>
+<li><strong>New York</strong> OMIG records carry an intended-use notice: they exist to prevent Medicaid payments to
+excluded persons, and use for other purposes is outside their intended scope.</li>
+<li><strong>Washington</strong> HCA records carry the caveat that not every listed action involves a finding of wrongdoing.</li>
+<li><strong>California</strong> DHCS records are provided under a revocable state license that requires attribution,
+citation of the source and publication date, and clear labeling of the data as modified.</li>
+<li><strong>Michigan</strong> records are public records obtained under the Michigan Freedom of Information Act and are
+not to be resold.</li>
+</ul>
+<p>If you redistribute any part of the dataset, you must carry these notices and the per-source attribution at
+<a href="/attribution.html">rosterproof.com/attribution</a> with it, must not present it as official government
+data, and must not remove the verify-before-adverse-action notice. You may not use automated means to
+bulk-extract this website or the API beyond the documented endpoints and limits.</p>
 
 <h2>6. Limitation of liability</h2>
 <p>To the maximum extent permitted by law, Shoonya and its affiliates will not be liable
