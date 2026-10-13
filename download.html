@@ -131,6 +131,15 @@ action. Source agencies disclaim the accuracy of their lists; records pass throu
 
 <p class="caveat">How the data is collected, matched and quality-checked: <a href="/methodology.pdf">RosterProof Methodology (PDF, 2 pages)</a>.</p>
 
+<div id="optout" style="margin-top:28px">
+<h2>Related datasets</h2>
+<div class="card">
+<h3 style="margin:0 0 8px">Medicare Opt-Out Affidavits</h3>
+<p style="margin:0 0 10px">Providers who have opted out of Medicare. <strong>Not an exclusion or sanction.</strong> Separate dataset, same column shape as the exclusion views, refreshed monthly from CMS. It is never counted in the 43 exclusion sources and never mixed into exclusion results.</p>
+<p class="muted-line" style="margin:0">Available in the <a href="https://app.snowflake.com/marketplace/listing/GZSXZ2K49BC/" target="_blank" rel="noopener">Snowflake listing</a> (OPTOUT_CURRENT) and in the file menu above as <code>optout_current.csv</code> / <code>optout_current.parquet</code> (same email-capture flow; line 1 of the CSV says it is not an exclusion).</p>
+</div>
+</div>
+
 <h2>Prefer tables to files?</h2>
 <p>The same data is live on the <a href="https://app.snowflake.com/marketplace/listing/GZSXZ2K49BC/" target="_blank" rel="noopener">Snowflake Marketplace</a>, free, refreshed weekly, with change tracking for streams. Developers can use the <a href="/api.html">HTTP API</a>.</p>
 </main>
