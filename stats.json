@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-10-12T18:53:43Z",
- "last_refresh_utc": "2026-10-12 18:52:35",
+ "generated_at_utc": "2026-10-13T01:55:28Z",
+ "last_refresh_utc": "2026-10-13 01:54:56",
  "refresh_cadence": "weekly",
  "records_total": 344653,
  "sources_total": 43,
@@ -267,7 +267,7 @@
   },
   {
    "state": "PA",
-   "active_records": 4900,
+   "active_records": 4898,
    "gap_pct": 20.8,
    "source_format": "CSV"
   },
