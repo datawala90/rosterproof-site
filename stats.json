@@ -1,8 +1,8 @@
 {
- "generated_at_utc": "2026-10-18T20:08:29Z",
- "last_refresh_utc": "2026-10-16 16:53:23",
+ "generated_at_utc": "2026-10-19T16:27:31Z",
+ "last_refresh_utc": "2026-10-19 16:26:17",
  "refresh_cadence": "weekly",
- "records_total": 346459,
+ "records_total": 346522,
  "sources_total": 44,
  "states": 39,
  "includes_dc": true,
@@ -17,23 +17,23 @@
  },
  "email_delivered_sources": 1,
  "npi_resolved": {
-  "count": 58548,
+  "count": 58547,
   "rate_pct": 16.8
  },
  "multi_jurisdiction_npis": 7747,
- "federal_gap_overall_pct": 54.1,
+ "federal_gap_overall_pct": 54.2,
  "tiers": [
   {
    "tier": "T1",
    "label": "Source-published NPI, NPPES-verified",
    "description": "the excluding agency printed an NPI and the CMS NPPES registry confirms the identity",
-   "count": 32659
+   "count": 32654
   },
   {
    "tier": "T2",
    "label": "Unique identity match (name+state)",
    "description": "exactly one provider in the national registry shares the normalized name and state",
-   "count": 23534
+   "count": 23533
   },
   {
    "tier": "T2a",
@@ -57,8 +57,8 @@
  "state_gaps": [
   {
    "state": "AZ",
-   "active_records": 772,
-   "gap_pct": 98.8,
+   "active_records": 783,
+   "gap_pct": 98.7,
    "source_format": "XLSX"
   },
   {
@@ -98,15 +98,15 @@
    "source_format": "XLSX"
   },
   {
-   "state": "KY",
-   "active_records": 401,
+   "state": "MO",
+   "active_records": 266,
    "gap_pct": 77.1,
    "source_format": "XLSX"
   },
   {
-   "state": "MO",
-   "active_records": 266,
-   "gap_pct": 77.1,
+   "state": "KY",
+   "active_records": 400,
+   "gap_pct": 77.0,
    "source_format": "XLSX"
   },
   {
@@ -123,14 +123,14 @@
   },
   {
    "state": "AR",
-   "active_records": 2009,
-   "gap_pct": 73.4,
+   "active_records": 2013,
+   "gap_pct": 73.5,
    "source_format": "CSV"
   },
   {
    "state": "CO",
-   "active_records": 318,
-   "gap_pct": 73.3,
+   "active_records": 319,
+   "gap_pct": 73.0,
    "source_format": "XLSX"
   },
   {
@@ -141,7 +141,7 @@
   },
   {
    "state": "IL",
-   "active_records": 3239,
+   "active_records": 3245,
    "gap_pct": 67.4,
    "source_format": "JSON"
   },
@@ -213,19 +213,19 @@
   },
   {
    "state": "NY",
-   "active_records": 9088,
-   "gap_pct": 50.0,
+   "active_records": 9113,
+   "gap_pct": 50.1,
    "source_format": "TSV"
   },
   {
    "state": "LA",
-   "active_records": 5587,
+   "active_records": 5589,
    "gap_pct": 49.4,
    "source_format": "CSV"
   },
   {
    "state": "TX",
-   "active_records": 11953,
+   "active_records": 11954,
    "gap_pct": 48.8,
    "source_format": "XLS"
   },
@@ -249,8 +249,8 @@
   },
   {
    "state": "OH",
-   "active_records": 2099,
-   "gap_pct": 34.0,
+   "active_records": 2115,
+   "gap_pct": 34.3,
    "source_format": "XLSX"
   },
   {
@@ -273,7 +273,7 @@
   },
   {
    "state": "PA",
-   "active_records": 4897,
+   "active_records": 4899,
    "gap_pct": 20.8,
    "source_format": "CSV"
   },
@@ -300,7 +300,7 @@
   {
    "source_id": "SAM",
    "name": "SAM.gov Exclusions Public Extract",
-   "active_records": 169006
+   "active_records": 169009
   },
   {
    "source_id": "LEIE",
@@ -320,10 +320,10 @@
  ],
  "watchlist": {
   "definition": "NPPES-verified providers with an active exclusion from one or more states whose current NPPES practice state has not excluded them",
-  "any_state": 2319,
-  "invisible_to_federal": 1613,
+  "any_state": 2316,
+  "invisible_to_federal": 1610,
   "two_plus_states": 250,
-  "individuals": 2095,
+  "individuals": 2092,
   "organizations": 224,
   "top_practice_states": [
    {
@@ -332,7 +332,7 @@
    },
    {
     "state": "PA",
-    "count": 116
+    "count": 115
    },
    {
     "state": "TX",
