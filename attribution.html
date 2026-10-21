@@ -69,6 +69,7 @@ timestamps ship inside the dataset itself (<code>SOURCE_REGISTRY</code>, <code>F
 <div class="tablewrap">
 <table>
 <tr><th>Source</th><th>Publishing agency</th><th>Attribution / notice obligations</th></tr>
+<tr><td>ID</td><td>Idaho Department of Health and Welfare, Medicaid Program Integrity Unit</td><td>Agency scope note — see below. Idaho-issued exclusions only; the Department directs users to check the HHS-OIG list as well.</td></tr>
 <tr><td>LEIE</td><td>U.S. HHS Office of Inspector General</td><td>Public domain. Definitive individual verification requires OIG's SSN-based Online Search — this file alone is not conclusive.</td></tr>
 <tr><td>SAM</td><td>U.S. General Services Administration (SAM.gov)</td><td>Public domain. Full public exclusions extract, all excluding agencies (filter via <code>EXCLUSION_AUTHORITY</code>).</td></tr>
 <tr><td>FDA_DEBAR</td><td>U.S. Food and Drug Administration — Debarment List (21 U.S.C. 335a)</td><td>Public domain. Active drug-application, drug-import and food-import debarments; term text as published (footnote marks included); <code>EXCLUSION_AUTHORITY = 'FDA / Debarment'</code>.</td></tr>
@@ -89,6 +90,7 @@ timestamps ship inside the dataset itself (<code>SOURCE_REGISTRY</code>, <code>F
 <tr><td>TX</td><td>Texas HHSC-OIG</td><td>HHSC identified as source with web address and copy date (in <code>SOURCE_REGISTRY</code>/<code>FEED_INFO</code>); no-endorsement statement (above); modification labeling (above).</td></tr>
 <tr><td>VT</td><td>Vermont Department of Vermont Health Access (DVHA), Agency of Human Services</td><td>Required disclaimer — see below. List of providers terminated "for cause" by DVHA/AHS; may not include actions by other agencies.</td></tr>
 <tr><td>WA</td><td>Washington Health Care Authority</td><td>Required caveat — see below.</td></tr>
+<tr><td>WV</td><td>West Virginia Department of Human Services, Bureau for Medical Services (BMS)</td><td>Attribution; passed through as published (monthly PDF on the WV MMIS provider portal).</td></tr>
 </table>
 </div>
 
@@ -101,6 +103,8 @@ intended use."</p></div>
 
 <h2>Required disclaimer — Vermont DVHA records</h2>
 <p>"This list should not be considered comprehensive of all providers excluded from participation in the Vermont Medicaid program; action by other federal or state entities may also result in exclusion. The providers identified herein are those that have been excluded by the Vermont Department of Health Access and the Agency of Human Services. This list may or may not include providers excluded due to action taken by other federal or state entities. This list contains the names of providers whose participation with Vermont Medicaid was terminated 'for cause', which may include conduct deemed as potentially detrimental to the Vermont Medicaid program."</p>
+<h2>Agency scope note — Idaho DHW records</h2>
+<p>Idaho's list "includes only exclusions issued by the Idaho Department of Health and Welfare. It does not include federal exclusions or exclusions from other states." The Department states the list "is not updated on a regular schedule" and that "If no reinstatement date is listed, the provider is still excluded." RosterProof carries the published Eligible-for-Reinstatement date as information only; an exclusion ends only when Idaho publishes a Date Reinstated.</p>
 <h2>Required caveat — Washington HCA records</h2>
 <div class="card notice"><p>"Not every action taken by the Department of Social and Health
 Services (DSHS) or the Health Care Authority (HCA) involves a finding of wrongdoing."

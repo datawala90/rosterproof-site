@@ -1,15 +1,15 @@
 {
- "generated_at_utc": "2026-10-20T21:38:24Z",
- "last_refresh_utc": "2026-10-20 21:34:35",
+ "generated_at_utc": "2026-10-21T20:43:34Z",
+ "last_refresh_utc": "2026-10-21 20:36:09",
  "refresh_cadence": "weekly",
- "records_total": 346591,
- "sources_total": 45,
- "states": 40,
+ "records_total": 346921,
+ "sources_total": 47,
+ "states": 42,
  "includes_dc": true,
  "source_formats": {
   "XLSX": 23,
+  "PDF": 8,
   "CSV": 8,
-  "PDF": 6,
   "HTML_TABLE": 4,
   "JSON": 3,
   "XLS": 1,
@@ -17,23 +17,23 @@
  },
  "email_delivered_sources": 1,
  "npi_resolved": {
-  "count": 58624,
-  "rate_pct": 16.8
+  "count": 58779,
+  "rate_pct": 16.9
  },
- "multi_jurisdiction_npis": 7770,
- "federal_gap_overall_pct": 54.2,
+ "multi_jurisdiction_npis": 7817,
+ "federal_gap_overall_pct": 54.1,
  "tiers": [
   {
    "tier": "T1",
    "label": "Source-published NPI, NPPES-verified",
    "description": "the excluding agency printed an NPI and the CMS NPPES registry confirms the identity",
-   "count": 32730
+   "count": 32884
   },
   {
    "tier": "T2",
    "label": "Unique identity match (name+state)",
    "description": "exactly one provider in the national registry shares the normalized name and state",
-   "count": 23539
+   "count": 23540
   },
   {
    "tier": "T2a",
@@ -212,6 +212,12 @@
    "source_format": "XLSX"
   },
   {
+   "state": "WV",
+   "active_records": 166,
+   "gap_pct": 53.6,
+   "source_format": "PDF"
+  },
+  {
    "state": "ND",
    "active_records": 192,
    "gap_pct": 52.6,
@@ -266,6 +272,12 @@
    "source_format": "XLSX"
   },
   {
+   "state": "ID",
+   "active_records": 156,
+   "gap_pct": 30.1,
+   "source_format": "PDF"
+  },
+  {
    "state": "CT",
    "active_records": 80,
    "gap_pct": 27.5,
@@ -306,7 +318,7 @@
   {
    "source_id": "SAM",
    "name": "SAM.gov Exclusions Public Extract",
-   "active_records": 169008
+   "active_records": 169002
   },
   {
    "source_id": "LEIE",
@@ -326,11 +338,11 @@
  ],
  "watchlist": {
   "definition": "NPPES-verified providers with an active exclusion from one or more states whose current NPPES practice state has not excluded them",
-  "any_state": 2322,
-  "invisible_to_federal": 1614,
-  "two_plus_states": 253,
-  "individuals": 2094,
-  "organizations": 228,
+  "any_state": 2320,
+  "invisible_to_federal": 1619,
+  "two_plus_states": 254,
+  "individuals": 2091,
+  "organizations": 229,
   "top_practice_states": [
    {
     "state": "FL",
@@ -350,7 +362,7 @@
    },
    {
     "state": "AZ",
-    "count": 99
+    "count": 100
    },
    {
     "state": "NY",
@@ -358,7 +370,7 @@
    },
    {
     "state": "OH",
-    "count": 84
+    "count": 87
    },
    {
     "state": "CA",
