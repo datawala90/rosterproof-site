@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LEIE vs SAM.gov — What Each Exclusion List Covers and Why You Need Both</title>
+<link rel="canonical" href="https://rosterproof.com/leie-vs-sam.html">
+<meta name="description" content="The OIG LEIE and SAM.gov exclusions compared: who publishes each, what an entry means, how they overlap, how often they change, and why state lists still matter.">
+<meta property="og:title" content="LEIE vs SAM.gov: the two federal exclusion lists, compared">
+<meta property="og:description" content="Who publishes each, what an entry means, how much they overlap, and what neither one covers.">
+<meta property="og:image" content="https://rosterproof.com/assets/og-image.png">
+<meta property="og:url" content="https://rosterproof.com/leie-vs-sam.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rosterproof.com/assets/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<style>
+body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#0a1128;color:#eef2fb;margin:0}
+.wrap{max-width:960px;margin:0 auto;padding:56px 24px}
+h1{font-size:28px;font-weight:600;margin:0 0 6px;line-height:1.25}
+h2{font-size:20px;margin:44px 0 6px;color:#7fd4c8}
+p{color:#c7d2ea;line-height:1.7}
+.tag{color:#8fa3c7;font-size:13px;letter-spacing:2px;margin-bottom:28px;text-transform:uppercase}
+.card{background:#111a36;border:1px solid #2f3b55;border-left:3px solid #7fd4c8;border-radius:14px;padding:18px 24px;margin:18px 0}
+.card p{margin:0}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0}
+th,td{border:1px solid #2f3b55;padding:9px 12px;text-align:left;vertical-align:top;line-height:1.55}
+th{background:#111a36;color:#8fa3c7;font-weight:600}
+td:first-child{white-space:nowrap}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;color:#7fd4c8}
+a{color:#7fd4c8}
+ul,ol{color:#c7d2ea;line-height:1.7}
+.sitehdr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 36px}
+.sitehdr .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.sitehdr .brand img{display:block;border-radius:6px}
+.sitehdr .brand span{color:#eef2fb;letter-spacing:3px;font-weight:600;font-size:14px}
+.sitehdr nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
+.sitehdr nav a{color:#8fa3c7;font-size:13px;text-decoration:none}
+.sitehdr nav a:hover{color:#7fd4c8}
+.cta{display:inline-block;background:#7fd4c8;color:#0a1128;font-weight:700;font-size:15px;padding:12px 22px;border-radius:12px;text-decoration:none;margin:6px 10px 6px 0}
+.cta:hover{background:#a5e6dc}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:24px 0 8px}
+.stat{background:#111a36;border:1px solid #2f3b55;border-radius:14px;padding:22px 14px}
+.stat .big{font-size:26px;font-weight:600;color:#7fd4c8;margin-bottom:6px;font-variant-numeric:tabular-nums}
+.stat .small{color:#8fa3c7;font-size:13px;line-height:1.5}
+.notice{background:#0d1530;border:1px solid #2f3b55;border-radius:10px;padding:12px 16px;color:#8fa3c7;font-size:13.5px;line-height:1.6;margin-top:28px}
+/* shared footer (canonical in tools/sync_footer.py — do not hand-edit per page) */
+.siteftr{margin-top:72px;padding:56px 12px 10px;border-top:1px solid #232e4a;text-align:center;color:#5b6b85;font-size:13px}
+.siteftr .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0 0 34px}
+.siteftr .flinks a{color:#7fd4c8;text-decoration:none;font-size:13.5px;letter-spacing:.5px}
+.siteftr .flinks a:hover{color:#a5e6dc;text-decoration:underline;text-underline-offset:4px}
+.siteftr .fpos{color:#8fa3c7;font-size:13px;line-height:1.6;text-align:center;max-width:620px;margin:0 auto 22px}
+.siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
+.siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is the difference between the LEIE and SAM.gov?",
+     "acceptedAnswer": {"@type": "Answer", "text": "The LEIE is published by the HHS Office of Inspector General and lists individuals and entities excluded from federal health care programs under the Social Security Act. SAM.gov is the government-wide exclusion system run by GSA: it collects exclusions from every federal agency, covering procurement and non-procurement programs, and includes OIG's exclusions among many others."}},
+    {"@type": "Question", "name": "Is every LEIE exclusion also in SAM.gov?",
+     "acceptedAnswer": {"@type": "Answer", "text": "OIG reports its exclusions to SAM.gov, so LEIE entries generally appear there as well, but the two are maintained separately, update on different schedules and carry different identifying fields. Compliance guidance and 42 CFR 455.436 treat them as two checks, not one."}},
+    {"@type": "Question", "name": "If I check both federal lists, do I still need the state lists?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Yes. States exclude and terminate providers on their own authority, and about half of active state Medicaid exclusions never appear on the LEIE. A federal-only check misses them."}}
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<header class="sitehdr"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><nav><a href="/">Home</a><a href="/states/">States</a><a href="/screen.html">Screen my providers</a><a href="/api.html">API</a><a href="/federal-gap.html">The Federal Gap</a><a href="/how-to-check-provider-exclusion.html">How to check</a></nav></header>
+<main>
+<h1>LEIE vs SAM.gov: the two federal exclusion lists, compared</h1>
+<div class="tag">who publishes each · what an entry means · what neither covers</div>
+
+<p>Every exclusion-screening rule in health care names two federal databases: the OIG's List of Excluded Individuals and Entities
+(LEIE) and the System for Award Management (SAM.gov). They are often spoken of as one check. They are not: different agencies,
+different legal bases, different scope, different fields, different schedules. Here is what each one is, how they overlap, and
+what falls between them.</p>
+
+<div class="stats">
+<div class="stat"><div class="big" id="st-leie">84K+</div><div class="small">active LEIE records</div></div>
+<div class="stat"><div class="big" id="st-sam">169K+</div><div class="small">active SAM.gov exclusion records</div></div>
+<div class="stat"><div class="big" id="st-gap">54%</div><div class="small">of active state exclusions not on the LEIE</div></div>
+</div>
+<p style="color:#8fa3c7;font-size:13px">Live from the published RosterProof dataset, refreshed weekly<span id="asof"></span>.</p>
+
+<h2>Side by side</h2>
+<div class="tablewrap"><table>
+<tr><th></th><th>OIG LEIE</th><th>SAM.gov exclusions</th></tr>
+<tr><td>Publisher</td><td>HHS Office of Inspector General</td><td>General Services Administration, on behalf of every federal agency</td></tr>
+<tr><td>Legal basis</td><td>Exclusion authorities in the Social Security Act (§1128 and §1156): mandatory exclusions for program-related crimes, patient abuse and felony convictions; permissive exclusions for license revocations, defaults and other grounds</td><td>Government-wide debarment and suspension under the procurement and non-procurement rules (FAR subpart 9.4, 2 CFR 180) plus statutory exclusions reported by agencies, including OIG's</td></tr>
+<tr><td>Who appears</td><td>Individuals and entities barred from payment by Medicare, Medicaid and all other federal health care programs</td><td>Anyone any federal agency has excluded from federal contracts, grants or benefits: contractors, individuals, health care providers and others</td></tr>
+<tr><td>Effect of an entry</td><td>No federal health care program payment for items or services furnished, ordered or prescribed by the excluded party; employer liable for civil monetary penalties</td><td>Ineligible for federal awards and, for OIG-reported entries, the same health program consequences; the SAM record names the excluding agency and the exclusion type</td></tr>
+<tr><td>Identifiers published</td><td>Name, general (business) name, specialty, address, exclusion type (statute), exclusion date, reinstatement date, NPI where known, DOB and SSN/EIN for verification only</td><td>Name, classification (individual / firm / etc.), exclusion type and program, excluding agency, activation and termination dates, addresses, DUNS/UEI and CAGE for entities</td></tr>
+<tr><td>Updates</td><td>Monthly database file plus a monthly supplement of additions and reinstatements</td><td>Continuous; a public extract is published daily</td></tr>
+<tr><td>Confirming a match</td><td>OIG Online Search accepts SSN or EIN to verify a name match definitively</td><td>The SAM record itself; for entities, the UEI</td></tr>
+</table></div>
+
+<h2>How they overlap</h2>
+<p>OIG reports its exclusions to SAM.gov, so an LEIE entry usually has a SAM counterpart naming "HHS-OIG" as the excluding
+agency. The reverse is far from true: SAM holds roughly twice as many active exclusion records as the LEIE, most of them from
+agencies that have nothing to do with health care. Checking SAM alone therefore finds more people but with far more noise
+for a provider roster; checking the LEIE alone misses exclusions that other agencies imposed. The two files also update on
+different cycles and publish different identifiers, which is why 42 CFR 455.436 asks state Medicaid programs to check both
+every month rather than either one.</p>
+
+<div class="card"><p><strong>In RosterProof</strong> the two are loaded as separate sources (<code>SOURCE_ID = 'LEIE'</code> and <code>'SAM'</code>) with
+<code>EXCLUSION_AUTHORITY</code> carrying the excluding agency on SAM records, so a screen can treat them as two checks while running them as one.</p></div>
+
+<h2>What neither one covers</h2>
+<p>State Medicaid agencies exclude and terminate providers on their own authority: license actions, program-integrity findings,
+Medicaid fraud-unit referrals, terminations for cause. Those actions are supposed to flow to OIG, and many do, but across every
+state list RosterProof loads about half of the active records have no LEIE counterpart, and in some states more than 90%
+(<a href="/federal-gap.html">the federal gap, measured per state</a>). Under ACA §6501 a termination for cause in one state is grounds for
+termination in every other, so these records matter everywhere. The <a href="/states/">state lists</a> are the third check, and the one most often skipped.</p>
+<p>Drug and device sponsors have a fourth and fifth: the FDA debarment list and the clinical-investigator disqualification list
+(<a href="/life-sciences.html">life sciences screening</a>). And a Medicare opt-out affidavit, which some screening tools surface next to
+exclusions, is a status rather than a sanction and should never be treated as a hit.</p>
+
+<h2>Checking all of them at once</h2>
+<p>The point of a unified dataset is that the distinction stops costing effort. <a href="/screen.html">Screen my providers</a> checks a pasted
+or uploaded roster against the LEIE, SAM.gov, the FDA lists and every loaded state list in one pass, and tells you which list each hit came
+from. The same data is a join in <a href="https://app.snowflake.com/marketplace/listing/GZSXZ2K49BC/" target="_blank" rel="noopener">Snowflake</a>,
+a call to the <a href="/api.html">API</a>, or a <a href="/download.html">weekly download</a>. Step-by-step: <a href="/how-to-check-provider-exclusion.html">how to check whether a provider is excluded</a>.</p>
+<p><a class="cta" href="/screen.html">Screen my providers →</a></p>
+
+<div class="notice"><strong>Verify before adverse action.</strong> General information about the two lists, not legal advice. A hit identifies a published exclusion record and, where present, an NPI match with a stated confidence. Confirm against the source agency before taking any action.</div>
+</main>
+<footer class="siteftr">
+<nav class="flinks" aria-label="Footer">
+<a href="/attribution.html">Attribution &amp; Notices</a>
+<a href="/dictionary.html">Data Dictionary</a>
+<a href="/federal-gap.html">The Federal Gap</a>
+<a href="/states/">State lists</a>
+<a href="/how-to-check-provider-exclusion.html">How to check a provider</a>
+<a href="/insights.html">Insights</a>
+<a href="/methodology.pdf">Methodology</a>
+<a href="/life-sciences.html">Life sciences</a>
+<a href="/download.html">Download</a>
+<a href="/api.html">API</a>
+<a href="/screen.html">Screen my providers</a>
+<a href="/terms.html">Terms of Use</a>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
+</nav>
+<p class="fpos">RosterProof is the exclusion and owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a fraud detector.</p>
+<div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
+</footer>
+<script>
+fetch('/stats.json').then(r => r.json()).then(d => {
+  const f = Object.fromEntries((d.federal_sources || []).map(s => [s.source_id, s.active_records]));
+  if (f.LEIE) document.getElementById('st-leie').textContent = f.LEIE.toLocaleString('en-US');
+  if (f.SAM) document.getElementById('st-sam').textContent = f.SAM.toLocaleString('en-US');
+  document.getElementById('st-gap').textContent = d.federal_gap_overall_pct + '%';
+  document.getElementById('asof').textContent = ' · as of ' + d.last_refresh_utc.slice(0, 10);
+}).catch(() => {});
+</script>
+</div>
+</body>
+</html>

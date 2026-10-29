@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>State Medicaid Exclusion Lists — All 42 States + DC in One Place</title>
+<link rel="canonical" href="https://rosterproof.com/states/">
+<meta name="description" content="All 42 state Medicaid exclusion lists + DC: official source, format, update schedule, active records and the share missing from the federal LEIE. Check a provider against every list at once.">
+<meta property="og:title" content="State Medicaid Exclusion Lists — All 42 States + DC in One Place">
+<meta property="og:description" content="All 42 state Medicaid exclusion lists + DC: official source, format, update schedule, active records and the share missing from the federal LEIE. Check a provider against every list at once.">
+<meta property="og:image" content="https://rosterproof.com/assets/og-image.png">
+<meta property="og:url" content="https://rosterproof.com/states/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rosterproof.com/assets/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<style>
+body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#0a1128;color:#eef2fb;margin:0}
+.wrap{max-width:960px;margin:0 auto;padding:56px 24px}
+h1{font-size:28px;font-weight:600;margin:0 0 6px;line-height:1.25}
+h2{font-size:20px;margin:44px 0 6px;color:#7fd4c8}
+p{color:#c7d2ea;line-height:1.7}
+.tag{color:#8fa3c7;font-size:13px;letter-spacing:2px;margin-bottom:28px;text-transform:uppercase}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:24px 0 8px}
+.stat{background:#111a36;border:1px solid #2f3b55;border-radius:14px;padding:22px 14px}
+.stat .big{font-size:26px;font-weight:600;color:#7fd4c8;margin-bottom:6px;font-variant-numeric:tabular-nums}
+.stat .small{color:#8fa3c7;font-size:13px;line-height:1.5}
+.card{background:#111a36;border:1px solid #2f3b55;border-left:3px solid #7fd4c8;border-radius:14px;padding:18px 24px;margin:18px 0}
+.card p{margin:0}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0}
+th,td{border:1px solid #2f3b55;padding:9px 12px;text-align:left;vertical-align:top;line-height:1.55}
+th{background:#111a36;color:#8fa3c7;font-weight:600}
+td.num{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;color:#7fd4c8}
+a{color:#7fd4c8}
+ul,ol{color:#c7d2ea;line-height:1.7}
+.sitehdr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 36px}
+.sitehdr .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.sitehdr .brand img{display:block;border-radius:6px}
+.sitehdr .brand span{color:#eef2fb;letter-spacing:3px;font-weight:600;font-size:14px}
+.sitehdr nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
+.sitehdr nav a{color:#8fa3c7;font-size:13px;text-decoration:none}
+.sitehdr nav a:hover{color:#7fd4c8}
+.cta{display:inline-block;background:#7fd4c8;color:#0a1128;font-weight:700;font-size:15px;padding:12px 22px;border-radius:12px;text-decoration:none;margin:6px 10px 6px 0}
+.cta:hover{background:#a5e6dc}
+.gbtn{display:inline-block;border:1px solid #7fd4c8;color:#7fd4c8;font-weight:600;font-size:14px;padding:10px 18px;border-radius:12px;text-decoration:none;margin:6px 10px 6px 0}
+.notice{background:#0d1530;border:1px solid #2f3b55;border-radius:10px;padding:12px 16px;color:#8fa3c7;font-size:13.5px;line-height:1.6;margin-top:28px}
+.crumbs{color:#8fa3c7;font-size:13px;margin-bottom:18px}.crumbs a{color:#8fa3c7}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px 18px;margin:14px 0}
+.grid a{color:#c7d2ea;text-decoration:none;font-size:14.5px;line-height:1.8}.grid a:hover{color:#7fd4c8}
+.grid a span{color:#5b6b85;font-size:12.5px;margin-left:6px;font-variant-numeric:tabular-nums}
+/* shared footer (canonical in tools/sync_footer.py — do not hand-edit per page) */
+.siteftr{margin-top:72px;padding:56px 12px 10px;border-top:1px solid #232e4a;text-align:center;color:#5b6b85;font-size:13px}
+.siteftr .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0 0 34px}
+.siteftr .flinks a{color:#7fd4c8;text-decoration:none;font-size:13.5px;letter-spacing:.5px}
+.siteftr .flinks a:hover{color:#a5e6dc;text-decoration:underline;text-underline-offset:4px}
+.siteftr .fpos{color:#8fa3c7;font-size:13px;line-height:1.6;text-align:center;max-width:620px;margin:0 auto 22px}
+.siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
+.siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "CollectionPage",
+ "name": "State Medicaid Exclusion Lists \u2014 All 42 States + DC in One Place",
+ "description": "All 42 state Medicaid exclusion lists + DC: official source, format, update schedule, active records and the share missing from the federal LEIE. Check a provider against every list at once.",
+ "url": "https://rosterproof.com/states/",
+ "isPartOf": {
+  "@type": "WebSite",
+  "name": "RosterProof",
+  "url": "https://rosterproof.com/"
+ }
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<header class="sitehdr"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><nav><a href="/">Home</a><a href="/states/">States</a><a href="/screen.html">Screen my providers</a><a href="/api.html">API</a><a href="/federal-gap.html">The Federal Gap</a><a href="/attribution.html">Attribution</a></nav></header>
+<main>
+<div class="crumbs"><a href="/">Home</a> › State exclusion lists</div>
+<h1>State Medicaid exclusion lists, all in one place</h1>
+<div class="tag">42 states + DC · 88,799 active records · updated weekly<span id="asof"> · as of 2026-10-26</span></div>
+
+<p>Every state Medicaid program can exclude or terminate providers on its own authority, and most publish a list. The lists come
+in 7 different formats on 43 different schedules, and <strong>about 54.1% of their active records never
+appear on the federal OIG LEIE</strong>, so a federal-only screen misses them. RosterProof loads every list below weekly into one
+schema, so one check covers all of them. Each state page shows the official source, the update schedule, the counts, and how to screen against it.</p>
+
+<p><a class="cta" href="/screen.html">Screen my providers against every list →</a> <a class="gbtn" href="/federal-gap.html">The federal gap by state</a></p>
+
+<div class="tablewrap"><table>
+<tr><th>State</th><th>Official list</th><th>Format</th><th>Cadence</th><th>Active records</th><th>Not on LEIE</th></tr>
+<tr><td><a href="/states/alabama/">Alabama</a></td><td><a href="https://medicaid.alabama.gov/content/8.0_Fraud/8.7_Suspended_Providers.aspx" target="_blank" rel="noopener">Alabama Medicaid Agency Provider Sanction List</a></td><td>Excel</td><td>irregular</td><td class="num" data-state="AL" data-k="records_active">2,081</td><td class="num" data-state="AL" data-k="gap_pct" data-suffix="%">21.0%</td></tr>
+<tr><td><a href="/states/alaska/">Alaska</a></td><td><a href="https://health.alaska.gov/en/office-of-the-commissioner/medicaid-program-integrity/" target="_blank" rel="noopener">Alaska Medical Assistance Excluded Provider List</a></td><td>PDF</td><td>irregular</td><td class="num" data-state="AK" data-k="records_active">291</td><td class="num" data-state="AK" data-k="gap_pct" data-suffix="%">65.3%</td></tr>
+<tr><td><a href="/states/arizona/">Arizona</a></td><td><a href="https://www.azahcccs.gov/Fraud/Downloads/StateExclusionSpreadsheet.xlsx" target="_blank" rel="noopener">Arizona AHCCCS State Exclusion List</a></td><td>Excel</td><td>monthly</td><td class="num" data-state="AZ" data-k="records_active">782</td><td class="num" data-state="AZ" data-k="gap_pct" data-suffix="%">98.7%</td></tr>
+<tr><td><a href="/states/arkansas/">Arkansas</a></td><td><a href="https://dhs.arkansas.gov/dhs/portal/Exclusions/PublicSearch/" target="_blank" rel="noopener">Arkansas DHS Excluded Provider List</a></td><td>CSV</td><td>irregular</td><td class="num" data-state="AR" data-k="records_active">2,013</td><td class="num" data-state="AR" data-k="gap_pct" data-suffix="%">73.5%</td></tr>
+<tr><td><a href="/states/california/">California</a></td><td><a href="https://data.chhs.ca.gov/api/3/action/package_show?id=provider-suspended-and-ineligible-list-s-i-list" target="_blank" rel="noopener">California Medi-Cal Suspended &amp; Ineligible List</a></td><td>CSV</td><td>monthly</td><td class="num" data-state="CA" data-k="records_active">23,465</td><td class="num" data-state="CA" data-k="gap_pct" data-suffix="%">59.7%</td></tr>
+<tr><td><a href="/states/colorado/">Colorado</a></td><td><a href="https://hcpf.colorado.gov/provider-termination" target="_blank" rel="noopener">Colorado HCPF Terminated &amp; Reinstated Provider Lists</a></td><td>Excel</td><td>monthly</td><td class="num" data-state="CO" data-k="records_active">319</td><td class="num" data-state="CO" data-k="gap_pct" data-suffix="%">73.0%</td></tr>
+<tr><td><a href="/states/connecticut/">Connecticut</a></td><td><a href="https://portal.ct.gov/DSS/Quality-Assurance/Quality-Assurance-Administrative-Actions-List" target="_blank" rel="noopener">Connecticut DSS Quality Assurance Administrative Actions List</a></td><td>web page</td><td>irregular</td><td class="num" data-state="CT" data-k="records_active">80</td><td class="num" data-state="CT" data-k="gap_pct" data-suffix="%">27.5%</td></tr>
+<tr><td><a href="/states/delaware/">Delaware</a></td><td><a href="https://medicaid.dhss.delaware.gov/provider/Home/ProgramIntegrityLanding/tabid/2102/Default.aspx" target="_blank" rel="noopener">Delaware Listing of Sanctioned Providers (DMMA Program Integrity)</a></td><td>PDF</td><td>irregular</td><td class="num" data-state="DE" data-k="records_active">1,607</td><td class="num" data-state="DE" data-k="gap_pct" data-suffix="%">36.4%</td></tr>
+<tr><td><a href="/states/district-of-columbia/">District of Columbia</a></td><td><a href="https://ocp.dc.gov/page/excluded-parties-list" target="_blank" rel="noopener">District of Columbia OCP Excluded Parties List</a></td><td>web page</td><td>irregular</td><td class="num" data-state="DC" data-k="records_active">25</td><td class="num" data-state="DC" data-k="gap_pct" data-suffix="%">96.0%</td></tr>
+<tr><td><a href="/states/georgia/">Georgia</a></td><td><a href="https://dch.georgia.gov/office-inspector-general/georgia-oig-exclusions-list" target="_blank" rel="noopener">Georgia DCH-OIG List of Excluded Individuals and Entities</a></td><td>Excel</td><td>monthly</td><td class="num" data-state="GA" data-k="records_active">1,375</td><td class="num" data-state="GA" data-k="gap_pct" data-suffix="%">14.5%</td></tr>
+<tr><td><a href="/states/hawaii/">Hawaii</a></td><td><a href="https://medquest.hawaii.gov/en/plans-providers/provider-exclusion-reinstatement-list.html" target="_blank" rel="noopener">Hawaii Med-QUEST Medicaid Provider Exclusion/Reinstatement List</a></td><td>PDF</td><td>irregular</td><td class="num" data-state="HI" data-k="records_active">198</td><td class="num" data-state="HI" data-k="gap_pct" data-suffix="%">9.1%</td></tr>
+<tr><td><a href="/states/idaho/">Idaho</a></td><td><a href="https://publicdocuments.dhw.idaho.gov/WebLink/Browse.aspx?id=6157&amp;dbid=0&amp;repo=PUBLIC-DOCUMENTS" target="_blank" rel="noopener">Idaho Medicaid Exclusion List (DHW Medicaid Program Integrity)</a></td><td>PDF</td><td>irregular</td><td class="num" data-state="ID" data-k="records_active">156</td><td class="num" data-state="ID" data-k="gap_pct" data-suffix="%">30.1%</td></tr>
+<tr><td><a href="/states/illinois/">Illinois</a></td><td><a href="https://ilhfspartner3.dynamics365portals.us/sanctions/" target="_blank" rel="noopener">Illinois HFS-OIG Provider Sanctions List</a></td><td>JSON</td><td>monthly</td><td class="num" data-state="IL" data-k="records_active">3,245</td><td class="num" data-state="IL" data-k="gap_pct" data-suffix="%">67.4%</td></tr>
+<tr><td><a href="/states/indiana/">Indiana</a></td><td><a href="https://www.in.gov/fssa/ompp/provider-information/termination-of-provider-participation-in-medicaid-and-chip/" target="_blank" rel="noopener">Indiana FSSA OMPP Provider Terminations</a></td><td>Excel</td><td>irregular</td><td class="num" data-state="IN" data-k="records_active">112</td><td class="num" data-state="IN" data-k="gap_pct" data-suffix="%">71.4%</td></tr>
+<tr><td><a href="/states/iowa/">Iowa</a></td><td><a href="https://hhs.iowa.gov/medicaid/program-integrity" target="_blank" rel="noopener">Iowa Medicaid Sanctions List</a></td><td>Excel</td><td>monthly</td><td class="num" data-state="IA" data-k="records_active">1,176</td><td class="num" data-state="IA" data-k="gap_pct" data-suffix="%">85.2%</td></tr>
+<tr><td><a href="/states/kansas/">Kansas</a></td><td><a href="https://www.kdhe.ks.gov/509/Provider-Termination-List" target="_blank" rel="noopener">Kansas Medical Assistance Program (KMAP) Provider Termination List</a></td><td>Excel</td><td>irregular</td><td class="num" data-state="KS" data-k="records_active">213</td><td class="num" data-state="KS" data-k="gap_pct" data-suffix="%">34.7%</td></tr>
+<tr><td><a href="/states/kentucky/">Kentucky</a></td><td><a href="https://www.chfs.ky.gov/agencies/dms/dpi/pe/Pages/terminated.aspx" target="_blank" rel="noopener">Kentucky DMS Terminated and Excluded Provider List</a></td><td>Excel</td><td>irregular</td><td class="num" data-state="KY" data-k="records_active">400</td><td class="num" data-state="KY" data-k="gap_pct" data-suffix="%">77.0%</td></tr>
+<tr><td><a href="/states/louisiana/">Louisiana</a></td><td><a href="https://adverseactions.ldh.la.gov/SelSearch/SelSearch/Export" target="_blank" rel="noopener">Louisiana LDH State Adverse Actions List</a></td><td>CSV</td><td>daily</td><td class="num" data-state="LA" data-k="records_active">5,594</td><td class="num" data-state="LA" data-k="gap_pct" data-suffix="%">49.4%</td></tr>
+<tr><td><a href="/states/maine/">Maine</a></td><td><a href="https://mainecare.maine.gov/Meex/meex.aspx" target="_blank" rel="noopener">MaineCare Monthly Provider Exclusion Report (PI0008-PM)</a></td><td>CSV</td><td>monthly</td><td class="num" data-state="ME" data-k="records_active">1,114</td><td class="num" data-state="ME" data-k="gap_pct" data-suffix="%">35.8%</td></tr>
+<tr><td><a href="/states/maryland/">Maryland</a></td><td><a href="https://health.maryland.gov/mmcp/provider/Documents/sanctioned-list/State_of_MD_Sanctioned_Providers.xlsx" target="_blank" rel="noopener">Maryland Medicaid Sanctioned Provider List</a></td><td>Excel</td><td>monthly</td><td class="num" data-state="MD" data-k="records_active">1,613</td><td class="num" data-state="MD" data-k="gap_pct" data-suffix="%">64.2%</td></tr>
+<tr><td><a href="/states/massachusetts/">Massachusetts</a></td><td><a href="https://www.mass.gov/info-details/learn-about-suspended-or-excluded-masshealth-providers" target="_blank" rel="noopener">Massachusetts Suspended or Excluded MassHealth Providers</a></td><td>Excel</td><td>monthly</td><td class="num" data-state="MA" data-k="records_active">292</td><td class="num" data-state="MA" data-k="gap_pct" data-suffix="%">80.5%</td></tr>
+<tr><td><a href="/states/michigan/">Michigan</a></td><td><a href="https://www.michigan.gov/mdhhs/-/media/Project/Websites/mdhhs/Assistance-Programs/Medicaid-BPHASA/MI-Sanctioned-Provider-List/MI_Sanctioned_Provider_List-XLSX.xlsx" target="_blank" rel="noopener">Michigan MDHHS Medicaid Sanctioned Provider List</a></td><td>Excel</td><td>monthly</td><td class="num" data-state="MI" data-k="records_active">3,982</td><td class="num" data-state="MI" data-k="gap_pct" data-suffix="%">83.5%</td></tr>
+<tr><td><a href="/states/minnesota/">Minnesota</a></td><td><a href="https://www.dhs.state.mn.us/main/idcplg?IdcService=GET_FILE&amp;RevisionSelectionMethod=LatestReleased&amp;Rendition=Primary&amp;allowInterrupt=1&amp;dDocName=DHS16_177448" target="_blank" rel="noopener">Minnesota MHCP Excluded Provider Lists</a></td><td>Excel</td><td>monthly</td><td class="num" data-state="MN" data-k="records_active">1,433</td><td class="num" data-state="MN" data-k="gap_pct" data-suffix="%">65.5%</td></tr>
+<tr><td><a href="/states/mississippi/">Mississippi</a></td><td><a href="https://medicaid.ms.gov/providers/provider-terminations/" target="_blank" rel="noopener">Mississippi Division of Medicaid Sanctioned Providers List</a></td><td>Excel</td><td>monthly</td><td class="num" data-state="MS" data-k="records_active">211</td><td class="num" data-state="MS" data-k="gap_pct" data-suffix="%">61.6%</td></tr>
+<tr><td><a href="/states/missouri/">Missouri</a></td><td><a href="https://mmac.mo.gov/providers/provider-sanctions/" target="_blank" rel="noopener">Missouri Medicaid (MMAC) Provider Sanction List</a></td><td>Excel</td><td>monthly</td><td class="num" data-state="MO" data-k="records_active">266</td><td class="num" data-state="MO" data-k="gap_pct" data-suffix="%">77.1%</td></tr>
+<tr><td><a href="/states/montana/">Montana</a></td><td><a href="https://dphhs.mt.gov/MontanaHealthcarePrograms/terminatedexcludedproviders" target="_blank" rel="noopener">Montana DPHHS Excluded or Terminated Montana Medicaid Providers</a></td><td>Excel</td><td>irregular</td><td class="num" data-state="MT" data-k="records_active">173</td><td class="num" data-state="MT" data-k="gap_pct" data-suffix="%">19.1%</td></tr>
+<tr><td><a href="/states/nebraska/">Nebraska</a></td><td><a href="https://dhhs.ne.gov/Pages/Program-Integrity-Sanctioned-Providers.aspx" target="_blank" rel="noopener">Nebraska Medicaid Excluded Providers (NMEP)</a></td><td>PDF</td><td>irregular</td><td class="num" data-state="NE" data-k="records_active">1,435</td><td class="num" data-state="NE" data-k="gap_pct" data-suffix="%">86.8%</td></tr>
+<tr><td><a href="/states/nevada/">Nevada</a></td><td><a href="https://www.omig.nv.gov/provider-enrollment--termination/provider-exclusions-sanctions-and-press-releases/" target="_blank" rel="noopener">Nevada Medicaid Sanctions / OMIG Exclusions List</a></td><td>PDF</td><td>irregular</td><td class="num" data-state="NV" data-k="records_active">980</td><td class="num" data-state="NV" data-k="gap_pct" data-suffix="%">58.2%</td></tr>
+<tr><td><a href="/states/new-hampshire/">New Hampshire</a></td><td><a href="https://www.dhhs.nh.gov/programs-services/medicaid/provider-sanctions" target="_blank" rel="noopener">New Hampshire Medicaid Provider Sanctions List</a></td><td>Excel</td><td>irregular</td><td class="num" data-state="NH" data-k="records_active">76</td><td class="num" data-state="NH" data-k="gap_pct" data-suffix="%">75.0%</td></tr>
+<tr><td><a href="/states/new-jersey/">New Jersey</a></td><td><a href="https://www.nj.gov/comptroller/divisions/medicaid/" target="_blank" rel="noopener">New Jersey OSC Medicaid Ineligible Provider Report</a></td><td>Excel</td><td>by email request</td><td class="num" data-state="NJ" data-k="records_active">3,675</td><td class="num" data-state="NJ" data-k="gap_pct" data-suffix="%">58.5%</td></tr>
+<tr><td><a href="/states/new-york/">New York</a></td><td><a href="https://apps.omig.ny.gov/exclusions/tabdelimited.aspx" target="_blank" rel="noopener">New York OMIG Medicaid Exclusion List</a></td><td>TSV</td><td>daily</td><td class="num" data-state="NY" data-k="records_active">9,119</td><td class="num" data-state="NY" data-k="gap_pct" data-suffix="%">50.2%</td></tr>
+<tr><td><a href="/states/north-carolina/">North Carolina</a></td><td><a href="https://medicaid.ncdhhs.gov/providers/excluded-providers" target="_blank" rel="noopener">North Carolina Medicaid State Excluded Provider List</a></td><td>Excel</td><td>monthly</td><td class="num" data-state="NC" data-k="records_active">166</td><td class="num" data-state="NC" data-k="gap_pct" data-suffix="%">76.5%</td></tr>
+<tr><td><a href="/states/north-dakota/">North Dakota</a></td><td><a href="https://www.hhs.nd.gov/healthcare/medicaid/provider/compliance/fraud-and-abuse" target="_blank" rel="noopener">North Dakota Provider Exclusion List</a></td><td>Excel</td><td>irregular</td><td class="num" data-state="ND" data-k="records_active">192</td><td class="num" data-state="ND" data-k="gap_pct" data-suffix="%">52.6%</td></tr>
+<tr><td><a href="/states/ohio/">Ohio</a></td><td><a href="https://medicaid.ohio.gov/resources-for-providers/enrollment-and-support/provider-enrollment/provider-exclusion-and-suspension-list" target="_blank" rel="noopener">Ohio Medicaid Provider Exclusion and Suspension List</a></td><td>Excel</td><td>monthly</td><td class="num" data-state="OH" data-k="records_active">2,115</td><td class="num" data-state="OH" data-k="gap_pct" data-suffix="%">34.3%</td></tr>
+<tr><td><a href="/states/oregon/">Oregon</a></td><td><a href="https://www.oregon.gov/oha/hsd/ohp/pages/provider-enroll.aspx" target="_blank" rel="noopener">Oregon Health Authority OHP Sanctioned Providers</a></td><td>JSON</td><td>irregular</td><td class="num" data-state="OR" data-k="records_active">3</td><td class="num" data-state="OR" data-k="gap_pct" data-suffix="%">66.7%</td></tr>
+<tr><td><a href="/states/pennsylvania/">Pennsylvania</a></td><td><a href="https://www.humanservices.dhs.pa.gov/Medchk/" target="_blank" rel="noopener">Pennsylvania Medicheck Precluded Providers List</a></td><td>CSV</td><td>daily</td><td class="num" data-state="PA" data-k="records_active">4,895</td><td class="num" data-state="PA" data-k="gap_pct" data-suffix="%">20.7%</td></tr>
+<tr><td><a href="/states/south-carolina/">South Carolina</a></td><td><a href="https://scdhhs.gov/fraud-waste-and-abuse" target="_blank" rel="noopener">South Carolina DHHS Excluded/Terminated Providers List</a></td><td>Excel</td><td>irregular</td><td class="num" data-state="SC" data-k="records_active">1,362</td><td class="num" data-state="SC" data-k="gap_pct" data-suffix="%">40.3%</td></tr>
+<tr><td><a href="/states/tennessee/">Tennessee</a></td><td><a href="https://www.tn.gov/tenncare/fraud-and-abuse/program-integrity.html" target="_blank" rel="noopener">Tennessee TennCare Terminated Provider List</a></td><td>JSON</td><td>twice a month</td><td class="num" data-state="TN" data-k="records_active">21</td><td class="num" data-state="TN" data-k="gap_pct" data-suffix="%">85.7%</td></tr>
+<tr><td><a href="/states/texas/">Texas</a></td><td><a href="https://oig.hhsc.state.tx.us/oigportal2/Exclusions/ctl/DOW/mid/384" target="_blank" rel="noopener">Texas HHSC-OIG Exclusions List</a></td><td>Excel</td><td>daily</td><td class="num" data-state="TX" data-k="records_active">11,956</td><td class="num" data-state="TX" data-k="gap_pct" data-suffix="%">48.8%</td></tr>
+<tr><td><a href="/states/vermont/">Vermont</a></td><td><a href="https://www.vtmedicaid.com/#/provEnrollExcluded" target="_blank" rel="noopener">Vermont Medicaid Monthly List of For Cause Exclusions (DVHA)</a></td><td>Excel</td><td>monthly</td><td class="num" data-state="VT" data-k="records_active">69</td><td class="num" data-state="VT" data-k="gap_pct" data-suffix="%">56.5%</td></tr>
+<tr><td><a href="/states/washington/">Washington</a></td><td><a href="https://www.hca.wa.gov/assets/billers-and-providers/termination-exclusion.xlsx" target="_blank" rel="noopener">Washington HCA/DSHS Provider Termination and Exclusion List</a></td><td>Excel</td><td>monthly</td><td class="num" data-state="WA" data-k="records_active">235</td><td class="num" data-state="WA" data-k="gap_pct" data-suffix="%">66.4%</td></tr>
+<tr><td><a href="/states/west-virginia/">West Virginia</a></td><td><a href="https://www.wvmmis.com/SitePages/Medicaid%20Provider%20SanctionedExclusion" target="_blank" rel="noopener">WV Medicaid Provider Exclusions and Terminations (BMS)</a></td><td>PDF</td><td>monthly</td><td class="num" data-state="WV" data-k="records_active">166</td><td class="num" data-state="WV" data-k="gap_pct" data-suffix="%">53.6%</td></tr>
+<tr><td><a href="/states/wyoming/">Wyoming</a></td><td><a href="https://health.wyo.gov/healthcarefin/medicaid/" target="_blank" rel="noopener">Wyoming Medicaid Provider Exclusion List</a></td><td>PDF</td><td>monthly</td><td class="num" data-state="WY" data-k="records_active">118</td><td class="num" data-state="WY" data-k="gap_pct" data-suffix="%">61.0%</td></tr>
+</table></div>
+<p style="color:#8fa3c7;font-size:13px">Counts from the published RosterProof dataset; the page re-reads them on load. "Not on LEIE" = share of a state's active records with no matching federal LEIE record (<a href="/federal-gap.html">method</a>).</p>
+
+<h2>States not yet loaded</h2>
+<p>Florida, New Mexico, Oklahoma, Rhode Island, South Dakota, Utah, Virginia, Wisconsin. Some publish no list by design (Virginia and Oklahoma refer screeners to the federal lists); others are being pursued with the agency. The federal lists — OIG LEIE, SAM.gov, the FDA debarment and investigator-disqualification lists — cover every state and are in every RosterProof check.</p>
+
+<h2>Checking a provider against all of them</h2>
+<ol>
+<li><a href="/screen.html">Screen my providers</a> — paste or upload NPIs in the browser, no account.</li>
+<li><a href="/api.html">API</a> — <code>POST /v1/screen</code>, free key, 500 lookups a month.</li>
+<li><a href="https://app.snowflake.com/marketplace/listing/GZSXZ2K49BC/" target="_blank" rel="noopener">Snowflake listing</a> or <a href="/download.html">CSV / Parquet download</a> — the whole dataset in your own warehouse.</li>
+</ol>
+<p>New to exclusion screening? Start with <a href="/how-to-check-provider-exclusion.html">how to check whether a provider is excluded</a> and <a href="/leie-vs-sam.html">LEIE vs SAM.gov: what each list covers</a>.</p>
+
+<div class="notice"><strong>Verify before adverse action.</strong> A hit identifies a published exclusion record and, where present, an NPI match with a stated confidence. Confirm against the source agency before taking any action. Free for compliance screening under the <a href="/terms.html">Terms of Use</a>.</div>
+</main>
+<script>
+fetch('/stats.json').then(r => r.json()).then(d => {
+  const by = Object.fromEntries((d.state_sources || []).map(s => [s.state, s]));
+  document.querySelectorAll('[data-state][data-k]').forEach(el => { const s = by[el.dataset.state]; if (!s) return; const v = s[el.dataset.k]; if (v == null) return;
+    el.textContent = el.dataset.suffix ? v + el.dataset.suffix : v.toLocaleString('en-US') });
+  document.getElementById('asof').textContent = ' · as of ' + d.last_refresh_utc.slice(0, 10);
+}).catch(() => {});
+</script>
+<footer class="siteftr">
+<nav class="flinks" aria-label="Footer">
+<a href="/attribution.html">Attribution &amp; Notices</a>
+<a href="/dictionary.html">Data Dictionary</a>
+<a href="/federal-gap.html">The Federal Gap</a>
+<a href="/states/">State lists</a>
+<a href="/how-to-check-provider-exclusion.html">How to check a provider</a>
+<a href="/insights.html">Insights</a>
+<a href="/methodology.pdf">Methodology</a>
+<a href="/life-sciences.html">Life sciences</a>
+<a href="/download.html">Download</a>
+<a href="/api.html">API</a>
+<a href="/screen.html">Screen my providers</a>
+<a href="/terms.html">Terms of Use</a>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
+</nav>
+<p class="fpos">RosterProof is the exclusion and owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a fraud detector.</p>
+<div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
+</footer>
+</div>
+</body>
+</html>

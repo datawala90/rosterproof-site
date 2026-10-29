@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Check If a Provider Is Excluded — OIG, SAM &amp; State Lists</title>
+<link rel="canonical" href="https://rosterproof.com/how-to-check-provider-exclusion.html">
+<meta name="description" content="Step by step: which lists to check (OIG LEIE, SAM.gov, state Medicaid lists), what to search with, how to confirm a match, and how to rescreen monthly.">
+<meta property="og:title" content="How to check whether a healthcare provider is excluded">
+<meta property="og:description" content="The lists, the steps, the pitfalls — and why a federal-only check misses about half of state exclusions.">
+<meta property="og:image" content="https://rosterproof.com/assets/og-image.png">
+<meta property="og:url" content="https://rosterproof.com/how-to-check-provider-exclusion.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rosterproof.com/assets/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<style>
+body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#0a1128;color:#eef2fb;margin:0}
+.wrap{max-width:960px;margin:0 auto;padding:56px 24px}
+h1{font-size:28px;font-weight:600;margin:0 0 6px;line-height:1.25}
+h2{font-size:20px;margin:44px 0 6px;color:#7fd4c8}
+h3{font-size:16px;margin:22px 0 4px;color:#eaf1fb}
+p{color:#c7d2ea;line-height:1.7}
+.tag{color:#8fa3c7;font-size:13px;letter-spacing:2px;margin-bottom:28px;text-transform:uppercase}
+.card{background:#111a36;border:1px solid #2f3b55;border-left:3px solid #7fd4c8;border-radius:14px;padding:18px 24px;margin:18px 0}
+.card p{margin:0}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0}
+th,td{border:1px solid #2f3b55;padding:9px 12px;text-align:left;vertical-align:top;line-height:1.55}
+th{background:#111a36;color:#8fa3c7;font-weight:600}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;color:#7fd4c8}
+a{color:#7fd4c8}
+ul,ol{color:#c7d2ea;line-height:1.7}
+.sitehdr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 36px}
+.sitehdr .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.sitehdr .brand img{display:block;border-radius:6px}
+.sitehdr .brand span{color:#eef2fb;letter-spacing:3px;font-weight:600;font-size:14px}
+.sitehdr nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
+.sitehdr nav a{color:#8fa3c7;font-size:13px;text-decoration:none}
+.sitehdr nav a:hover{color:#7fd4c8}
+.cta{display:inline-block;background:#7fd4c8;color:#0a1128;font-weight:700;font-size:15px;padding:12px 22px;border-radius:12px;text-decoration:none;margin:6px 10px 6px 0}
+.cta:hover{background:#a5e6dc}
+.notice{background:#0d1530;border:1px solid #2f3b55;border-radius:10px;padding:12px 16px;color:#8fa3c7;font-size:13.5px;line-height:1.6;margin-top:28px}
+.num{color:#7fd4c8;font-variant-numeric:tabular-nums}
+/* shared footer (canonical in tools/sync_footer.py — do not hand-edit per page) */
+.siteftr{margin-top:72px;padding:56px 12px 10px;border-top:1px solid #232e4a;text-align:center;color:#5b6b85;font-size:13px}
+.siteftr .flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:0 0 34px}
+.siteftr .flinks a{color:#7fd4c8;text-decoration:none;font-size:13.5px;letter-spacing:.5px}
+.siteftr .flinks a:hover{color:#a5e6dc;text-decoration:underline;text-underline-offset:4px}
+.siteftr .fpos{color:#8fa3c7;font-size:13px;line-height:1.6;text-align:center;max-width:620px;margin:0 auto 22px}
+.siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
+.siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Which lists do I have to check to see if a provider is excluded?",
+     "acceptedAnswer": {"@type": "Answer", "text": "At minimum the federal OIG LEIE and SAM.gov. State Medicaid agencies and managed-care plans must check both every month (42 CFR 455.436). Each state also keeps its own exclusion or termination list, and about half of active state exclusions never appear on the LEIE, so the state lists for every state where the provider has practiced should be checked too."}},
+    {"@type": "Question", "name": "What information do I need to check a provider?",
+     "acceptedAnswer": {"@type": "Answer", "text": "The NPI gives the most reliable match. Without an NPI, use the full legal name, any former or maiden names, the state of practice and, for OIG's own verification, the date of birth and SSN."}},
+    {"@type": "Question", "name": "How do I confirm a match before acting on it?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Verify with the agency that published the record: OIG's SSN-based Online Search for LEIE matches, the SAM.gov record for SAM, and the state agency's own list for a state exclusion. A screening hit identifies a published record and a match with a stated confidence; it is not itself proof of identity."}},
+    {"@type": "Question", "name": "How often should providers be rescreened?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Monthly for the federal lists under 42 CFR 455.436, and most compliance programs screen state lists on the same cycle. Screening at hire or credentialing alone misses exclusions that happen later."}}
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<header class="sitehdr"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><nav><a href="/">Home</a><a href="/states/">States</a><a href="/screen.html">Screen my providers</a><a href="/api.html">API</a><a href="/federal-gap.html">The Federal Gap</a><a href="/leie-vs-sam.html">LEIE vs SAM</a></nav></header>
+<main>
+<h1>How to check whether a provider is excluded</h1>
+<div class="tag">the lists, the steps, the pitfalls</div>
+
+<p>An excluded provider cannot be paid by Medicare, Medicaid or any other federal health care program, and an organization
+that employs or contracts with one can be fined for every claim the excluded person touched. Checking is a legal requirement
+for state Medicaid agencies and managed-care plans (42 CFR 455.436: screen the federal databases monthly) and a standard
+condition of participation for everyone who bills them. This page walks through how to do it properly.</p>
+
+<div class="card"><p><strong>Short version:</strong> get the NPI, check the OIG LEIE, check SAM.gov, check the exclusion list of every state
+the provider has practiced in, confirm any match with the publishing agency, keep the record, and repeat every month.
+<a href="/screen.html">Screen my providers</a> does the first five lists-worth of lookups in one step, against
+<span class="num" id="st-sources">47</span> sources at once.</p></div>
+
+<h2>1. Know which lists exist</h2>
+<div class="tablewrap"><table>
+<tr><th>List</th><th>Who publishes it</th><th>What it covers</th></tr>
+<tr><td><strong>OIG LEIE</strong></td><td>HHS Office of Inspector General</td><td>Individuals and entities excluded from all federal health care programs under the Social Security Act. Updated monthly. <span class="num" id="st-leie"></span></td></tr>
+<tr><td><strong>SAM.gov</strong></td><td>General Services Administration</td><td>Exclusions from federal procurement and non-procurement programs by every federal agency, OIG's among them. <span class="num" id="st-sam"></span> <a href="/leie-vs-sam.html">How the two differ.</a></td></tr>
+<tr><td><strong>State Medicaid lists</strong></td><td>Each state's Medicaid agency or program-integrity unit</td><td>Providers the state has excluded or terminated for cause. <a href="/states/">All <span id="st-states">42</span> published lists + DC</a>, each on its own schedule and in its own format.</td></tr>
+<tr><td><strong>FDA debarment and investigator lists</strong></td><td>Food and Drug Administration</td><td>Debarred persons and disqualified clinical investigators. Required for drug and device sponsors; see <a href="/life-sciences.html">life sciences screening</a>.</td></tr>
+</table></div>
+<p>The federal lists are necessary but not sufficient. Measured across every state list RosterProof loads,
+<strong><span class="num" id="st-gap">54</span>% of active state exclusions do not appear on the LEIE</strong>
+(<a href="/federal-gap.html">the federal gap, by state</a>). A program that stops at the federal lists never sees them.</p>
+
+<h2>2. Gather the identifiers</h2>
+<ul>
+<li><strong>NPI</strong> — the 10-digit National Provider Identifier. It is the one identifier that resolves a match without ambiguity, and the state lists increasingly publish it.</li>
+<li><strong>Full legal name</strong>, plus former, maiden and "doing business as" names. Many state records are name-only.</li>
+<li><strong>State(s) of practice</strong>, present and past. An exclusion follows the person, not the state.</li>
+<li><strong>Date of birth and SSN</strong> — not for searching public lists, but OIG's Online Search accepts them to confirm an LEIE match definitively.</li>
+<li>For organizations: the <strong>legal entity name</strong> and any trade names, and the names of owners and managing employees (OIG expects those to be screened too).</li>
+</ul>
+
+<h2>3. Run the checks</h2>
+<h3>By hand</h3>
+<ol>
+<li>Search the <a href="https://exclusions.oig.hhs.gov/" target="_blank" rel="noopener">OIG LEIE Online Search</a> by name; for a possible match, use the SSN/EIN verification to confirm.</li>
+<li>Search <a href="https://sam.gov/search/?index=ex" target="_blank" rel="noopener">SAM.gov exclusions</a> by name or by the entity's identifiers.</li>
+<li>Open each relevant <a href="/states/">state list</a> and search it. Formats vary: some are web tables, most are Excel or PDF files you download and search.</li>
+<li>Record what you searched, when, and the result, for each provider.</li>
+</ol>
+<h3>In one step</h3>
+<p>Paste or upload a roster on <a href="/screen.html">Screen my providers</a>. Each NPI, name or organization is checked against the LEIE, SAM.gov, the FDA lists and every loaded state list in a single pass; the result for each row names the list, the record, the match tier and whether a human should look. Larger rosters and monthly reruns go through the <a href="/api.html">API</a> (free key, 500 lookups a month) or the <a href="https://app.snowflake.com/marketplace/listing/GZSXZ2K49BC/" target="_blank" rel="noopener">Snowflake listing</a>, where screening is a join.</p>
+<p><a class="cta" href="/screen.html">Screen my providers →</a></p>
+
+<h2>4. Confirm before acting</h2>
+<p>A screening hit says a published record matches your provider at a stated confidence. It is not, by itself, proof that
+they are the same person. Before terminating, withholding payment or reporting, confirm with the agency that published the
+record: OIG's SSN-based verification for LEIE, the SAM.gov record itself, or the state agency's list and contact. RosterProof
+labels every match with how it was made (NPI confirmed in the national registry, unique name match, license number, or an
+AI-adjudicated match flagged for human review) so you know how much confirming is left to do.</p>
+
+<h2>5. Rescreen monthly, and watch for the common misses</h2>
+<ul>
+<li><strong>Screening once at hire.</strong> Exclusions happen later. Monthly rescreening is the federal expectation and the practical one.</li>
+<li><strong>Federal lists only.</strong> About half of state exclusions never reach the LEIE; see above.</li>
+<li><strong>The provider moved.</strong> Someone excluded in one state and now practicing in another appears on the first state's list only. RosterProof tracks <span class="num" id="st-watch"></span> such providers whose current practice state has not excluded them (<a href="/insights.html">what the data says</a>).</li>
+<li><strong>Name variants.</strong> A hyphen, a maiden name or a middle initial can hide a match in a name-only search.</li>
+<li><strong>Confusing a Medicare opt-out with an exclusion.</strong> An opt-out affidavit is a status, not a sanction; it should never be treated as a hit.</li>
+<li><strong>Not screening owners and managing employees</strong> of contracted organizations.</li>
+</ul>
+
+<div class="notice"><strong>Verify before adverse action.</strong> This page is general information about screening practice, not legal advice. A hit identifies a published exclusion record and, where present, an NPI match with a stated confidence. Confirm against the source agency before taking any action.</div>
+</main>
+<footer class="siteftr">
+<nav class="flinks" aria-label="Footer">
+<a href="/attribution.html">Attribution &amp; Notices</a>
+<a href="/dictionary.html">Data Dictionary</a>
+<a href="/federal-gap.html">The Federal Gap</a>
+<a href="/states/">State lists</a>
+<a href="/how-to-check-provider-exclusion.html">How to check a provider</a>
+<a href="/insights.html">Insights</a>
+<a href="/methodology.pdf">Methodology</a>
+<a href="/life-sciences.html">Life sciences</a>
+<a href="/download.html">Download</a>
+<a href="/api.html">API</a>
+<a href="/screen.html">Screen my providers</a>
+<a href="/terms.html">Terms of Use</a>
+<a href="/privacy.html">Privacy Policy</a>
+<a href="mailto:support@rosterproof.com">support@rosterproof.com</a>
+</nav>
+<p class="fpos">RosterProof is the exclusion and owner-screening layer that feeds compliance, payment-integrity, and fraud programs — not a fraud detector.</p>
+<div class="fbrand"><img src="/shoonya-logo.png" alt="Shoonya enso logo" width="34" height="34" loading="lazy"><span>© 2026 Shoonya — RosterProof is a Shoonya product</span></div>
+</footer>
+<script>
+fetch('/stats.json').then(r => r.json()).then(d => {
+  const set = (id, v) => { const e = document.getElementById(id); if (e && v != null) e.textContent = v };
+  set('st-sources', d.sources_total); set('st-states', d.states); set('st-gap', Math.round(d.federal_gap_overall_pct));
+  const f = Object.fromEntries((d.federal_sources || []).map(s => [s.source_id, s.active_records]));
+  if (f.LEIE) set('st-leie', f.LEIE.toLocaleString('en-US') + ' active records.'); if (f.SAM) set('st-sam', f.SAM.toLocaleString('en-US') + ' active records.');
+  if (d.watchlist) set('st-watch', d.watchlist.any_state.toLocaleString('en-US'));
+}).catch(() => {});
+</script>
+</div>
+</body>
+</html>

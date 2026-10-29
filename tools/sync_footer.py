@@ -14,7 +14,7 @@ import sys
 import pathlib
 
 PAGES = ["index.html", "federal-gap.html", "insights.html", "life-sciences.html", "download.html", "api.html", "screen.html", "dictionary.html",
-         "attribution.html", "terms.html", "privacy.html"]
+         "attribution.html", "terms.html", "privacy.html", "how-to-check-provider-exclusion.html", "leie-vs-sam.html"]
 
 FOOTER_CSS = """/* shared footer (canonical in tools/sync_footer.py — do not hand-edit per page) */
 .siteftr{margin-top:72px;padding:56px 12px 10px;border-top:1px solid #232e4a;text-align:center;color:#5b6b85;font-size:13px}
@@ -30,6 +30,8 @@ FOOTER_HTML = """<footer class="siteftr">
 <a href="/attribution.html">Attribution &amp; Notices</a>
 <a href="/dictionary.html">Data Dictionary</a>
 <a href="/federal-gap.html">The Federal Gap</a>
+<a href="/states/">State lists</a>
+<a href="/how-to-check-provider-exclusion.html">How to check a provider</a>
 <a href="/insights.html">Insights</a>
 <a href="/methodology.pdf">Methodology</a>
 <a href="/life-sciences.html">Life sciences</a>
