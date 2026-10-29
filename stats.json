@@ -1,6 +1,6 @@
 {
- "generated_at_utc": "2026-10-29T14:49:29Z",
- "last_refresh_utc": "2026-10-26 16:13:00",
+ "generated_at_utc": "2026-10-29T15:53:41Z",
+ "last_refresh_utc": "2026-10-29 15:52:36",
  "refresh_cadence": "weekly",
  "records_total": 346953,
  "sources_total": 47,
@@ -201,8 +201,8 @@
   },
   {
    "state": "NV",
-   "active_records": 980,
-   "gap_pct": 58.2,
+   "active_records": 977,
+   "gap_pct": 58.0,
    "source_format": "PDF"
   },
   {
@@ -879,9 +879,9 @@
    "source_url": "https://www.omig.nv.gov/provider-enrollment--termination/provider-exclusions-sanctions-and-press-releases/",
    "source_format": "PDF",
    "update_cadence": "IRREGULAR",
-   "last_changed": "2026-10-05",
+   "last_changed": "2026-10-29",
    "records_total": 1229,
-   "records_active": 980,
+   "records_active": 977,
    "organizations": 427,
    "individuals": 802,
    "verified_npis": 772,
@@ -889,7 +889,7 @@
    "latest_start": "2026-07-01",
    "multi_jurisdiction": 236,
    "started_last_90d": 0,
-   "gap_pct": 58.2
+   "gap_pct": 58.0
   },
   {
    "state": "NY",
