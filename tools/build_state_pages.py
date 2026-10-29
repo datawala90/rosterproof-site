@@ -152,8 +152,7 @@ def state_page(s, stats, all_states):
         dates = " The agency does not publish exclusion start dates for these records."
     multi = s["multi_jurisdiction"]
     notice = NOTICES.get(code)
-    others = [o for o in all_states if o["state"] != code]
-    neighbours = sorted(others, key=lambda o: abs((o["gap_pct"] or 0) - (gap or 0)))[:6]
+    others = sorted((o for o in all_states if o["state"] != code), key=lambda o: STATE_NAMES[o["state"]])   # alphabetical, never ranked
     body = f"""<div class="crumbs"><a href="/">Home</a> › <a href="/states/">State exclusion lists</a> › {E(name)}</div>
 <h1>{E(name)} {kind}</h1>
 <div class="tag">{E(s['source_name'])} · in the RosterProof dataset<span id="asof"> · as of {asof}</span></div>
@@ -197,7 +196,8 @@ them, and keeps every change. The official list is the record of truth:
 </table></div>
 
 <h2>Other state lists</h2>
-<p>States with a federal gap closest to {E(name)}'s: {', '.join(f'<a href="/states/{slug(o["state"])}/">{E(STATE_NAMES[o["state"]])}</a>' for o in neighbours)}. All {stats['states']} states + DC: <a href="/states/">state Medicaid exclusion lists</a>.</p>
+<p>Every list RosterProof loads, each with its official source and how to screen against it (<a href="/states/">all states + DC</a>):</p>
+<div class="grid">{''.join(f'<a href="/states/{slug(o["state"])}/">{E(STATE_NAMES[o["state"]])}</a>' for o in others)}</div>
 
 <div class="notice"><strong>Verify before adverse action.</strong> RosterProof is a screening data layer, not a fraud detector. A hit identifies a published exclusion record and, where present, an NPI match with a stated confidence. Confirm against the source agency before taking any action. Free for compliance screening under the <a href="/terms.html">Terms of Use</a>.</div>
 </main>
