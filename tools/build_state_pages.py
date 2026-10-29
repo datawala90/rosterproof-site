@@ -84,7 +84,7 @@ ul,ol{color:#c7d2ea;line-height:1.7}
 
 
 HEADER = ('<header class="sitehdr"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a>'
-          '<nav><a href="/">Home</a><a href="/states/">States</a><a href="/screen.html">Screen my providers</a><a href="/api.html">API</a>'
+          '<nav><a href="/">Home</a><a href="/investigator/">Investigator</a><a href="/states/">States</a><a href="/screen.html">Screen my providers</a><a href="/api.html">API</a>'
           '<a href="/federal-gap.html">The Federal Gap</a><a href="/attribution.html">Attribution</a></nav></header>')
 
 
