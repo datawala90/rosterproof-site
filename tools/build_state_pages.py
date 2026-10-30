@@ -210,7 +210,7 @@ fetch('/stats.json').then(r => r.json()).then(d => {{
 }}).catch(() => {{}});
 </script>
 """
-    return head(title, desc, url, ld) + body + FOOTER_HTML + "\n</div>\n</body>\n</html>\n"
+    return head(title, desc, url, ld) + body + FOOTER_HTML + "\n</div>\n" + beacon() + "</body>\n</html>\n"
 
 
 def index_page(states, stats):
@@ -269,7 +269,13 @@ fetch('/stats.json').then(r => r.json()).then(d => {{
 }}).catch(() => {{}});
 </script>
 """
-    return head(title, desc, url, ld, "website") + body + FOOTER_HTML + "\n</div>\n</body>\n</html>\n"
+    return head(title, desc, url, ld, "website") + body + FOOTER_HTML + "\n</div>\n" + beacon() + "</body>\n</html>\n"
+
+
+def beacon() -> str:
+    """Cloudflare Web Analytics beacon, once tools/beacon_token.txt exists (tools/add_beacon.py)."""
+    t = ROOT / "tools" / "beacon_token.txt"
+    return (f'<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{{"token": "{t.read_text().strip()}"}}\'></script>\n' if t.exists() else "")
 
 
 def update_sitemap(states, today):
