@@ -1,8 +1,8 @@
 {
- "generated_at_utc": "2026-10-29T15:53:41Z",
- "last_refresh_utc": "2026-10-29 15:52:36",
+ "generated_at_utc": "2026-10-30T03:36:57Z",
+ "last_refresh_utc": "2026-10-30 03:35:37",
  "refresh_cadence": "weekly",
- "records_total": 346953,
+ "records_total": 347125,
  "sources_total": 47,
  "states": 42,
  "includes_dc": true,
@@ -20,20 +20,20 @@
   "count": 58779,
   "rate_pct": 16.9
  },
- "multi_jurisdiction_npis": 7817,
+ "multi_jurisdiction_npis": 7815,
  "federal_gap_overall_pct": 54.1,
  "tiers": [
   {
    "tier": "T1",
    "label": "Source-published NPI, NPPES-verified",
    "description": "the excluding agency printed an NPI and the CMS NPPES registry confirms the identity",
-   "count": 32884
+   "count": 32882
   },
   {
    "tier": "T2",
    "label": "Unique identity match (name+state)",
    "description": "exactly one provider in the national registry shares the normalized name and state",
-   "count": 23539
+   "count": 23534
   },
   {
    "tier": "T2a",
@@ -123,7 +123,7 @@
   },
   {
    "state": "AR",
-   "active_records": 2013,
+   "active_records": 2017,
    "gap_pct": 73.5,
    "source_format": "CSV"
   },
@@ -225,19 +225,19 @@
   },
   {
    "state": "NY",
-   "active_records": 9119,
+   "active_records": 9127,
    "gap_pct": 50.2,
    "source_format": "TSV"
   },
   {
    "state": "LA",
-   "active_records": 5594,
-   "gap_pct": 49.4,
+   "active_records": 5597,
+   "gap_pct": 49.5,
    "source_format": "CSV"
   },
   {
    "state": "TX",
-   "active_records": 11956,
+   "active_records": 11959,
    "gap_pct": 48.8,
    "source_format": "XLS"
   },
@@ -291,7 +291,7 @@
   },
   {
    "state": "PA",
-   "active_records": 4895,
+   "active_records": 4907,
    "gap_pct": 20.7,
    "source_format": "CSV"
   },
@@ -357,11 +357,11 @@
    "source_url": "https://dhs.arkansas.gov/dhs/portal/Exclusions/PublicSearch/",
    "source_format": "CSV",
    "update_cadence": "IRREGULAR",
-   "last_changed": "2026-10-19",
-   "records_total": 2021,
-   "records_active": 2013,
+   "last_changed": "2026-10-30",
+   "records_total": 2026,
+   "records_active": 2017,
    "organizations": 86,
-   "individuals": 1935,
+   "individuals": 1940,
    "verified_npis": 190,
    "earliest_start": null,
    "latest_start": null,
@@ -401,7 +401,7 @@
    "verified_npis": 6283,
    "earliest_start": "1972-07-01",
    "latest_start": "2026-10-19",
-   "multi_jurisdiction": 1982,
+   "multi_jurisdiction": 1981,
    "started_last_90d": 52,
    "gap_pct": 59.7
   },
@@ -627,17 +627,17 @@
    "source_url": "https://adverseactions.ldh.la.gov/SelSearch/SelSearch/Export",
    "source_format": "CSV",
    "update_cadence": "DAILY",
-   "last_changed": "2026-10-26",
-   "records_total": 5959,
-   "records_active": 5594,
-   "organizations": 374,
-   "individuals": 5585,
+   "last_changed": "2026-10-30",
+   "records_total": 5966,
+   "records_active": 5597,
+   "organizations": 377,
+   "individuals": 5589,
    "verified_npis": 466,
    "earliest_start": "1975-02-24",
-   "latest_start": "2026-10-25",
+   "latest_start": "2026-10-29",
    "multi_jurisdiction": 231,
-   "started_last_90d": 66,
-   "gap_pct": 49.4
+   "started_last_90d": 72,
+   "gap_pct": 49.5
   },
   {
    "state": "MA",
@@ -869,7 +869,7 @@
    "verified_npis": 1143,
    "earliest_start": "1976-08-20",
    "latest_start": "2026-09-01",
-   "multi_jurisdiction": 747,
+   "multi_jurisdiction": 746,
    "started_last_90d": 17,
    "gap_pct": 58.5
   },
@@ -897,16 +897,16 @@
    "source_url": "https://apps.omig.ny.gov/exclusions/tabdelimited.aspx",
    "source_format": "TSV",
    "update_cadence": "DAILY",
-   "last_changed": "2026-10-26",
-   "records_total": 9158,
-   "records_active": 9119,
-   "organizations": 1292,
-   "individuals": 7866,
+   "last_changed": "2026-10-30",
+   "records_total": 9167,
+   "records_active": 9127,
+   "organizations": 1294,
+   "individuals": 7873,
    "verified_npis": 3234,
    "earliest_start": "1982-04-30",
-   "latest_start": "2026-10-22",
+   "latest_start": "2026-10-28",
    "multi_jurisdiction": 1661,
-   "started_last_90d": 202,
+   "started_last_90d": 211,
    "gap_pct": 50.2
   },
   {
@@ -951,16 +951,16 @@
    "source_url": "https://www.humanservices.dhs.pa.gov/Medchk/",
    "source_format": "CSV",
    "update_cadence": "DAILY",
-   "last_changed": "2026-10-26",
-   "records_total": 6726,
-   "records_active": 4895,
+   "last_changed": "2026-10-30",
+   "records_total": 6738,
+   "records_active": 4907,
    "organizations": 271,
-   "individuals": 6455,
+   "individuals": 6467,
    "verified_npis": 1665,
    "earliest_start": "1957-01-21",
-   "latest_start": "2026-08-20",
+   "latest_start": "2026-09-20",
    "multi_jurisdiction": 1369,
-   "started_last_90d": 10,
+   "started_last_90d": 22,
    "gap_pct": 20.7
   },
   {
@@ -1005,11 +1005,11 @@
    "source_url": "https://oig.hhsc.state.tx.us/oigportal2/Exclusions/ctl/DOW/mid/384",
    "source_format": "XLS",
    "update_cadence": "DAILY",
-   "last_changed": "2026-10-26",
-   "records_total": 13428,
-   "records_active": 11956,
-   "organizations": 524,
-   "individuals": 12904,
+   "last_changed": "2026-10-30",
+   "records_total": 13435,
+   "records_active": 11959,
+   "organizations": 525,
+   "individuals": 12910,
    "verified_npis": 2443,
    "earliest_start": "1959-02-03",
    "latest_start": "2026-09-20",
@@ -1094,7 +1094,7 @@
   {
    "source_id": "SAM",
    "name": "SAM.gov Exclusions Public Extract",
-   "active_records": 169011
+   "active_records": 169160
   },
   {
    "source_id": "LEIE",
@@ -1115,7 +1115,7 @@
  "watchlist": {
   "definition": "NPPES-verified providers with an active exclusion from one or more states whose current NPPES practice state has not excluded them",
   "any_state": 2321,
-  "invisible_to_federal": 1620,
+  "invisible_to_federal": 1621,
   "two_plus_states": 254,
   "individuals": 2092,
   "organizations": 229,
