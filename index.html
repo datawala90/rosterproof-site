@@ -76,8 +76,8 @@ h2.sec{font-size:22px;margin:56px 0 6px;text-align:left}
 .topnav .navgroup{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .navbtn{white-space:nowrap}
 .topnav .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.topnav .brand img{display:block;border-radius:6px}
-.topnav .brand span{color:#eef2fb;letter-spacing:3px;font-weight:600;font-size:14px}
+.topnav .brand img{display:block;border-radius:8px;width:40px;height:40px}
+.topnav .brand span{color:#eef2fb;letter-spacing:3px;font-weight:600;font-size:17.5px}
 .navbtn{background:#7fd4c8;color:#0a1128;font-weight:600;font-size:14px;letter-spacing:.5px;
  padding:9px 18px;border-radius:999px;text-decoration:none}
 .navbtn:hover{background:#a5e6dc}
@@ -104,6 +104,7 @@ h2.sec{font-size:22px;margin:56px 0 6px;text-align:left}
 .siteftr .fpos{color:#8fa3c7;font-size:13px;line-height:1.6;text-align:center;max-width:620px;margin:0 auto 22px}
 .siteftr .fbrand{display:flex;align-items:center;justify-content:center;gap:12px;color:#46536b;font-size:12px;flex-wrap:wrap}
 .siteftr .fbrand img{opacity:.75;display:block;border-radius:50%}
+@media(max-width:600px){.topnav .brand img{width:32px;height:32px}.topnav .brand span{font-size:14px}}
 </style>
 <script type="application/ld+json">
 {
@@ -140,7 +141,7 @@ h2.sec{font-size:22px;margin:56px 0 6px;text-align:left}
 </script>
 </head>
 <body>
-<nav class="topnav"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><span class="navgroup"><a class="navbtn" href="/investigator/">Investigator</a><a class="navbtn" href="/insights.html">Insights</a><a class="navbtn" href="#get-the-data">Get the data</a></span></nav>
+<nav class="topnav"><a class="brand" href="/"><img src="/icon-512.png" width="40" height="40" alt="RosterProof"><span>rosterproof</span></a><span class="navgroup"><a class="navbtn" href="/investigator/" target="_blank" rel="noopener">Investigator</a><a class="navbtn" href="/insights.html">Insights</a><a class="navbtn" href="#get-the-data">Get the data</a></span></nav>
 <main>
 <div class="wrap">
 <div class="brandline">rosterproof</div>
@@ -257,7 +258,7 @@ query the <code>PUBLISHED_V1</code> views in minutes. No forms.</p>
 <div class="card" style="max-width:720px;margin:0 auto">
 <h3 style="margin:0 0 8px">See the story behind a hit</h3>
 <p style="margin:0 0 10px">A hit is rarely one record. The Investigator shows how it connects: a provider excluded in several states, a move from one state's list to another's, the same NPI published under different names. Explore the synthetic examples, or look up your own providers with a free API key.</p>
-<p class="muted-line" style="margin:0"><a href="/investigator/">Open the Investigator →</a></p>
+<p class="muted-line" style="margin:0"><a href="/investigator/" target="_blank" rel="noopener">Open the Investigator →</a></p>
 </div>
 </div>
 <div id="related-datasets" style="margin-top:28px">

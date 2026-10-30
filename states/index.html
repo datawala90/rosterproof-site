@@ -40,8 +40,9 @@ a{color:#7fd4c8}
 ul,ol{color:#c7d2ea;line-height:1.7}
 .sitehdr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 36px}
 .sitehdr .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.sitehdr .brand img{display:block;border-radius:6px}
-.sitehdr .brand span{color:#eef2fb;letter-spacing:3px;font-weight:600;font-size:14px}
+.sitehdr .brand img{display:block;border-radius:8px;width:40px;height:40px}
+.sitehdr .brand span{color:#eef2fb;letter-spacing:3px;font-weight:600;font-size:16.25px}
+@media(max-width:600px){.sitehdr .brand img{width:32px;height:32px}.sitehdr .brand span{font-size:13px}}
 .sitehdr nav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap}
 .sitehdr nav a{color:#8fa3c7;font-size:13px;text-decoration:none}
 .sitehdr nav a:hover{color:#7fd4c8}
@@ -79,7 +80,7 @@ ul,ol{color:#c7d2ea;line-height:1.7}
 </head>
 <body>
 <div class="wrap">
-<header class="sitehdr"><a class="brand" href="/"><img src="/icon-512.png" width="26" height="26" alt="RosterProof"><span>rosterproof</span></a><nav><a href="/">Home</a><a href="/investigator/">Investigator</a><a href="/states/">States</a><a href="/screen.html">Screen my providers</a><a href="/api.html">API</a><a href="/federal-gap.html">The Federal Gap</a><a href="/attribution.html">Attribution</a></nav></header>
+<header class="sitehdr"><a class="brand" href="/"><img src="/icon-512.png" width="40" height="40" alt="RosterProof"><span>rosterproof</span></a><nav><a href="/">Home</a><a href="/investigator/" target="_blank" rel="noopener">Investigator</a><a href="/states/">States</a><a href="/screen.html">Screen my providers</a><a href="/api.html">API</a><a href="/federal-gap.html">The Federal Gap</a><a href="/attribution.html">Attribution</a></nav></header>
 <main>
 <div class="crumbs"><a href="/">Home</a> › State exclusion lists</div>
 <h1>State Medicaid exclusion lists, all in one place</h1>
