@@ -200,7 +200,7 @@ them, and keeps every change. The official list is the record of truth:
 <p>Every list RosterProof loads, each with its official source and how to screen against it (<a href="/states/">all states + DC</a>):</p>
 <div class="grid">{''.join(f'<a href="/states/{slug(o["state"])}/">{E(STATE_NAMES[o["state"]])}</a>' for o in others)}</div>
 
-<div class="notice"><strong>Verify before adverse action.</strong> RosterProof is a screening data layer, not a fraud detector. A hit identifies a published exclusion record and, where present, an NPI match with a stated confidence. Confirm against the source agency before taking any action. Free for compliance screening under the <a href="/terms.html">Terms of Use</a>.</div>
+<div class="notice"><strong>Verify before adverse action.</strong> RosterProof is a screening data layer, not a detection tool. A hit identifies a published exclusion record and, where present, an NPI match with a stated confidence. Confirm against the source agency before taking any action. Free for compliance screening under the <a href="/terms.html">Terms of Use</a>.</div>
 </main>
 <script>
 fetch('/stats.json').then(r => r.json()).then(d => {{
