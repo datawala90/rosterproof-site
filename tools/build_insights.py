@@ -137,7 +137,7 @@ we measured the gap between the state's exclusion start and the LEIE's:</p>
 {bar_rows([(f'{r["a"]} → {r["b"]}', r["providers"], fmt(r["providers"])) for r in cor], cmax)}
 <p class="chartnote">Providers excluded in the first state and later in the second (same NPI, ordered by exclusion dates). Median gap between consecutive jurisdictions: <strong>{month_word(R["consec"][0]["median_gap"])}</strong>.</p>
 </div>
-<div class="card"><p><strong>Excluded providers resurface one state over</strong> — every corridor above but one runs between neighbors in the New York, New Jersey, Pennsylvania and Delaware region.</p>
+<div class="card"><p><strong>Excluded providers resurface one state over</strong> — {sum(1 for r in cor if {r['a'], r['b']} <= {'NY', 'NJ', 'PA', 'DE'})} of the {len(cor)} corridors above run between neighbors in the New York, New Jersey, Pennsylvania and Delaware region.</p>
 <p class="caveat">Caveat: corridor order reflects exclusion dates, which proxies but does not prove relocation order.</p></div>
 
 <h2 id="watchlist">Excluded somewhere, practicing where nobody can see it</h2>
