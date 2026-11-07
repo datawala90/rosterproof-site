@@ -1,10 +1,10 @@
 {
- "generated_at_utc": "2026-11-02T19:21:03Z",
- "last_refresh_utc": "2026-11-02 19:17:20",
+ "generated_at_utc": "2026-11-07T18:45:46Z",
+ "last_refresh_utc": "2026-11-05 19:24:16",
  "refresh_cadence": "weekly",
- "records_total": 347159,
- "sources_total": 47,
- "states": 42,
+ "records_total": 348902,
+ "sources_total": 48,
+ "states": 43,
  "includes_dc": true,
  "source_formats": {
   "XLSX": 23,
@@ -12,22 +12,22 @@
   "CSV": 8,
   "HTML_TABLE": 4,
   "JSON": 3,
-  "XLS": 1,
+  "XLS": 2,
   "TSV": 1
  },
  "email_delivered_sources": 1,
  "npi_resolved": {
-  "count": 58878,
-  "rate_pct": 16.9
+  "count": 59809,
+  "rate_pct": 17.1
  },
- "multi_jurisdiction_npis": 7822,
- "federal_gap_overall_pct": 54.1,
+ "multi_jurisdiction_npis": 7940,
+ "federal_gap_overall_pct": 54.6,
  "tiers": [
   {
    "tier": "T1",
    "label": "Source-published NPI, NPPES-verified",
    "description": "the excluding agency printed an NPI and the CMS NPPES registry confirms the identity",
-   "count": 32964
+   "count": 33895
   },
   {
    "tier": "T2",
@@ -96,6 +96,12 @@
    "active_records": 292,
    "gap_pct": 80.5,
    "source_format": "XLSX"
+  },
+  {
+   "state": "FL",
+   "active_records": 1728,
+   "gap_pct": 79.2,
+   "source_format": "XLS"
   },
   {
    "state": "MO",
@@ -195,7 +201,7 @@
   },
   {
    "state": "NJ",
-   "active_records": 3675,
+   "active_records": 3686,
    "gap_pct": 58.5,
    "source_format": "XLSX"
   },
@@ -291,7 +297,7 @@
   },
   {
    "state": "PA",
-   "active_records": 4903,
+   "active_records": 4901,
    "gap_pct": 20.7,
    "source_format": "CSV"
   },
@@ -401,8 +407,8 @@
    "verified_npis": 6283,
    "earliest_start": "1972-07-01",
    "latest_start": "2026-10-19",
-   "multi_jurisdiction": 1981,
-   "started_last_90d": 48,
+   "multi_jurisdiction": 1983,
+   "started_last_90d": 41,
    "gap_pct": 59.7
   },
   {
@@ -438,7 +444,7 @@
    "earliest_start": "2000-02-29",
    "latest_start": "2026-08-07",
    "multi_jurisdiction": 24,
-   "started_last_90d": 1,
+   "started_last_90d": 0,
    "gap_pct": 27.5
   },
   {
@@ -476,6 +482,24 @@
    "multi_jurisdiction": 424,
    "started_last_90d": 19,
    "gap_pct": 36.4
+  },
+  {
+   "state": "FL",
+   "source_name": "Florida AHCA Medicaid Sanctioned Providers",
+   "source_url": "https://apps.ahca.myflorida.com/dm_web/",
+   "source_format": "XLS",
+   "update_cadence": "IRREGULAR",
+   "last_changed": "2026-11-05",
+   "records_total": 1731,
+   "records_active": 1728,
+   "organizations": 861,
+   "individuals": 870,
+   "verified_npis": 678,
+   "earliest_start": "2009-07-22",
+   "latest_start": "2026-09-11",
+   "multi_jurisdiction": 227,
+   "started_last_90d": 1,
+   "gap_pct": 79.2
   },
   {
    "state": "GA",
@@ -528,7 +552,7 @@
    "earliest_start": "2010-10-08",
    "latest_start": "2026-08-18",
    "multi_jurisdiction": 111,
-   "started_last_90d": 10,
+   "started_last_90d": 7,
    "gap_pct": 85.2
   },
   {
@@ -636,7 +660,7 @@
    "earliest_start": "1975-02-24",
    "latest_start": "2026-11-01",
    "multi_jurisdiction": 231,
-   "started_last_90d": 78,
+   "started_last_90d": 69,
    "gap_pct": 49.5
   },
   {
@@ -672,7 +696,7 @@
    "earliest_start": "1979-05-18",
    "latest_start": "2026-10-09",
    "multi_jurisdiction": 199,
-   "started_last_90d": 10,
+   "started_last_90d": 6,
    "gap_pct": 64.2
   },
   {
@@ -707,7 +731,7 @@
    "verified_npis": 1284,
    "earliest_start": "1981-10-28",
    "latest_start": "2026-07-08",
-   "multi_jurisdiction": 273,
+   "multi_jurisdiction": 274,
    "started_last_90d": 0,
    "gap_pct": 83.5
   },
@@ -761,7 +785,7 @@
    "verified_npis": 154,
    "earliest_start": "2002-10-30",
    "latest_start": "2026-08-13",
-   "multi_jurisdiction": 61,
+   "multi_jurisdiction": 62,
    "started_last_90d": 1,
    "gap_pct": 61.6
   },
@@ -834,7 +858,7 @@
    "earliest_start": "2007-03-16",
    "latest_start": "2026-09-25",
    "multi_jurisdiction": 50,
-   "started_last_90d": 25,
+   "started_last_90d": 21,
    "gap_pct": 86.8
   },
   {
@@ -861,16 +885,16 @@
    "source_url": "https://www.nj.gov/comptroller/divisions/medicaid/",
    "source_format": "XLSX",
    "update_cadence": "EMAIL_REQUEST",
-   "last_changed": "2026-10-03",
-   "records_total": 4088,
-   "records_active": 3675,
+   "last_changed": "2026-11-05",
+   "records_total": 4101,
+   "records_active": 3686,
    "organizations": 186,
-   "individuals": 3902,
+   "individuals": 3915,
    "verified_npis": 1143,
    "earliest_start": "1976-08-20",
-   "latest_start": "2026-09-01",
-   "multi_jurisdiction": 747,
-   "started_last_90d": 13,
+   "latest_start": "2026-10-28",
+   "multi_jurisdiction": 750,
+   "started_last_90d": 21,
    "gap_pct": 58.5
   },
   {
@@ -905,8 +929,8 @@
    "verified_npis": 3245,
    "earliest_start": "1982-04-30",
    "latest_start": "2026-10-28",
-   "multi_jurisdiction": 1662,
-   "started_last_90d": 201,
+   "multi_jurisdiction": 1663,
+   "started_last_90d": 191,
    "gap_pct": 50.2
   },
   {
@@ -924,7 +948,7 @@
    "earliest_start": "2005-04-20",
    "latest_start": "2026-10-08",
    "multi_jurisdiction": 564,
-   "started_last_90d": 68,
+   "started_last_90d": 66,
    "gap_pct": 34.3
   },
   {
@@ -953,14 +977,14 @@
    "update_cadence": "DAILY",
    "last_changed": "2026-10-30",
    "records_total": 6738,
-   "records_active": 4903,
+   "records_active": 4901,
    "organizations": 271,
    "individuals": 6467,
    "verified_npis": 1666,
    "earliest_start": "1957-01-21",
    "latest_start": "2026-09-20",
-   "multi_jurisdiction": 1372,
-   "started_last_90d": 22,
+   "multi_jurisdiction": 1373,
+   "started_last_90d": 21,
    "gap_pct": 20.7
   },
   {
@@ -977,7 +1001,7 @@
    "verified_npis": 570,
    "earliest_start": "1985-08-07",
    "latest_start": "2026-10-28",
-   "multi_jurisdiction": 273,
+   "multi_jurisdiction": 276,
    "started_last_90d": 23,
    "gap_pct": 40.5
   },
@@ -1094,7 +1118,7 @@
   {
    "source_id": "SAM",
    "name": "SAM.gov Exclusions Public Extract",
-   "active_records": 169170
+   "active_records": 169151
   },
   {
    "source_id": "LEIE",
@@ -1114,27 +1138,27 @@
  ],
  "watchlist": {
   "definition": "NPPES-verified providers with an active exclusion from one or more states whose current NPPES practice state has not excluded them",
-  "any_state": 2320,
-  "invisible_to_federal": 1620,
-  "two_plus_states": 255,
-  "individuals": 2091,
-  "organizations": 229,
+  "any_state": 2313,
+  "invisible_to_federal": 1636,
+  "two_plus_states": 259,
+  "individuals": 2083,
+  "organizations": 230,
   "top_practice_states": [
    {
     "state": "FL",
-    "count": 287
+    "count": 255
    },
    {
     "state": "PA",
-    "count": 115
+    "count": 118
    },
    {
     "state": "TX",
-    "count": 107
+    "count": 108
    },
    {
     "state": "NC",
-    "count": 105
+    "count": 106
    },
    {
     "state": "AZ",
@@ -1142,7 +1166,7 @@
    },
    {
     "state": "NY",
-    "count": 88
+    "count": 90
    },
    {
     "state": "OH",

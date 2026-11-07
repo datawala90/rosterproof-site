@@ -37,7 +37,8 @@ CADENCE_SHORT = {"DAILY": "daily", "SEMIMONTHLY": "twice a month", "MONTHLY": "m
 NOTICES = {"TX": "Texas HHSC asks that copies name HHSC as the source with the web address and copy date, and that any modification is labeled.",
            "NC": "North Carolina DHHS permits non-commercial copying of its list, unaltered and cited.",
            "VT": "Vermont DVHA requires a disclaimer: its list covers providers terminated for cause by DVHA and the Agency of Human Services and may not include every excluded provider.",
-           "ID": "The Idaho Department of Health and Welfare notes that its list holds Idaho-issued exclusions only and directs users to check the federal lists as well."}
+           "ID": "The Idaho Department of Health and Welfare notes that its list holds Idaho-issued exclusions only and directs users to check the federal lists as well.",
+           "FL": "Florida AHCA Medicaid Sanctioned Providers report. Florida does not publish reinstatement dates; confirm current status with AHCA."}
 
 E = html.escape
 fmt = lambda n: f"{n:,}"
