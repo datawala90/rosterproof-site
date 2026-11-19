@@ -1,8 +1,8 @@
 {
- "generated_at_utc": "2026-11-07T18:45:46Z",
- "last_refresh_utc": "2026-11-05 19:24:16",
+ "generated_at_utc": "2026-11-19T18:18:21Z",
+ "last_refresh_utc": "2026-11-16 19:29:49",
  "refresh_cadence": "weekly",
- "records_total": 348902,
+ "records_total": 349564,
  "sources_total": 48,
  "states": 43,
  "includes_dc": true,
@@ -18,34 +18,34 @@
  "email_delivered_sources": 1,
  "npi_resolved": {
   "count": 59809,
-  "rate_pct": 17.1
+  "rate_pct": 17.0
  },
- "multi_jurisdiction_npis": 7940,
- "federal_gap_overall_pct": 54.6,
+ "multi_jurisdiction_npis": 7937,
+ "federal_gap_overall_pct": 54.8,
  "tiers": [
   {
    "tier": "T1",
    "label": "Source-published NPI, NPPES-verified",
    "description": "the excluding agency printed an NPI and the CMS NPPES registry confirms the identity",
-   "count": 33895
+   "count": 33867
   },
   {
    "tier": "T2",
    "label": "Unique identity match (name+state)",
    "description": "exactly one provider in the national registry shares the normalized name and state",
-   "count": 23559
+   "count": 23536
   },
   {
    "tier": "T2a",
    "label": "Unique identity match via registered alias",
    "description": "same, matched through a registered maiden/former/dba name",
-   "count": 670
+   "count": 669
   },
   {
    "tier": "T3",
    "label": "License-number corroborated",
    "description": "the state license number on the exclusion agrees with the registry",
-   "count": 535
+   "count": 533
   },
   {
    "tier": "T4",
@@ -57,8 +57,8 @@
  "state_gaps": [
   {
    "state": "AZ",
-   "active_records": 788,
-   "gap_pct": 98.7,
+   "active_records": 805,
+   "gap_pct": 98.8,
    "source_format": "XLSX"
   },
   {
@@ -69,7 +69,7 @@
   },
   {
    "state": "NE",
-   "active_records": 1435,
+   "active_records": 1434,
    "gap_pct": 86.8,
    "source_format": "PDF"
   },
@@ -81,27 +81,33 @@
   },
   {
    "state": "IA",
-   "active_records": 1176,
-   "gap_pct": 85.2,
+   "active_records": 1175,
+   "gap_pct": 85.4,
    "source_format": "XLSX"
   },
   {
    "state": "MI",
    "active_records": 3982,
-   "gap_pct": 83.5,
-   "source_format": "XLSX"
-  },
-  {
-   "state": "MA",
-   "active_records": 292,
-   "gap_pct": 80.5,
+   "gap_pct": 83.4,
    "source_format": "XLSX"
   },
   {
    "state": "FL",
-   "active_records": 1728,
-   "gap_pct": 79.2,
+   "active_records": 2100,
+   "gap_pct": 80.8,
    "source_format": "XLS"
+  },
+  {
+   "state": "MA",
+   "active_records": 292,
+   "gap_pct": 80.1,
+   "source_format": "XLSX"
+  },
+  {
+   "state": "NC",
+   "active_records": 168,
+   "gap_pct": 77.4,
+   "source_format": "XLSX"
   },
   {
    "state": "MO",
@@ -111,14 +117,8 @@
   },
   {
    "state": "KY",
-   "active_records": 400,
-   "gap_pct": 77.0,
-   "source_format": "XLSX"
-  },
-  {
-   "state": "NC",
-   "active_records": 168,
-   "gap_pct": 76.8,
+   "active_records": 399,
+   "gap_pct": 76.9,
    "source_format": "XLSX"
   },
   {
@@ -129,8 +129,8 @@
   },
   {
    "state": "AR",
-   "active_records": 2017,
-   "gap_pct": 73.5,
+   "active_records": 2016,
+   "gap_pct": 73.4,
    "source_format": "CSV"
   },
   {
@@ -142,13 +142,13 @@
   {
    "state": "IN",
    "active_records": 112,
-   "gap_pct": 71.4,
+   "gap_pct": 72.3,
    "source_format": "XLSX"
   },
   {
    "state": "IL",
-   "active_records": 3245,
-   "gap_pct": 67.4,
+   "active_records": 3257,
+   "gap_pct": 67.5,
    "source_format": "JSON"
   },
   {
@@ -164,27 +164,27 @@
    "source_format": "XLSX"
   },
   {
-   "state": "MN",
-   "active_records": 1433,
-   "gap_pct": 65.5,
-   "source_format": "XLSX"
-  },
-  {
    "state": "AK",
    "active_records": 291,
    "gap_pct": 65.3,
    "source_format": "PDF"
   },
   {
+   "state": "MN",
+   "active_records": 1433,
+   "gap_pct": 65.3,
+   "source_format": "XLSX"
+  },
+  {
    "state": "MD",
-   "active_records": 1613,
-   "gap_pct": 64.2,
+   "active_records": 1616,
+   "gap_pct": 64.3,
    "source_format": "XLSX"
   },
   {
    "state": "MS",
    "active_records": 211,
-   "gap_pct": 61.6,
+   "gap_pct": 61.1,
    "source_format": "XLSX"
   },
   {
@@ -195,20 +195,20 @@
   },
   {
    "state": "CA",
-   "active_records": 23465,
+   "active_records": 23548,
    "gap_pct": 59.7,
    "source_format": "CSV"
   },
   {
    "state": "NJ",
-   "active_records": 3686,
+   "active_records": 3687,
    "gap_pct": 58.5,
    "source_format": "XLSX"
   },
   {
    "state": "NV",
    "active_records": 977,
-   "gap_pct": 58.0,
+   "gap_pct": 57.5,
    "source_format": "PDF"
   },
   {
@@ -231,19 +231,19 @@
   },
   {
    "state": "NY",
-   "active_records": 9127,
-   "gap_pct": 50.2,
+   "active_records": 9145,
+   "gap_pct": 50.4,
    "source_format": "TSV"
   },
   {
    "state": "LA",
-   "active_records": 5604,
-   "gap_pct": 49.5,
+   "active_records": 5623,
+   "gap_pct": 49.7,
    "source_format": "CSV"
   },
   {
    "state": "TX",
-   "active_records": 11959,
+   "active_records": 11967,
    "gap_pct": 48.8,
    "source_format": "XLS"
   },
@@ -256,7 +256,7 @@
   {
    "state": "DE",
    "active_records": 1607,
-   "gap_pct": 36.4,
+   "gap_pct": 36.3,
    "source_format": "PDF"
   },
   {
@@ -274,13 +274,13 @@
   {
    "state": "OH",
    "active_records": 2115,
-   "gap_pct": 34.3,
+   "gap_pct": 33.9,
    "source_format": "XLSX"
   },
   {
    "state": "ID",
-   "active_records": 156,
-   "gap_pct": 30.1,
+   "active_records": 153,
+   "gap_pct": 31.4,
    "source_format": "PDF"
   },
   {
@@ -291,26 +291,26 @@
   },
   {
    "state": "AL",
-   "active_records": 2081,
-   "gap_pct": 21.0,
+   "active_records": 2082,
+   "gap_pct": 21.3,
    "source_format": "XLSX"
   },
   {
    "state": "PA",
-   "active_records": 4901,
+   "active_records": 4903,
    "gap_pct": 20.7,
    "source_format": "CSV"
   },
   {
    "state": "MT",
    "active_records": 173,
-   "gap_pct": 19.1,
+   "gap_pct": 19.7,
    "source_format": "XLSX"
   },
   {
    "state": "GA",
    "active_records": 1375,
-   "gap_pct": 14.5,
+   "gap_pct": 14.8,
    "source_format": "XLSX"
   },
   {
@@ -345,17 +345,17 @@
    "source_url": "https://medicaid.alabama.gov/content/8.0_Fraud/8.7_Suspended_Providers.aspx",
    "source_format": "XLSX",
    "update_cadence": "IRREGULAR",
-   "last_changed": "2026-10-10",
-   "records_total": 2083,
-   "records_active": 2081,
+   "last_changed": "2026-11-16",
+   "records_total": 2085,
+   "records_active": 2082,
    "organizations": 112,
-   "individuals": 1971,
+   "individuals": 1973,
    "verified_npis": 0,
    "earliest_start": "1983-08-15",
-   "latest_start": "2026-04-28",
+   "latest_start": "2026-09-30",
    "multi_jurisdiction": 0,
-   "started_last_90d": 0,
-   "gap_pct": 21.0
+   "started_last_90d": 1,
+   "gap_pct": 21.3
   },
   {
    "state": "AR",
@@ -363,9 +363,9 @@
    "source_url": "https://dhs.arkansas.gov/dhs/portal/Exclusions/PublicSearch/",
    "source_format": "CSV",
    "update_cadence": "IRREGULAR",
-   "last_changed": "2026-10-30",
+   "last_changed": "2026-11-09",
    "records_total": 2026,
-   "records_active": 2017,
+   "records_active": 2016,
    "organizations": 86,
    "individuals": 1940,
    "verified_npis": 191,
@@ -373,7 +373,7 @@
    "latest_start": null,
    "multi_jurisdiction": 53,
    "started_last_90d": 0,
-   "gap_pct": 73.5
+   "gap_pct": 73.4
   },
   {
    "state": "AZ",
@@ -381,17 +381,17 @@
    "source_url": "https://www.azahcccs.gov/Fraud/Downloads/StateExclusionSpreadsheet.xlsx",
    "source_format": "XLSX",
    "update_cadence": "MONTHLY",
-   "last_changed": "2026-11-02",
-   "records_total": 793,
-   "records_active": 788,
-   "organizations": 791,
+   "last_changed": "2026-11-09",
+   "records_total": 811,
+   "records_active": 805,
+   "organizations": 809,
    "individuals": 2,
    "verified_npis": 320,
    "earliest_start": "2023-09-14",
    "latest_start": "2026-11-15",
    "multi_jurisdiction": 14,
-   "started_last_90d": 68,
-   "gap_pct": 98.7
+   "started_last_90d": 74,
+   "gap_pct": 98.8
   },
   {
    "state": "CA",
@@ -399,16 +399,16 @@
    "source_url": "https://data.chhs.ca.gov/api/3/action/package_show?id=provider-suspended-and-ineligible-list-s-i-list",
    "source_format": "CSV",
    "update_cadence": "MONTHLY",
-   "last_changed": "2026-10-12",
-   "records_total": 23520,
-   "records_active": 23465,
-   "organizations": 1283,
-   "individuals": 22237,
+   "last_changed": "2026-11-16",
+   "records_total": 23648,
+   "records_active": 23548,
+   "organizations": 1352,
+   "individuals": 22296,
    "verified_npis": 6283,
    "earliest_start": "1972-07-01",
-   "latest_start": "2026-10-19",
+   "latest_start": "2026-11-11",
    "multi_jurisdiction": 1983,
-   "started_last_90d": 41,
+   "started_last_90d": 47,
    "gap_pct": 59.7
   },
   {
@@ -480,8 +480,8 @@
    "earliest_start": "2007-01-19",
    "latest_start": "2026-09-17",
    "multi_jurisdiction": 424,
-   "started_last_90d": 19,
-   "gap_pct": 36.4
+   "started_last_90d": 13,
+   "gap_pct": 36.3
   },
   {
    "state": "FL",
@@ -489,17 +489,17 @@
    "source_url": "https://apps.ahca.myflorida.com/dm_web/",
    "source_format": "XLS",
    "update_cadence": "IRREGULAR",
-   "last_changed": "2026-11-05",
-   "records_total": 1731,
-   "records_active": 1728,
-   "organizations": 861,
-   "individuals": 870,
+   "last_changed": "2026-11-09",
+   "records_total": 2103,
+   "records_active": 2100,
+   "organizations": 1023,
+   "individuals": 1080,
    "verified_npis": 678,
    "earliest_start": "2009-07-22",
    "latest_start": "2026-09-11",
    "multi_jurisdiction": 227,
-   "started_last_90d": 1,
-   "gap_pct": 79.2
+   "started_last_90d": 3,
+   "gap_pct": 80.8
   },
   {
    "state": "GA",
@@ -515,9 +515,9 @@
    "verified_npis": 199,
    "earliest_start": "1982-04-15",
    "latest_start": "2026-01-12",
-   "multi_jurisdiction": 187,
+   "multi_jurisdiction": 186,
    "started_last_90d": 0,
-   "gap_pct": 14.5
+   "gap_pct": 14.8
   },
   {
    "state": "HI",
@@ -545,15 +545,15 @@
    "update_cadence": "MONTHLY",
    "last_changed": "2026-10-05",
    "records_total": 1325,
-   "records_active": 1176,
+   "records_active": 1175,
    "organizations": 257,
    "individuals": 1068,
    "verified_npis": 313,
    "earliest_start": "2010-10-08",
    "latest_start": "2026-08-18",
    "multi_jurisdiction": 111,
-   "started_last_90d": 7,
-   "gap_pct": 85.2
+   "started_last_90d": 0,
+   "gap_pct": 85.4
   },
   {
    "state": "ID",
@@ -561,17 +561,17 @@
    "source_url": "https://publicdocuments.dhw.idaho.gov/WebLink/Browse.aspx?id=6157&dbid=0&repo=PUBLIC-DOCUMENTS",
    "source_format": "PDF",
    "update_cadence": "IRREGULAR",
-   "last_changed": "2026-10-21",
-   "records_total": 164,
-   "records_active": 156,
-   "organizations": 14,
-   "individuals": 150,
+   "last_changed": "2026-11-16",
+   "records_total": 167,
+   "records_active": 153,
+   "organizations": 15,
+   "individuals": 152,
    "verified_npis": 0,
    "earliest_start": "1994-11-28",
-   "latest_start": "2026-03-11",
+   "latest_start": "2026-11-04",
    "multi_jurisdiction": 0,
-   "started_last_90d": 0,
-   "gap_pct": 30.1
+   "started_last_90d": 1,
+   "gap_pct": 31.4
   },
   {
    "state": "IL",
@@ -579,17 +579,17 @@
    "source_url": "https://ilhfspartner3.dynamics365portals.us/sanctions/",
    "source_format": "JSON",
    "update_cadence": "MONTHLY",
-   "last_changed": "2026-10-19",
-   "records_total": 3248,
-   "records_active": 3245,
-   "organizations": 558,
-   "individuals": 2690,
+   "last_changed": "2026-11-16",
+   "records_total": 3261,
+   "records_active": 3257,
+   "organizations": 563,
+   "individuals": 2698,
    "verified_npis": 912,
    "earliest_start": "1979-04-19",
-   "latest_start": "2026-10-07",
+   "latest_start": "2026-11-04",
    "multi_jurisdiction": 329,
-   "started_last_90d": 6,
-   "gap_pct": 67.4
+   "started_last_90d": 12,
+   "gap_pct": 67.5
   },
   {
    "state": "IN",
@@ -607,7 +607,7 @@
    "latest_start": "2026-03-06",
    "multi_jurisdiction": 51,
    "started_last_90d": 0,
-   "gap_pct": 71.4
+   "gap_pct": 72.3
   },
   {
    "state": "KS",
@@ -624,7 +624,7 @@
    "earliest_start": "2010-09-30",
    "latest_start": "2026-10-20",
    "multi_jurisdiction": 72,
-   "started_last_90d": 10,
+   "started_last_90d": 8,
    "gap_pct": 34.7
   },
   {
@@ -633,9 +633,9 @@
    "source_url": "https://www.chfs.ky.gov/agencies/dms/dpi/pe/Pages/terminated.aspx",
    "source_format": "XLSX",
    "update_cadence": "IRREGULAR",
-   "last_changed": "2026-10-19",
+   "last_changed": "2026-11-16",
    "records_total": 406,
-   "records_active": 400,
+   "records_active": 399,
    "organizations": 138,
    "individuals": 268,
    "verified_npis": 335,
@@ -643,7 +643,7 @@
    "latest_start": "2026-07-22",
    "multi_jurisdiction": 103,
    "started_last_90d": 0,
-   "gap_pct": 77.0
+   "gap_pct": 76.9
   },
   {
    "state": "LA",
@@ -651,17 +651,17 @@
    "source_url": "https://adverseactions.ldh.la.gov/SelSearch/SelSearch/Export",
    "source_format": "CSV",
    "update_cadence": "DAILY",
-   "last_changed": "2026-11-02",
-   "records_total": 5973,
-   "records_active": 5604,
-   "organizations": 377,
-   "individuals": 5596,
+   "last_changed": "2026-11-16",
+   "records_total": 5995,
+   "records_active": 5623,
+   "organizations": 378,
+   "individuals": 5617,
    "verified_npis": 473,
    "earliest_start": "1975-02-24",
-   "latest_start": "2026-11-01",
-   "multi_jurisdiction": 231,
-   "started_last_90d": 69,
-   "gap_pct": 49.5
+   "latest_start": "2026-11-16",
+   "multi_jurisdiction": 230,
+   "started_last_90d": 82,
+   "gap_pct": 49.7
   },
   {
    "state": "MA",
@@ -679,7 +679,7 @@
    "latest_start": "2026-05-19",
    "multi_jurisdiction": 50,
    "started_last_90d": 0,
-   "gap_pct": 80.5
+   "gap_pct": 80.1
   },
   {
    "state": "MD",
@@ -687,17 +687,17 @@
    "source_url": "https://health.maryland.gov/mmcp/provider/Documents/sanctioned-list/State_of_MD_Sanctioned_Providers.xlsx",
    "source_format": "XLSX",
    "update_cadence": "MONTHLY",
-   "last_changed": "2026-10-10",
-   "records_total": 1626,
-   "records_active": 1613,
+   "last_changed": "2026-11-16",
+   "records_total": 1631,
+   "records_active": 1616,
    "organizations": 176,
-   "individuals": 1450,
+   "individuals": 1455,
    "verified_npis": 424,
    "earliest_start": "1979-05-18",
-   "latest_start": "2026-10-09",
+   "latest_start": "2026-11-10",
    "multi_jurisdiction": 199,
-   "started_last_90d": 6,
-   "gap_pct": 64.2
+   "started_last_90d": 9,
+   "gap_pct": 64.3
   },
   {
    "state": "ME",
@@ -733,7 +733,7 @@
    "latest_start": "2026-07-08",
    "multi_jurisdiction": 274,
    "started_last_90d": 0,
-   "gap_pct": 83.5
+   "gap_pct": 83.4
   },
   {
    "state": "MN",
@@ -751,7 +751,7 @@
    "latest_start": "2026-07-29",
    "multi_jurisdiction": 23,
    "started_last_90d": 0,
-   "gap_pct": 65.5
+   "gap_pct": 65.3
   },
   {
    "state": "MO",
@@ -786,8 +786,8 @@
    "earliest_start": "2002-10-30",
    "latest_start": "2026-08-13",
    "multi_jurisdiction": 62,
-   "started_last_90d": 1,
-   "gap_pct": 61.6
+   "started_last_90d": 0,
+   "gap_pct": 61.1
   },
   {
    "state": "MT",
@@ -795,17 +795,17 @@
    "source_url": "https://dphhs.mt.gov/MontanaHealthcarePrograms/terminatedexcludedproviders",
    "source_format": "XLSX",
    "update_cadence": "IRREGULAR",
-   "last_changed": "2026-08-15",
-   "records_total": 175,
+   "last_changed": "2026-11-09",
+   "records_total": 176,
    "records_active": 173,
    "organizations": 4,
-   "individuals": 171,
+   "individuals": 172,
    "verified_npis": 44,
    "earliest_start": "2007-08-20",
-   "latest_start": "2026-07-20",
+   "latest_start": "2026-10-22",
    "multi_jurisdiction": 38,
-   "started_last_90d": 0,
-   "gap_pct": 19.1
+   "started_last_90d": 1,
+   "gap_pct": 19.7
   },
   {
    "state": "NC",
@@ -823,7 +823,7 @@
    "latest_start": "2026-07-28",
    "multi_jurisdiction": 38,
    "started_last_90d": 0,
-   "gap_pct": 76.8
+   "gap_pct": 77.4
   },
   {
    "state": "ND",
@@ -840,7 +840,7 @@
    "earliest_start": "2011-12-24",
    "latest_start": "2026-08-19",
    "multi_jurisdiction": 27,
-   "started_last_90d": 1,
+   "started_last_90d": 0,
    "gap_pct": 52.9
   },
   {
@@ -849,16 +849,16 @@
    "source_url": "https://dhhs.ne.gov/Pages/Program-Integrity-Sanctioned-Providers.aspx",
    "source_format": "PDF",
    "update_cadence": "IRREGULAR",
-   "last_changed": "2026-10-10",
-   "records_total": 1455,
-   "records_active": 1435,
-   "organizations": 136,
+   "last_changed": "2026-11-09",
+   "records_total": 1456,
+   "records_active": 1434,
+   "organizations": 137,
    "individuals": 1319,
    "verified_npis": 271,
    "earliest_start": "2007-03-16",
-   "latest_start": "2026-09-25",
+   "latest_start": "2026-10-03",
    "multi_jurisdiction": 50,
-   "started_last_90d": 21,
+   "started_last_90d": 15,
    "gap_pct": 86.8
   },
   {
@@ -885,16 +885,16 @@
    "source_url": "https://www.nj.gov/comptroller/divisions/medicaid/",
    "source_format": "XLSX",
    "update_cadence": "EMAIL_REQUEST",
-   "last_changed": "2026-11-05",
-   "records_total": 4101,
-   "records_active": 3686,
-   "organizations": 186,
+   "last_changed": "2026-11-16",
+   "records_total": 4102,
+   "records_active": 3687,
+   "organizations": 187,
    "individuals": 3915,
    "verified_npis": 1143,
    "earliest_start": "1976-08-20",
-   "latest_start": "2026-10-28",
+   "latest_start": "2026-11-13",
    "multi_jurisdiction": 750,
-   "started_last_90d": 21,
+   "started_last_90d": 16,
    "gap_pct": 58.5
   },
   {
@@ -913,7 +913,7 @@
    "latest_start": "2026-07-01",
    "multi_jurisdiction": 236,
    "started_last_90d": 0,
-   "gap_pct": 58.0
+   "gap_pct": 57.5
   },
   {
    "state": "NY",
@@ -921,17 +921,17 @@
    "source_url": "https://apps.omig.ny.gov/exclusions/tabdelimited.aspx",
    "source_format": "TSV",
    "update_cadence": "DAILY",
-   "last_changed": "2026-11-02",
-   "records_total": 9167,
-   "records_active": 9127,
-   "organizations": 1294,
-   "individuals": 7873,
+   "last_changed": "2026-11-16",
+   "records_total": 9189,
+   "records_active": 9145,
+   "organizations": 1299,
+   "individuals": 7890,
    "verified_npis": 3245,
    "earliest_start": "1982-04-30",
-   "latest_start": "2026-10-28",
-   "multi_jurisdiction": 1663,
-   "started_last_90d": 191,
-   "gap_pct": 50.2
+   "latest_start": "2026-11-11",
+   "multi_jurisdiction": 1662,
+   "started_last_90d": 181,
+   "gap_pct": 50.4
   },
   {
    "state": "OH",
@@ -939,17 +939,17 @@
    "source_url": "https://medicaid.ohio.gov/resources-for-providers/enrollment-and-support/provider-enrollment/provider-exclusion-and-suspension-list",
    "source_format": "XLSX",
    "update_cadence": "MONTHLY",
-   "last_changed": "2026-10-19",
-   "records_total": 2161,
+   "last_changed": "2026-11-09",
+   "records_total": 2162,
    "records_active": 2115,
    "organizations": 252,
-   "individuals": 1909,
+   "individuals": 1910,
    "verified_npis": 941,
    "earliest_start": "2005-04-20",
-   "latest_start": "2026-10-08",
+   "latest_start": "2026-10-19",
    "multi_jurisdiction": 564,
-   "started_last_90d": 66,
-   "gap_pct": 34.3
+   "started_last_90d": 42,
+   "gap_pct": 33.9
   },
   {
    "state": "OR",
@@ -975,16 +975,16 @@
    "source_url": "https://www.humanservices.dhs.pa.gov/Medchk/",
    "source_format": "CSV",
    "update_cadence": "DAILY",
-   "last_changed": "2026-10-30",
-   "records_total": 6738,
-   "records_active": 4901,
+   "last_changed": "2026-11-16",
+   "records_total": 6748,
+   "records_active": 4903,
    "organizations": 271,
-   "individuals": 6467,
+   "individuals": 6477,
    "verified_npis": 1666,
    "earliest_start": "1957-01-21",
    "latest_start": "2026-09-20",
    "multi_jurisdiction": 1373,
-   "started_last_90d": 21,
+   "started_last_90d": 16,
    "gap_pct": 20.7
   },
   {
@@ -1002,7 +1002,7 @@
    "earliest_start": "1985-08-07",
    "latest_start": "2026-10-28",
    "multi_jurisdiction": 276,
-   "started_last_90d": 23,
+   "started_last_90d": 16,
    "gap_pct": 40.5
   },
   {
@@ -1029,16 +1029,16 @@
    "source_url": "https://oig.hhsc.state.tx.us/oigportal2/Exclusions/ctl/DOW/mid/384",
    "source_format": "XLS",
    "update_cadence": "DAILY",
-   "last_changed": "2026-11-02",
-   "records_total": 13437,
-   "records_active": 11959,
-   "organizations": 525,
-   "individuals": 12912,
+   "last_changed": "2026-11-16",
+   "records_total": 13448,
+   "records_active": 11967,
+   "organizations": 526,
+   "individuals": 12922,
    "verified_npis": 2448,
    "earliest_start": "1959-02-03",
-   "latest_start": "2026-09-20",
+   "latest_start": "2026-11-09",
    "multi_jurisdiction": 1036,
-   "started_last_90d": 13,
+   "started_last_90d": 12,
    "gap_pct": 48.8
   },
   {
@@ -1118,12 +1118,12 @@
   {
    "source_id": "SAM",
    "name": "SAM.gov Exclusions Public Extract",
-   "active_records": 169151
+   "active_records": 169131
   },
   {
    "source_id": "LEIE",
    "name": "HHS OIG List of Excluded Individuals/Entities",
-   "active_records": 84025
+   "active_records": 84156
   },
   {
    "source_id": "FDA_DEBAR",
@@ -1138,15 +1138,15 @@
  ],
  "watchlist": {
   "definition": "NPPES-verified providers with an active exclusion from one or more states whose current NPPES practice state has not excluded them",
-  "any_state": 2313,
-  "invisible_to_federal": 1636,
+  "any_state": 2308,
+  "invisible_to_federal": 1631,
   "two_plus_states": 259,
-  "individuals": 2083,
+  "individuals": 2078,
   "organizations": 230,
   "top_practice_states": [
    {
     "state": "FL",
-    "count": 255
+    "count": 254
    },
    {
     "state": "PA",
@@ -1162,7 +1162,7 @@
    },
    {
     "state": "AZ",
-    "count": 100
+    "count": 99
    },
    {
     "state": "NY",
